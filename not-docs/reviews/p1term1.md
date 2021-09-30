@@ -69,7 +69,7 @@ Use only `integer`, `float`, `boolean`, and `string`.
 #### 2. What is the problem with this code?
 
 ```python
-age = input("What is your age?")  # Assume the user types in an int
+age = int(input("What is your age?"))  # Assume user input is int
 print("You are " + age + " years old!")
 ```
 
