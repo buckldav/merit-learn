@@ -1,12 +1,13 @@
 ---
 layout: default
 title: Web Dev Basics
-nav_order: 4
+nav_order: 1
 has_children: true
 permalink: /docs/web-dev-basics/
 ---
 
 # Web Development Basics
 
-Click on a language below to begin learning!
-{: .fs-6 .fw-300 }
+Learn to create a multi-page website with HTML and CSS. Visit each of the following pages below to create the full project.
+
+To begin, fork this repl project: [https://replit.com/@buckldav/MultiPageSite0#index.html](https://replit.com/@buckldav/MultiPageSite0#index.html).
