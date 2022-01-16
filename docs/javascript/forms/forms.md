@@ -4,7 +4,7 @@ title: JavaScript Forms
 parent: JavaScript
 nav_order: 2
 has_children: true
-permalink: /docs/javascript-forms/
+permalink: /docs/javascript/forms/
 has_toc: true
 ---
 

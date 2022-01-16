@@ -3,7 +3,7 @@ layout: default
 title: JavaScript Games
 parent: JavaScript
 nav_order: 3
-permalink: /docs/javascript-games/
+permalink: /docs/javascript/games/
 ---
 
 # Game Development with JavaScript
