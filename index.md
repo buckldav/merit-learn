@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Home
-nav_order: 1
+nav_order: 0
 description: "Merit Academy Tech U is a place to learn programming. It provides direction to the resources you need to learn the fundamentals."
 permalink: /
 last_modified_date: 2020-08-05T17:54:08+0000
