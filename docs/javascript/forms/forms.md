@@ -2,7 +2,7 @@
 layout: default
 title: JavaScript Forms
 parent: JavaScript
-nav_order: 2
+nav_order: 3
 has_children: true
 permalink: /docs/javascript/forms/
 has_toc: true
