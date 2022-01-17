@@ -69,7 +69,7 @@ Contact Mr. Buckley: <a href="mailto:david.buckley@meritacademy.org">david.buckl
 
 #### Quiz 1-3
 
-At this point, I have students do a Kahoot related to the first three projects.
+At this point, I have students do a Kahoot related to projects 1-3.
 
 - [Teacher Link](https://create.kahoot.it/details/dab908b7-e1d3-4655-a075-142963d1cdf9)
 - [Single-Player Link](https://kahoot.it/challenge/?quiz-id=dab908b7-e1d3-4655-a075-142963d1cdf9&single-player=true)
@@ -118,7 +118,7 @@ At this point, I have students do a Kahoot related to the first three projects.
 
 #### Quiz 2
 
-At this point, I have students do a Kahoot related to the first three projects.
+At this point, I have students do a Kahoot related to projects 4-6.
 
 - [Teacher Link](https://create.kahoot.it/details/c06d6af9-0918-40dd-94b8-ea3a267b8a68)
 - [Single-Player Link](https://kahoot.it/challenge/?quiz-id=c06d6af9-0918-40dd-94b8-ea3a267b8a68&single-player=true)
