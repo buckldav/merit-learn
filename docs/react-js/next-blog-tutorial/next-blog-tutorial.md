@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Blog Tutorial
-nav_order: 1
+title: Next.js Blog Tutorial
+nav_order: 2
 has_children: true
-parent: Next.js
-permalink: /docs/next-js/blog-tutorial
+parent: React.js
+permalink: /docs/react-js/next-blog-tutorial
 has_toc: true
 ---
 
