@@ -18,7 +18,7 @@ function enableBtn(url, cssClass) {
   fetch(url).then((res) => {
     if (res.status === 200) {
       // Page exists, enable navigation button
-      console.log(res)
+      // console.log(res)
       const el = document.querySelector(`.${cssClass} a`)
       el.setAttribute("href", url)
       el.classList.remove("disabled")
