@@ -32,4 +32,4 @@ If you'd like some starting HTML, visit [https://replit.com/@buckldav/TodoApp0#i
 
 Here's a working example ([link](https://todoappminified.buckldav.repl.co/)):
 
-<iframe src="https://todoappminified.buckldav.repl.co/" width="500" height="400" title="To Do App" frameborder="none" style="border: 2px solid #f0f2f5; border-radius: 4px"></iframe>
+<iframe src="https://todoappminified.buckldav.repl.co/" width="500" height="400" title="To Do App" frameborder="none"></iframe>

@@ -15,15 +15,16 @@ for (let i = path.length - 1; i >= 0; i--) {
 }
 
 function enableBtn(url, cssClass) {
-  fetch(url).then((res) => {
-    if (res.status === 200) {
-      // Page exists, enable navigation button
-      // console.log(res)
-      const el = document.querySelector(`.${cssClass} a`)
-      el.setAttribute("href", url)
-      el.classList.remove("disabled")
-    }
-  })
+  fetch(url)
+    .then((res) => {
+      if (res.status === 200) {
+        // Page exists, enable navigation button
+        // console.log(res)
+        const el = document.querySelector(`.${cssClass} a`)
+        el.setAttribute("href", url)
+        el.classList.remove("disabled")
+      }
+    })
 }
 const prevUrl = pathParent + ("0" + (parseInt(pageNo) + -1)).slice(-2) + "/"
 const nextUrl = pathParent + ("0" + (parseInt(pageNo) + 1)).slice(-2) + "/"
