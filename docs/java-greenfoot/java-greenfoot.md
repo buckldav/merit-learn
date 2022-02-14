@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Java with Greenfoot
-nav_order: 6
+nav_order: 7
 has_children: true
 permalink: /docs/java-greenfoot/
 has_toc: true
