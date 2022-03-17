@@ -27,3 +27,7 @@ For this tutorial we will be following a simple [Unity 3D tutorial](https://www.
 Follow along with the whole tutorial(or at least watch it) and you should be set to work on your own game!
 
 _Remember!_ Google is a really good resource when you get stuck. Try to do what you need without Google and if you can't get it, _then_ use Google. (If you still need help you can ask someone in the room)
+
+## Learn C&#35;
+
+Visit Microsoft's Official Tutorials to learn C#: [https://dotnet.microsoft.com/en-us/learn/csharp](https://dotnet.microsoft.com/en-us/learn/csharp).
