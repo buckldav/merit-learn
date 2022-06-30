@@ -21,12 +21,12 @@ document.forms[1].onsubmit = (e) => {
   let access = document.getElementById("access").value
   const el = document.getElementById("accessedObj")
   if (object.id) {
-    if (access.indexOf("object.") === 0) {
+    if (access.indexOf("object.") === 0 && !access.includes(";")) {
       el.innerHTML = eval(access)
     } else {
-      el.innerHTML = `Invalid input <code>${trim(
+      el.innerHTML = `Invalid input "<span class="text-red-300">${trim(
         access
-      )}</code>. Try the format <code>object.&lt;property&gt;</code>.`
+      )}</span>". Try the format "<span class="text-red-300">object.&lt;property&gt;</span>".`
     }
   } else {
     el.innerHTML = `Cannot access <code>${trim(access)}</code>.`
