@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Web Dev Basics
-nav_order: 2
+nav_order: "02"
 has_children: true
 permalink: /docs/web-dev-basics/
 ---

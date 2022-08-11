@@ -1,7 +1,7 @@
 ---
 layout: default
 title: GitHub
-nav_order: 1
+nav_order: "01"
 has_children: true
 permalink: /docs/git/
 ---

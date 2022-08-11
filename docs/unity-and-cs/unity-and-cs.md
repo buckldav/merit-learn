@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Unity and C#
-nav_order: 6
+nav_order: "06"
 has_children: true
 permalink: /docs/unity-cs/
 ---

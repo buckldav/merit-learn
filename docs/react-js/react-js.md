@@ -1,7 +1,7 @@
 ---
 layout: default
 title: React.js
-nav_order: 4
+nav_order: "04"
 has_children: true
 permalink: /docs/react-js/
 has_toc: true

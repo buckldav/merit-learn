@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Processing - Intro to CS
-nav_order: 2
+nav_order: "02"
 has_children: true
 permalink: /docs/processing/
 has_toc: true

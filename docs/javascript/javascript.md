@@ -1,7 +1,7 @@
 ---
 layout: default
 title: JavaScript
-nav_order: 3
+nav_order: "03"
 has_children: true
 permalink: /docs/javascript/
 has_toc: true
