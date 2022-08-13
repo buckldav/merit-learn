@@ -6,13 +6,15 @@ nav_order: 3
 ---
 
 # CSS Layouts and Frameworks
+
 {: .no_toc }
 
 ## Table of contents
+
 {: .no_toc .text-delta }
 
 1. TOC
-{:toc}
+   {:toc}
 
 ---
 
@@ -20,9 +22,9 @@ nav_order: 3
 
 By default, web pages display HTML in a single vertical layout (i.e. each element is loaded directly beneath it). For more flexibility in your web design, you need to learn how to do layouts in CSS using CSS flexbox and CSS grid. In short, flexbox is used for horizontal or vertical aligning (like for a navigation bar) while grid is used for laying out entire pages. Both are important to know, but flexbox is probably a good place to start and is capable in its own right of laying out entire pages.
 
-* <b><a href="https://medium.com/youstart-labs/beginners-guide-to-choose-between-css-grid-and-flexbox-783005dd2412">Beginner's Guide to Choosing Between CSS Grid and Flexbox</a></b><br>This guide has some great resources for learning Grid and Flexbox.
-* <b><a href="https://codepip.com/games/flexbox-froggy/">Flexbox Froggy</a></b><br>This is a great game to practice Flexbox.
-* <b><a href="https://codepip.com/games/grid-garden/">Grid Garden</a></b><br>This is a great game to practice Grid.
+- <b><a href="https://medium.com/youstart-labs/beginners-guide-to-choose-between-css-grid-and-flexbox-783005dd2412">Beginner's Guide to Choosing Between CSS Grid and Flexbox</a></b><br>This guide has some great resources for learning Grid and Flexbox.
+- <b><a href="https://codepip.com/games/flexbox-froggy/">Flexbox Froggy</a></b><br>This is a great game to practice Flexbox.
+- <b><a href="https://codepip.com/games/grid-garden/">Grid Garden</a></b><br>This is a great game to practice Grid.
 
 ## Frameworks
 
@@ -49,3 +51,7 @@ If you're looking for a lightweight system that does a few things like Grid layo
 This article outlines a few other frameworks for beginners in addition to the two above. I particularly like <a href="https://get.foundation/sites.html">Foundation</a>, which is taught in the Sassy CSS unit of Web Development Capstone because it's particularly effective with <a href="https://sass-lang.com/">Sass</a> (which is CSS, but better! You should learn it once you feel comfortable with CSS).
 
 <b><a href="https://medium.com/swlh/a-beginners-guide-to-css-frameworks-7bdfb9a1acb0">A Beginner's Guide to CSS Frameworks</a></b>
+
+<b>
+<a href="https://dev.to/chetan_atrawalkar/20-best-css3-library-for-developers-58p ">20 CSS3 Libraries/Frameworks</a>
+</b>
