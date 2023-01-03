@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Extra Resources
-nav_order: "10"
+nav_order: 9
 parent: Unity and C#
 permalink: /docs/unity-cs/extra-resources/
 ---
