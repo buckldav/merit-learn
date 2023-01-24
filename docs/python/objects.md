@@ -138,13 +138,11 @@ We can use these classes like building blocks to create small images. This Monst
 
 ![Monster](/assets/images/python/objects/monster.png)
 
-Here's the implementation.
+Here's the implementation. Notice that the monster does not need to inherit from `Shape` because it has lots of Shapes in it that can draw themselves.
 
 ```python
-class Monster(Shape):
+class Monster():
   def __init__(self, x, y, size):
-    super().__init__(x, y)
-    self.size = size
     self.teeth = [
       Triangle(x, y, size),
       Triangle(x+size, y, size),
