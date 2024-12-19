@@ -8,7 +8,7 @@ permalink: /docs/unity-cs/animation-basics/
 
 # Animation
 
-First, create a spritesheet via a website like [piskelapp.com](https://piskelapp.com). Export your project as a PNG spritesheet.
+First, create a spritesheet via a website like [piskelapp.com](https://www.piskelapp.com). Export your project as a PNG spritesheet.
 
 <div style="display:flex;gap:12px;">
 <span>1.</span>
