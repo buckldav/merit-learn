@@ -1,6 +1,6 @@
 # learn-merit
 
-[https://learn.meritacademy.tech](https://learn.meritacademy.tech)
+[https://cs.dbuckley.dev](https://cs.dbuckley.dev)
 
 Merit Academy Tech U is a place to learn programming. It provides direction to the resources you need to learn the fundamentals.
 

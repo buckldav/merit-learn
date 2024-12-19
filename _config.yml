@@ -16,7 +16,7 @@
 title: Merit Academy Tech U
 description: Some tips on how to do the code.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://learn.meritacademy.tech" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://cs.dbuckley.dev" # the base hostname & protocol for your site, e.g. http://example.com
 github: "https://github.com/buckldav/learn-merit"
 
 permalink: pretty
