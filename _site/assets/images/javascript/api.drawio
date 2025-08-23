@@ -1,0 +1,52 @@
+<mxfile host="65bd71144e">
+    <diagram id="F_oQ6Y_VdBZHkIwGXuBy" name="Page-1">
+        <mxGraphModel dx="1128" dy="423" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="12" style="edgeStyle=none;html=1;entryX=0.995;entryY=0.63;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.009;exitY=0.643;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="" style="image;html=1;image=img/lib/clip_art/computers/Database_128x128.png" vertex="1" parent="1">
+                    <mxGeometry x="497" y="67.38999999999999" width="120" height="77.61" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" style="edgeStyle=none;html=1;entryX=0.143;entryY=0.47;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="3" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" style="edgeStyle=none;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fontFamily=Lucida Console;exitX=0.111;exitY=0.752;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="3" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];shape=mxgraph.kubernetes.icon;prIcon=api" vertex="1" parent="1">
+                    <mxGeometry x="297" y="59" width="90" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;entryX=0.011;entryY=0.515;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="4" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/laptop_client.svg;" vertex="1" parent="1">
+                    <mxGeometry x="37" y="62.78" width="85" height="94.44" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="GET&lt;br&gt;/users/" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" vertex="1" parent="1">
+                    <mxGeometry x="167" y="67.38999999999999" width="90" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Database" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
+                    <mxGeometry x="527" y="37.39" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="app.get(&quot;users&quot;)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
+                    <mxGeometry x="397" y="67.38999999999999" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="&lt;br&gt;[&lt;br&gt;&amp;nbsp; { &lt;br&gt;&amp;nbsp; &amp;nbsp; username: &quot;Jeff&quot;,&lt;br&gt;&amp;nbsp; &amp;nbsp; age: 25&lt;br&gt;&amp;nbsp; },&lt;br&gt;&amp;nbsp; ...&lt;br&gt;]" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
+                    <mxGeometry x="387" y="97.38999999999999" width="160" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Status: 200&lt;br&gt;Response: JSON" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
+                    <mxGeometry x="147" y="125" width="150" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Express.js API" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
+                    <mxGeometry x="282" y="35" width="115" height="32.39" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Web Client" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;" vertex="1" parent="1">
+                    <mxGeometry x="37" y="36.2" width="115" height="32.39" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
