@@ -3,6 +3,6 @@
 .ruby-version
 .jekyll-cache
 .sass-cache
-#_site
+_site
 node_modules
 not-docs/reviews/*.html
