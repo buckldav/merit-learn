@@ -121,4 +121,3 @@ compress_html:
   blanklines: false
   profile: false
 
-theme: just-the-docs
