@@ -149,6 +149,14 @@ You can also visit other sites on the local network.
 172.22.4.200 myneighborssite.com
 ```
 
+### Extra: Block a website
+
+If you want to never go to `google.com` on your computer, point that domain name to some other IP.
+
+```bash
+0.0.0.0      google.com
+```
+
 ## Firewall and Local Network
 
 To open port 80 on your computer to the local network, you need to create an entry in the firewall config.
@@ -158,10 +166,3 @@ sudo firewall-cmd --add-port 80/tcp --permanent
 sudo firewall-cmd --reload
 ```
 
-### Extra: Block a website
-
-If you want to never go to `google.com` on your computer, point that domain name to some other IP.
-
-```bash
-0.0.0.0      google.com
-```

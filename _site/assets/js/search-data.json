@@ -1733,432 +1733,450 @@
     "url": "https://cs.dbuckley.dev/docs/web-dev-basics/html/#introductory-examples-and-resources",
     "relUrl": "/docs/web-dev-basics/html/#introductory-examples-and-resources"
   },"289": {
+    "doc": "HTTP and HTTPS",
+    "title": "HTTP and HTTPS",
+    "content": ". | How does the internet standardize data transfer? | How do websites establish a secure connection for data transfer? | . ",
+    "url": "https://cs.dbuckley.dev/docs/web-dev/http-https/",
+    "relUrl": "/docs/web-dev/http-https/"
+  },"290": {
+    "doc": "HTTP and HTTPS",
+    "title": "Creating a Self-Signed Local TLS Certificate with openssl",
+    "content": "This certificate will be self-signed, meaning that it has not been validated by a third-party on the internet. This is for cases where yor computer does not have port 80 exposed to the public internet or you are doing local development. Before running the following code, ensure you have openssl installed. which openssl . This code creates a public and private key for the HTTPS protocol to use when encrypting your data. sudo su - root cd /etc/pki mkdir -p nginx/private cd nginx # TODO: set this variable yourself to your hostname, like potato.potato HOSTNAME=localhost openssl req -x509 -out server.crt -keyout private/server.key \\ -newkey rsa:2048 -nodes -sha256 \\ -subj \"/CN=$HOSTNAME\" -extensions EXT -config &lt;( \\ printf \"[dn]\\nCN=$HOSTNAME\\n[req]\\ndistinguished_name = dn\\n[EXT]\\nsubjectAltName=DNS:$HOSTNAME\\nkeyUsage=digitalSignature\\nextendedKeyUsage=serverAuth\") # exit root user exit . Uncomment these lines at the /etc/nginx/nginx.conf to enable SSL connection with your new certificate. server { listen 443 ssl; listen [::]:443 ssl; http2 on; server_name _; root /usr/share/nginx/html; ssl_certificate \"/etc/pki/nginx/server.crt\"; ssl_certificate_key \"/etc/pki/nginx/private/server.key\"; ssl_session_cache shared:SSL:1m; ssl_session_timeout 10m; ssl_ciphers PROFILE=SYSTEM; ssl_prefer_server_ciphers on; # Load configuration files for the default server block. # include /etc/nginx/default.d/*.conf; } . Test the nginx configuration to see if it works and then apply changes by restarting. sudo nginx -t sudo systemctl restart nginx . You should be able to access https://localhost in the browser. You will have to “accept the risk” of a self-signed certificate and continue. You can then see that you have an encrypted connection by looking at the “More Information” option in the browser. ",
+    "url": "https://cs.dbuckley.dev/docs/web-dev/http-https/#creating-a-self-signed-local-tls-certificate-with-openssl",
+    "relUrl": "/docs/web-dev/http-https/#creating-a-self-signed-local-tls-certificate-with-openssl"
+  },"291": {
+    "doc": "HTTP and HTTPS",
+    "title": "Creating a TLS Certificate with Certbot and Let’s Encrypt",
+    "content": "If you have a website available on the public internet (on port 80) and a domain name on public DNS, you can use certbot to create an SSL certificate with a free authority called “Let’s Encrypt”. Here is a great article on setting up certbot with nginx: https://dev.to/yousufbasir/setting-up-nginx-with-certbot-for-https-on-your-web-application-n1i for a public website. ",
+    "url": "https://cs.dbuckley.dev/docs/web-dev/http-https/#creating-a-tls-certificate-with-certbot-and-lets-encrypt",
+    "relUrl": "/docs/web-dev/http-https/#creating-a-tls-certificate-with-certbot-and-lets-encrypt"
+  },"292": {
     "doc": "Home",
     "title": "Welcome!",
     "content": "Merit Academy Tech U is a place to learn programming. It provides direction to the resources you need to learn the fundamentals. ",
     "url": "https://cs.dbuckley.dev/#welcome",
     "relUrl": "/#welcome"
-  },"290": {
+  },"293": {
     "doc": "Home",
     "title": "About the project",
     "content": "Merit Academy Tech U’s content is published by Merit Academy under a Creative Commons License. License . Merit Academy Tech U’s code is distributed by an MIT license. Contributing . When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change. Read more about becoming a contributor in our GitHub repo. Thank you to the contributors of Merit Academy Tech U! . Code of Conduct . Merit Academy Tech U is committed to fostering a welcoming community. View our Code of Conduct on our GitHub repository. ",
     "url": "https://cs.dbuckley.dev/#about-the-project",
     "relUrl": "/#about-the-project"
-  },"291": {
+  },"294": {
     "doc": "Home",
     "title": "About our school",
     "content": "Merit Academy is a 7-12 charter school in Springville, Utah. We offer both online and in-person courses. Click here to see the CS Courses we offer. If you’d like to know more about the school, including enrollment, visit https://meritprepacademy.org. ",
     "url": "https://cs.dbuckley.dev/#about-our-school",
     "relUrl": "/#about-our-school"
-  },"292": {
+  },"295": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
     "url": "https://cs.dbuckley.dev/",
     "relUrl": "/"
-  },"293": {
+  },"296": {
     "doc": "Java with Greenfoot",
     "title": "Java with Greenfoot",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/java-greenfoot/",
     "relUrl": "/docs/java-greenfoot/"
-  },"294": {
+  },"297": {
     "doc": "Java with Greenfoot",
     "title": "Introduction",
     "content": "These are lessons designed to help beginning programmers learn the Java language in a visual way using the Greenfoot environment. It is recommended that these lessons be done in order but they can be completed individually. ",
     "url": "https://cs.dbuckley.dev/docs/java-greenfoot/#introduction",
     "relUrl": "/docs/java-greenfoot/#introduction"
-  },"295": {
+  },"298": {
     "doc": "Java with Greenfoot",
     "title": "Attribution and Licensing",
     "content": "These lessons are adapted from several of Raspberry Pi’s Python Projects for the Java language. The content therein is licensed under Creative Commons CC BY-SA 4.0. ",
     "url": "https://cs.dbuckley.dev/docs/java-greenfoot/#attribution-and-licensing",
     "relUrl": "/docs/java-greenfoot/#attribution-and-licensing"
-  },"296": {
+  },"299": {
     "doc": "JavaScript",
     "title": "JavaScript",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/javascript/",
     "relUrl": "/docs/javascript/"
-  },"297": {
+  },"300": {
     "doc": "JavaScript",
     "title": "What is JavaScript?",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/javascript/#what-is-javascript",
     "relUrl": "/docs/javascript/#what-is-javascript"
-  },"298": {
+  },"301": {
     "doc": "JavaScript",
     "title": "Why JavaScript?",
     "content": "There is no “best” general-purpose programming language. Each language has a niche. C is used for operating systems. C# is used for games and Windows apps. JavaScript is used for web-based software. On GitHub, the world’s largest code repository, JavaScript is the #1 most used language and TypeScript, its cousin, is #5 (https://madnight.github.io/githut/#/pull_requests/2021/3). You can build apps, games, pretty much anything with JavaScript. While there is no “best” language, JavaScript certainly makes a strong case to be considered. ",
     "url": "https://cs.dbuckley.dev/docs/javascript/#why-javascript",
     "relUrl": "/docs/javascript/#why-javascript"
-  },"299": {
+  },"302": {
     "doc": "Markdown",
     "title": "Markdown",
     "content": "Coders are writers of code and technical documentation. They need to be able to share content and communicate quickly. These tools will help you do that. Navigate to the option below, depending on which coding platform you are using. ",
     "url": "https://cs.dbuckley.dev/docs/git/markdown/",
     "relUrl": "/docs/git/markdown/"
-  },"300": {
+  },"303": {
     "doc": "Mobile Apps",
     "title": "Mobile Apps",
     "content": "Smart mobile devices are a relatively new development target and the way we build for them is still rapidly changing. There are two ways to develop for mobile devices: write native apps or write cross-platform apps. | Native apps compile to executables that can be run on one operating system (i.e. Native Android Apps, .apk files, are written in Java or Kotlin; Native iOS Apps, .ipa files, are written in Swift). | Cross-platform apps are written in a language that can either be run in a mobile browser (Progressive Web Apps) or hybridly compiled and installed to multiple devices (i.e. React Native JavaScript Apps, Flutter Dart Apps, Xamarin C# Apps). | . Image Source and More Information: https://www.simform.com/blog/native-vs-cross-platform-development/. ",
     "url": "https://cs.dbuckley.dev/docs/mobile-apps/",
     "relUrl": "/docs/mobile-apps/"
-  },"301": {
+  },"304": {
     "doc": "Mobile Apps",
     "title": "What You Will Be Building",
     "content": "Those of you in AP CS Principles will be building a Progressive Web App (PWA), which is essentially a website that you can download and run on a phone. Those of you in AP CS A will be building a native Android App using Android Studio and Java. This video explains a little about what a progressive web app is and touches a little on the difference between it and a mobile app. ",
     "url": "https://cs.dbuckley.dev/docs/mobile-apps/#what-you-will-be-building",
     "relUrl": "/docs/mobile-apps/#what-you-will-be-building"
-  },"302": {
+  },"305": {
     "doc": "Next.js Blog Tutorial",
     "title": "Blog Tutorial",
     "content": "This is an introductory Next.js tutorial for App &amp; Web Development at Merit Academy. This tutorial only requires basic HTML and CSS knowledge, no previous JavaScript or React skills needed. ",
     "url": "https://cs.dbuckley.dev/docs/react-js/next-blog-tutorial#blog-tutorial",
     "relUrl": "/docs/react-js/next-blog-tutorial#blog-tutorial"
-  },"303": {
+  },"306": {
     "doc": "Next.js Blog Tutorial",
     "title": "Scope and Learning Targets",
     "content": "Based on Utah CTE’s Web Development 1 Standards (2021-2022). Standard 2.2 . | File structure and naming. | . Standard 3.3 . | Implement an id selector to modify a single element on the page. | Implement selectors a:link, a:visited, a:active, a:hover. | . Standard 3.4 . | Use absolute and static to position elements. | . Standard 4.2 . | Input Controls: Dropdown Lists. | Navigational Components. | . Standard 4.6 . | Specify page description, keywords, viewport, and author using meta tags. | Declare encoding using meta tags. | Understand principles of search engine optimization. | . ",
     "url": "https://cs.dbuckley.dev/docs/react-js/next-blog-tutorial#scope-and-learning-targets",
     "relUrl": "/docs/react-js/next-blog-tutorial#scope-and-learning-targets"
-  },"304": {
+  },"307": {
     "doc": "Next.js Blog Tutorial",
     "title": "Next.js Blog Tutorial",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/react-js/next-blog-tutorial",
     "relUrl": "/docs/react-js/next-blog-tutorial"
-  },"305": {
+  },"308": {
     "doc": "Objects in Python",
     "title": "Objects in Python",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/python/objects/",
     "relUrl": "/docs/python/objects/"
-  },"306": {
+  },"309": {
     "doc": "Objects in Python",
     "title": "Intro to Objects",
     "content": "A object is a data structure that can encapsulate variables and functions into a single entity. For example, strings are objects in Python. Here’s a simplified look at it. name = \"Jeff\" # The dot operator (.) allows you to access variables and functions from the object. name.lower() # jeff name.upper() # JEFF . ",
     "url": "https://cs.dbuckley.dev/docs/python/objects/#intro-to-objects",
     "relUrl": "/docs/python/objects/#intro-to-objects"
-  },"307": {
+  },"310": {
     "doc": "Objects in Python",
     "title": "Constructors",
     "content": "Many objects are created by calling a special function called a constructor. For example, when using Python’s turtle library, the constructor Turtle() creates a Turtle object that you can store in a variable. In below code, three Turtle objects are instantiated. Each has a different color and gets displaced a different amount. import turtle t1 = turtle.Turtle() t2 = turtle.Turtle() t3 = turtle.Turtle() t1.color(\"red\") t1.goto(30, 0) t2.color(\"green\") t2.goto(20, 0) t3.color(\"blue\") t3.goto(10, 0) . ",
     "url": "https://cs.dbuckley.dev/docs/python/objects/#constructors",
     "relUrl": "/docs/python/objects/#constructors"
-  },"308": {
+  },"311": {
     "doc": "Objects in Python",
     "title": "Write a Shape Class",
     "content": "Classes contain the logic for instantiating (creating) objects. Here’s an example of a Shape class that draws a dot at x, y. import turtle class Shape: def __init__(self, x, y): self.x = x self.y = y self.t = turtle.Turtle() self.t.hideturtle() self.t.penup() self.t.speed(0) self.t.setpos(self.x, self.y) def draw(self): self.t.dot() # Make a Shape at x=50, y=10 s1 = Shape(50, 10) s1.draw() # Make as many shapes as you want s2 = Shape(-30, 10) s2.draw() . | The __init__ function is the constructor definition and is what gets called with Shape(x, y). | The self property holds all of the variables of the object. The first parameter of every function in a class should have self as the first parameter. | . Try instantiating different shapes and calling their draw() functions. ",
     "url": "https://cs.dbuckley.dev/docs/python/objects/#write-a-shape-class",
     "relUrl": "/docs/python/objects/#write-a-shape-class"
-  },"309": {
+  },"312": {
     "doc": "Objects in Python",
     "title": "Triangle Class",
     "content": "One useful feature of classes is that they can share implementations through inheritance. A Triangle is a Shape in that it has a Turtle (self.t) and an x, y position. Triangles also have a size, which is the side length of one of their segments. Inheritance . To inherit from a class, the following pattern is used: . class ChildClass(ParentClass): pass # Triangle is a child of Shape, and inherits Shape's functionality class Triangle(Shape): pass . Child Constructors and super() . In the constructor for the Triangle class (__init__), calling the super() function accesses the parent class (Shape), which you can initialize with super().__init__(x, y). class Triangle(Shape): def __init__(self, x, y, size): # Calls the Shape constructor super().__init__(x, y) # Set the size of the triangle self.size = size . By calling super(), a Triangle now has the following members: self.t, self.x, and self.y in addition to its own self.size variable. It also moves the turtle into position at based on self.x and self.y. Full Triangle Code . Now, let’s override the draw() function to draw a triangle based on the self.size. class Triangle(Shape): def __init__(self, x, y, size): super().__init__(x, y) self.size = size def draw(self): self.t.pendown() self.t.forward(self.size) self.t.right(120) self.t.forward(self.size) self.t.right(120) self.t.forward(self.size) t1 = Triangle(-10, -10, 30) t1.draw() t2 = Triangle(0, 50, 30) t2.draw() . ",
     "url": "https://cs.dbuckley.dev/docs/python/objects/#triangle-class",
     "relUrl": "/docs/python/objects/#triangle-class"
-  },"310": {
+  },"313": {
     "doc": "Objects in Python",
     "title": "Composite Class with Multiple Shapes (Draw a Monster)",
     "content": "We can use these classes like building blocks to create small images. This Monster (pictured below) is made up of two Shapes (dots) and four Triangles. Here’s the implementation. Notice that the monster does not need to inherit from Shape because it has lots of Shapes in it that can draw themselves. class Monster(): def __init__(self, x, y, size): self.teeth = [ Triangle(x, y, size), Triangle(x+size, y, size), Triangle(x+size*2, y, size), Triangle(x+size*3, y, size), ] self.eyes = [ Shape(x+size, y+size), Shape(x+size*3, y+size), ] def draw(self): for tooth in self.teeth: tooth.draw() for eye in self.eyes: eye.draw() m = Monster(-200, 0, 20) m.draw() . ",
     "url": "https://cs.dbuckley.dev/docs/python/objects/#composite-class-with-multiple-shapes-draw-a-monster",
     "relUrl": "/docs/python/objects/#composite-class-with-multiple-shapes-draw-a-monster"
-  },"311": {
+  },"314": {
     "doc": "Objects in Python",
     "title": "Challenge",
     "content": "Create your own Shape child class (i.e. Square, Circle, etc.) and your own Composite Class (i.e. JackOLantern, SmileyFace, etc.) . Turtle docs . ",
     "url": "https://cs.dbuckley.dev/docs/python/objects/#challenge",
     "relUrl": "/docs/python/objects/#challenge"
-  },"312": {
+  },"315": {
     "doc": "Platformer Basics",
     "title": "Platformer Basics",
     "content": "Visit each page below to learn the basics of making a platformer. We will not be adding our own graphics to this platformer, we are just going to learn the nuts and bolts of how to have a player that can run and jump in an environment. ",
     "url": "https://cs.dbuckley.dev/docs/unity-cs/platformer-basics/",
     "relUrl": "/docs/unity-cs/platformer-basics/"
-  },"313": {
+  },"316": {
     "doc": "Processing - Intro to CS",
     "title": "Processing - Intro to Computer Science",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/processing/#processing---intro-to-computer-science",
     "relUrl": "/docs/processing/#processing---intro-to-computer-science"
-  },"314": {
+  },"317": {
     "doc": "Processing - Intro to CS",
     "title": "Introduction",
     "content": "These are lessons designed to help beginners learn programming in a visual way using Processing. Depending on the class you are in at Merit or your personal taste, you can create these programs in Java, Python, or JavaScript. ",
     "url": "https://cs.dbuckley.dev/docs/processing/#introduction",
     "relUrl": "/docs/processing/#introduction"
-  },"315": {
+  },"318": {
     "doc": "Processing - Intro to CS",
     "title": "Processing - Intro to CS",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/processing/",
     "relUrl": "/docs/processing/"
-  },"316": {
+  },"319": {
     "doc": "Python Projects",
     "title": "Python Projects",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/python/projects",
     "relUrl": "/docs/python/projects"
-  },"317": {
+  },"320": {
     "doc": "Learn Python",
     "title": "Python",
     "content": "Much of the content below is taken from https://www.raspberrypi.org/documentation/usage/python/. ",
     "url": "https://cs.dbuckley.dev/docs/python/#python",
     "relUrl": "/docs/python/#python"
-  },"318": {
+  },"321": {
     "doc": "Learn Python",
     "title": "Basic Python usage",
     "content": "Hello world in Python: . print(\"Hello world\") . Simple as that! . ",
     "url": "https://cs.dbuckley.dev/docs/python/#basic-python-usage",
     "relUrl": "/docs/python/#basic-python-usage"
-  },"319": {
+  },"322": {
     "doc": "Learn Python",
     "title": "Indentation",
     "content": "Some languages use curly braces { and } to wrap around lines of code which belong together, and leave it to the writer to indent these lines to appear visually nested. However, Python does not use curly braces but instead requires indentation for nesting. For example a for loop in Python: . for i in range(10): print(\"Hello\") . The indentation is necessary here. A second line indented would be a part of the loop, and a second line not indented would be outside of the loop. For example: . for i in range(2): print(\"A\") print(\"B\") . would print: . A B A B . whereas the following: . for i in range(2): print(\"A\") print(\"B\") . would print: . A A B . ",
     "url": "https://cs.dbuckley.dev/docs/python/#indentation",
     "relUrl": "/docs/python/#indentation"
-  },"320": {
+  },"323": {
     "doc": "Learn Python",
     "title": "Variables",
     "content": "To save a value to a variable, assign it like so: . name = \"Bob\" age = 15 . Note that data types were not specified with these variables, as types are inferred, and can be changed later. age = 15 age += 1 # increment age by 1 print(age) . This time I used comments beside the increment command. ",
     "url": "https://cs.dbuckley.dev/docs/python/#variables",
     "relUrl": "/docs/python/#variables"
-  },"321": {
+  },"324": {
     "doc": "Learn Python",
     "title": "Comments",
     "content": "Comments are ignored in the program but there for you to leave notes, and are denoted by the hash # symbol. Multi-line comments use triple quotes like so: . \"\"\" This is a very simple Python program that prints \"Hello\". That's all it does. \"\"\" print(\"Hello\") . ",
     "url": "https://cs.dbuckley.dev/docs/python/#comments",
     "relUrl": "/docs/python/#comments"
-  },"322": {
+  },"325": {
     "doc": "Learn Python",
     "title": "Lists",
     "content": "Python also has lists (called arrays in some languages) which are collections of data of any type: . numbers = [1, 2, 3] . Lists are denoted by the use of square brackets [] and each item is separated by a comma. ",
     "url": "https://cs.dbuckley.dev/docs/python/#lists",
     "relUrl": "/docs/python/#lists"
-  },"323": {
+  },"326": {
     "doc": "Learn Python",
     "title": "Iteration",
     "content": "Some data types are iterable, which means you can loop over the values they contain. For example a list: . numbers = [1, 2, 3] for number in numbers: print(number) . This takes each item in the list numbers and prints out the item: . 1 2 3 . Note I used the word number to denote each item. This is merely the word I chose for this - it’s recommended you choose descriptive words for variables - using plurals for lists, and singular for each item makes sense. It makes it easier to understand when reading. Other data types are iterable, for example the string: . dog_name = \"BINGO\" for char in dog_name: print(char) . This loops over each character and prints them out: . B I N G O . ",
     "url": "https://cs.dbuckley.dev/docs/python/#iteration",
     "relUrl": "/docs/python/#iteration"
-  },"324": {
+  },"327": {
     "doc": "Learn Python",
     "title": "Range",
     "content": "The integer data type is not iterable and trying to iterate over it will produce an error. For example: . for i in 3: print(i) . will produce: . TypeError: 'int' object is not iterable Python error . However you can make an iterable object using the range function: . for i in range(3): print(i) . range(5) contains the numbers 0, 1, 2, 3 and 4 (five numbers in total). To get the numbers 1 to 5 (inclusive) use range(1, 6). ",
     "url": "https://cs.dbuckley.dev/docs/python/#range",
     "relUrl": "/docs/python/#range"
-  },"325": {
+  },"328": {
     "doc": "Learn Python",
     "title": "Length",
     "content": "You can use functions like len to find the length of a string or a list: . name = \"Jamie\" print(len(name)) # 5 names = [\"Bob\", \"Jane\", \"James\", \"Alice\"] print(len(names)) # 4 . ",
     "url": "https://cs.dbuckley.dev/docs/python/#length",
     "relUrl": "/docs/python/#length"
-  },"326": {
+  },"329": {
     "doc": "Learn Python",
     "title": "If statements",
     "content": "You can use if statements for control flow: . name = \"Joe\" if len(name) &gt; 3: print(\"Nice name,\") print(name) else: print(\"That's a short name,\") print(name) . ",
     "url": "https://cs.dbuckley.dev/docs/python/#if-statements",
     "relUrl": "/docs/python/#if-statements"
-  },"327": {
+  },"330": {
     "doc": "Learn Python",
     "title": "Learn Python",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/python/",
     "relUrl": "/docs/python/"
-  },"328": {
+  },"331": {
     "doc": "Learn Pyxel",
     "title": "Learn Pyxel",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/python/pyxel",
     "relUrl": "/docs/python/pyxel"
-  },"329": {
+  },"332": {
     "doc": "React.js Basics",
     "title": "React.js Basics",
     "content": "Many web applications have to manage a lot of information on the client’s side. This could include authentication creditentials, information from third party APIs such as Google, a shopping cart in an eCommerce site, etc. Keeping track of all that data can be cumbersome, especially when multiple user events need access to similar information. ",
     "url": "https://cs.dbuckley.dev/docs/react-js/basics",
     "relUrl": "/docs/react-js/basics"
-  },"330": {
+  },"333": {
     "doc": "React.js Basics",
     "title": "Single Page Application Philosophy",
     "content": "A single page application (SPA) is a design philosophy where the user is only sent one HTML page for the app they request. The DOM is then modified as needed and application state is stored in memory with JavaScript. This was done in the To Do App assignment, and you should complete the entire JavaScript Basics module before continuing here. SPAs are typically built with opinionated frameworks (Angular, React, Vue, Svelte, etc.) that provide structure to DOM modification and state management. They abstract away the nuts and bolts in order to give the developer a safe and streamlined experience. ",
     "url": "https://cs.dbuckley.dev/docs/react-js/basics#single-page-application-philosophy",
     "relUrl": "/docs/react-js/basics#single-page-application-philosophy"
-  },"331": {
+  },"334": {
     "doc": "React.js Basics",
     "title": "SPA with React.js",
     "content": "With that said, dive into the tutorial below to create your first few React.js apps. ",
     "url": "https://cs.dbuckley.dev/docs/react-js/basics#spa-with-reactjs",
     "relUrl": "/docs/react-js/basics#spa-with-reactjs"
-  },"332": {
+  },"335": {
     "doc": "React.js",
     "title": "React.js",
     "content": "React.js is a frontend framework used to build reactive, stateful web applications. Before diving in to any of these tutorials, I suggest that you visit React’s official tutorial to get a high-level overview of the technology. ",
     "url": "https://cs.dbuckley.dev/docs/react-js/",
     "relUrl": "/docs/react-js/"
-  },"333": {
+  },"336": {
     "doc": "Extra Resources",
     "title": "Extra Resources",
     "content": "AI Follow Tutorial . How to Manage Global Variables . Check out the README file in this GitHub repository: https://github.com/buckldav/StaticScoreExample . How to Load Scene on Button Press . https://blog.insane.engineer/post/unity_button_load_scene/ . ",
     "url": "https://cs.dbuckley.dev/docs/unity-cs/extra-resources/",
     "relUrl": "/docs/unity-cs/extra-resources/"
-  },"334": {
+  },"337": {
     "doc": "State Machines",
     "title": "State Machines",
     "content": "Here’s a video outlining the utility of state machines in video game development. | What is a finite state machine? | What is a benefit of using a state machine? | In programming, what is an enumerator? | . ",
     "url": "https://cs.dbuckley.dev/docs/unity-cs/state-machines/",
     "relUrl": "/docs/unity-cs/state-machines/"
-  },"335": {
+  },"338": {
     "doc": "The Internet",
     "title": "The Internet",
     "content": "Here are some vocabulary words and demonstrations having to do with the internet. ",
     "url": "https://cs.dbuckley.dev/docs/web-dev-basics/the-internet/",
     "relUrl": "/docs/web-dev-basics/the-internet/"
-  },"336": {
+  },"339": {
     "doc": "The Internet",
     "title": "Vocabulary",
     "content": "Source . | A computing device is a physical artifact that can run a program. Some examples include computers, tablets, servers, routers, and smart sensors. | A computing system is a group of computing devices and programs working together for a common purpose. | A computer network is a group of interconnected computing devices capable of sending or receiving data. A computer network is a type of computing system. | A path between two computing devices on a computer network (a sender and a receiver) is a sequence of directly connected computing devices that begins at the sender and ends at the receiver. | Routing is the process of finding a path from sender to receiver. | The bandwidth of a computer network is the maximum amount of data that can be sent in a fixed amount of time. Bandwidth is usually measured in bits per second. | A protocol is an agreed-upon set of rules that specify the behavior of a system. The protocols used in the Internet are open, which allows users to easily connect additional computing devices to the Internet. Example protocols: IP, HTTP(S), TCP, FTP, UDP. | The scalability of a system is the capacity for the system to change in size and scale to meet new demands. | Information is passed through the Internet as a data stream. Data streams contain chunks of data, which are encapsulated in packets. | Redundancy is the inclusion of extra components that can be used to mitigate failure of a system if other components fail. | When a system can support failures and still continue to function, it is called fault-tolerant. | . ",
     "url": "https://cs.dbuckley.dev/docs/web-dev-basics/the-internet/#vocabulary",
     "relUrl": "/docs/web-dev-basics/the-internet/#vocabulary"
-  },"337": {
+  },"340": {
     "doc": "The Internet",
     "title": "Internet Game",
     "content": "Try to connect all the cities to make a fault-tolerant network with the least amount of cost. Game Permalink: https://NetworkGame.buckldav.repl.co . Start Game . ",
     "url": "https://cs.dbuckley.dev/docs/web-dev-basics/the-internet/#internet-game",
     "relUrl": "/docs/web-dev-basics/the-internet/#internet-game"
-  },"338": {
+  },"341": {
     "doc": "Top Down Game",
     "title": "Top Down Game",
     "content": "Visit each page to learn about how to make a game similar to Zelda I. This includes multiple scenes, collectibles, doors, and a score. ",
     "url": "https://cs.dbuckley.dev/docs/unity-cs/top-down-game/",
     "relUrl": "/docs/unity-cs/top-down-game/"
-  },"339": {
+  },"342": {
     "doc": "Turtle Snowflakes",
     "title": "Turtle Snowflakes",
     "content": "import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo) /** * Write a description of class snowflake here. * * @author (your name) * @version (a version number or a date) */ public class snowflake extends Actor { private void moveAndDraw(int distance) { //getWorld().getBackground().setColor(Color.GREEN); final int X_VECTOR = (int)(getX() + distance * Math.cos(Math.toRadians(getRotation()))); final int Y_VECTOR = (int)(getY() + distance * Math.sin(Math.toRadians(getRotation()))); getWorld().getBackground().drawLine(getX(), getY(), X_VECTOR, Y_VECTOR); move(distance); } private void setColor(int r, int g, int b) { getWorld().getBackground().setColor(new Color(r, g, b)); } private void branch(int distance){ for (int a = 0; a &lt; 3; a++) { for (int b = 0; b &lt; 3; b++) { moveAndDraw(distance); moveAndDraw(-distance); turn(45); } turn(-90); moveAndDraw(-distance); turn(-45); } turn(90); moveAndDraw(distance * 3); } public void act() { int r = 1; int g = 100; int b = 5; int[][] colors = { {85, 211, 136}, {197, 196, 126}, {235, 233, 166}, {25, 135, 222}, {211, 64, 159}, {159, 165, 106}, {178, 160, 125}, {36, 192, 70}, {231, 184, 204}, {63, 203, 219} }; setColor(0,0,0); int randSize = (int)(Math.random()*25) + 5; for (int i = 0; i &lt; 8; i++) { branch(randSize); turn(-45); } } } . ",
     "url": "https://cs.dbuckley.dev/docs/java-greenfoot/turtle-snowflakes/",
     "relUrl": "/docs/java-greenfoot/turtle-snowflakes/"
-  },"340": {
+  },"343": {
     "doc": "Turtley Amazing",
     "title": "Turtley Amazing",
     "content": "Adapted from https://projects.raspberrypi.org/en/projects/turtley-amazing for the Java language. Turtley Amazing by the Raspberry Pi Foundation is licensed under a Creative Commons Attribution 4.0 International License. ",
     "url": "https://cs.dbuckley.dev/docs/java-greenfoot/turtley-amazing/",
     "relUrl": "/docs/java-greenfoot/turtley-amazing/"
-  },"341": {
+  },"344": {
     "doc": "Unit Project - To Do App",
     "title": "Unit Project - To Do App",
     "content": "Objective: Make a To Do App where a user can add tasks to a table and remove an individual task when it’s completed. For an example, click here. ",
     "url": "https://cs.dbuckley.dev/docs/javascript/basics/unit-project/",
     "relUrl": "/docs/javascript/basics/unit-project/"
-  },"342": {
+  },"345": {
     "doc": "Unit Project - To Do App",
     "title": "Requirements",
     "content": ". | Use an array to keep track of tasks. (3 pts) | Use at least one event handler. (3 pts) | Use at least one function. (3 pts) | In HTML, use a table or list to display tasks. (3 pts) | Modify the DOM when tasks are added or removed. | Be able to add a task based on user input. (3 pts) | Be able to remove a specific task. (3 pts) | . | Code Style (2 pts) . | Have logical names for your variables and functions. | Use const for variables that don’t need to be reassigned. | Have good indentation blocks of code (functions, conditionals). | . | . Starting HTML . If you’d like some starting HTML, visit https://replit.com/@buckldav/TodoApp0#index.html. ",
     "url": "https://cs.dbuckley.dev/docs/javascript/basics/unit-project/#requirements",
     "relUrl": "/docs/javascript/basics/unit-project/#requirements"
-  },"343": {
+  },"346": {
     "doc": "Unit Project - To Do App",
     "title": "Example",
     "content": "Here’s a working example (link): . ",
     "url": "https://cs.dbuckley.dev/docs/javascript/basics/unit-project/#example",
     "relUrl": "/docs/javascript/basics/unit-project/#example"
-  },"344": {
+  },"347": {
     "doc": "Unity and C#",
     "title": "Beginning in Unity",
     "content": "Welcome to this quick start to Unity! . Unity is a free to use, game engine that supports both 3D and 2D game developement. This is software that is used professionally for game and app developement. List of games made in Unity (If you want examples) . You may choose between 2D or 3D games for the project you want to work on. Each has their own pros and cons to work with. Unity was built for 3D games and the coding seems to be mostly built for 3D. For 3D, you probably won’t be making your own models which means you will have to use premade models from other people. For 2D games, it’s easy to get the assets you may need but harder to code them to do what you want. For this tutorial we will be following a simple Unity 3D tutorial that will help you understand how Unity works. Follow along with the whole tutorial(or at least watch it) and you should be set to work on your own game! . Remember! Google is a really good resource when you get stuck. Try to do what you need without Google and if you can’t get it, then use Google. (If you still need help you can ask someone in the room) . ",
     "url": "https://cs.dbuckley.dev/docs/unity-cs/#beginning-in-unity",
     "relUrl": "/docs/unity-cs/#beginning-in-unity"
-  },"345": {
+  },"348": {
     "doc": "Unity and C#",
     "title": "Learn C#",
     "content": "Visit Microsoft’s Official Tutorials to learn C#: https://dotnet.microsoft.com/en-us/learn/csharp. ",
     "url": "https://cs.dbuckley.dev/docs/unity-cs/#learn-c",
     "relUrl": "/docs/unity-cs/#learn-c"
-  },"346": {
+  },"349": {
     "doc": "Unity and C#",
     "title": "Unity and C#",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/unity-cs/",
     "relUrl": "/docs/unity-cs/"
-  },"347": {
+  },"350": {
     "doc": "Web Dev Basics",
     "title": "Web Development Basics",
     "content": "Learn to create a multi-page website with HTML and CSS. Visit each of the following pages below to create the full project. To begin, fork this repl project: https://replit.com/@buckldav/MultiPageSite0#index.html. ",
     "url": "https://cs.dbuckley.dev/docs/web-dev-basics/#web-development-basics",
     "relUrl": "/docs/web-dev-basics/#web-development-basics"
-  },"348": {
+  },"351": {
     "doc": "Web Dev Basics",
     "title": "Web Dev Basics",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/web-dev-basics/",
     "relUrl": "/docs/web-dev-basics/"
-  },"349": {
+  },"352": {
     "doc": "Web Dev Advanced",
     "title": "Web Development Advanced",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/web-dev-advanced/#web-development-advanced",
     "relUrl": "/docs/web-dev-advanced/#web-development-advanced"
-  },"350": {
+  },"353": {
     "doc": "Web Dev Advanced",
     "title": "Web Dev Advanced",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/web-dev-advanced/",
     "relUrl": "/docs/web-dev-advanced/"
-  },"351": {
+  },"354": {
     "doc": "Intro to Web Services",
     "title": "Web Services",
     "content": "A service is a long-running program. It can be a website, a database, an application, an email server, etc. This page documents the following: . | Basic Linux commands | Ports | NGINX | . ",
     "url": "https://cs.dbuckley.dev/docs/web-dev/web-services/#web-services",
     "relUrl": "/docs/web-dev/web-services/#web-services"
-  },"352": {
+  },"355": {
     "doc": "Intro to Web Services",
     "title": "Basic Linux",
     "content": "This class is taught in person with computers that have Fedora Linux on them. cd ls pwd mkdir . Vim . vi filename.txt . i - Enter \"insert mode\" to type ESC - Exit \"insert mode\" :w - Write changes :q - Quit y - Copy (Yank) p - Paste -- alternatively -- Ctrl+Shift+C - Copy Ctrl+Shift+V - Paste dG - Delete to the end of the file . ",
     "url": "https://cs.dbuckley.dev/docs/web-dev/web-services/#basic-linux",
     "relUrl": "/docs/web-dev/web-services/#basic-linux"
-  },"353": {
+  },"356": {
     "doc": "Intro to Web Services",
     "title": "Ports",
     "content": ". | A service can (and usually is) bound to a numbered port. The port is where users can connect to the service. For example, a website running on port 3000 can be accessed locally at http://localhost:3000. | Ports less than 1024 are “privileged” (only accessible by services running as root). | There are various reserved default ports for common services. Here are just a few. | . | port | service / protocol | . | 21 | ftp | . | 22 | ssh | . | 80 | http | . | 443 | https | . | 587 | smtp (email) | . You can run services on an unprivileged port as a common user. # run an http server use the node package \"serve\" npx serve # running on http://localhost:3000 (default) . You cannot run this server on the privileged port 80 (http) as a normal user. npx serve -p 80 Error: Failed to serve: Error: listen EACCES: permission denied 0.0.0.0:80 . ",
     "url": "https://cs.dbuckley.dev/docs/web-dev/web-services/#ports",
     "relUrl": "/docs/web-dev/web-services/#ports"
-  },"354": {
+  },"357": {
     "doc": "Intro to Web Services",
     "title": "NGINX",
     "content": "The solution to the privileged port problem is to have a service running as root use port 80 to serve a website. A common service is NGINX. It can be managed by systemd via the systemctl tool. # see if nginx is installed, things you install end up in /usr/bin which nginx # install if needed (red hat linux like fedora) sudo dnf install nginx -y # enable the service and start sudo systemctl enable nginx sudo systemctl start nginx # view the status sudo systemctl status nginx # restart the nginx service after config changes sudo systemctl restart nginx . Here is where the configuration file is for the website. You can edit the file as root. sudo vi /etc/nginx/nginx.conf . The file tells us that there is a server ready at port 80. It serves files in /usr/share/nginx/html. server { listen 80; listen [::]:80; server_name _; root /usr/share/nginx/html; # Load configuration files for the default server block. include /etc/nginx/default.d/*.conf; } . You can visit http://localhost or http://localhost:80 in your browser (it’s equivalent). You should see a test page. To edit the index.html file, you can use vim. # put whatever html you want here and refresh http://localhost in your browser sudo vi /usr/share/nginx/html/index.html . It’s a bad idea to put all of your website files in one config under the root user, we are just doing it here for convenience and so we don’t have to write our own NGINX configs yet. ",
     "url": "https://cs.dbuckley.dev/docs/web-dev/web-services/#nginx",
     "relUrl": "/docs/web-dev/web-services/#nginx"
-  },"355": {
+  },"358": {
     "doc": "Intro to Web Services",
     "title": "Local DNS",
-    "content": "DNS (domain name servers) match domain names with IP Addresses. For example, on your computer, there is an entry for localhost pointing to your computer. # 127.0.0.1 is your local ip address 127.0.0.1 localhost . The file where these entries are located is /etc/hosts. You can edit it to add your own entries. For example, if I want to visit my website at http://potato, and http://potato.potato: . sudo vi /etc/hosts . # add as many entries as you'd like 127.0.0.1 localhost potato potato.potato . You can also visit other sites on the local network. 172.22.4.200 myneighborssite.com . ",
+    "content": "DNS (domain name servers) match domain names with IP Addresses. For example, on your computer, there is an entry for localhost pointing to your computer. # 127.0.0.1 is your local ip address 127.0.0.1 localhost . The file where these entries are located is /etc/hosts. You can edit it to add your own entries. For example, if I want to visit my website at http://potato, and http://potato.potato: . sudo vi /etc/hosts . # add as many entries as you'd like 127.0.0.1 localhost potato potato.potato . You can also visit other sites on the local network. 172.22.4.200 myneighborssite.com . Extra: Block a website . If you want to never go to google.com on your computer, point that domain name to some other IP. 0.0.0.0 google.com . ",
     "url": "https://cs.dbuckley.dev/docs/web-dev/web-services/#local-dns",
     "relUrl": "/docs/web-dev/web-services/#local-dns"
-  },"356": {
+  },"359": {
     "doc": "Intro to Web Services",
     "title": "Firewall and Local Network",
-    "content": "To open port 80 on your computer to the local network, you need to create an entry in the firewall config. sudo firewall-cmd --add-port 80/tcp --permanent sudo firewall-cmd --reload . Extra: Block a website . If you want to never go to google.com on your computer, point that domain name to some other IP. 0.0.0.0 google.com . ",
+    "content": "To open port 80 on your computer to the local network, you need to create an entry in the firewall config. sudo firewall-cmd --add-port 80/tcp --permanent sudo firewall-cmd --reload . ",
     "url": "https://cs.dbuckley.dev/docs/web-dev/web-services/#firewall-and-local-network",
     "relUrl": "/docs/web-dev/web-services/#firewall-and-local-network"
-  },"357": {
+  },"360": {
     "doc": "Intro to Web Services",
     "title": "Intro to Web Services",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/web-dev/web-services/",
     "relUrl": "/docs/web-dev/web-services/"
-  },"358": {
+  },"361": {
     "doc": "Well-Formed Websites",
     "title": "Well-Formed Websites",
     "content": " ",
     "url": "https://cs.dbuckley.dev/docs/web-dev-basics/well-formed/",
     "relUrl": "/docs/web-dev-basics/well-formed/"
-  },"359": {
+  },"362": {
     "doc": "Well-Formed Websites",
     "title": "Strand 2 - Fundamentals of HTML5",
     "content": "Standard 1 . Demonstrate knowledge required to develop an HTML document. | Code the foundation for a webpage. Include the element tags DOCTYPE, html, head, title, and body. | Structure the page using semantic and structural elements such as: header, nav, main, section, article, aside, footer, div, etc. | . Standard 2 . Explain appropriate file structure and naming conventions. | Use logical file structure to build websites. | Incorporate appropriate naming conventions for website files. | . Standard 3 . Use the DOCTYPE Declaration. | Develop pages using the DOCTYPE declaration. | . Standard 4 . Develop “well formed” webpages with appropriate HTML structure and according to W3C standards that can be validated. | Demonstrate best practice by consistently using lowercase text for all element. | Properly nest elements. | Use quotes on attribute values. | . Standard 5 . Demonstrate the use of input elements and attributes. | Create pages with tags and attributes at the block level. (html, head, body, style, header, nav, main, section, footer, div). | Create pages with tags and attributes at the inline level. (DOCTYPE, title, h1, h2, h6, p, br, meta, etc.) | Create webpages with text formatting, links, images, lists, tables (tabular data), etc. | Relative links are relative to the directory of the website. (images/photo.jpg). | Absolute links are the exact location on the internet and contain a protocol. (http, https, ftp). | Code special characters such as: &amp;nbsp;, &amp;copy;, &amp;quot;, &amp;lt;, &amp;gt;, &amp;amp;, &amp;mdash;. | Demonstrate the use of form, fieldsets, legend, buttons, text fields, checkboxes, radio buttons, and dropdown lists. | . Standard 6 . Use meta tags for page documentation and search engine optimization (SEO). | Specify page description, keywords, viewport, and author using meta tags. | Declare encoding using meta tags. | Understand principles of search engine optimization. | . ",
     "url": "https://cs.dbuckley.dev/docs/web-dev-basics/well-formed/#strand-2---fundamentals-of-html5",
     "relUrl": "/docs/web-dev-basics/well-formed/#strand-2---fundamentals-of-html5"
-  },"360": {
+  },"363": {
     "doc": "Well-Formed Websites",
     "title": "Strand 4 - Site Planning",
     "content": "Standard 1 . Analyze project requirements. | Identify the purpose and audience for a website. | Identify basic principles of website usability, readability, and accessibility. | Usability: Cross browser compatibility. | Readability: Contrast, size, font, and color. | Accessibility standards that address the needs of people with visual and motor impairments, such as using alt tags, strong instead of bold, etc. | . | Identify and follow steps in the website planning and development process. | . Standard 2 . Users are the focus of all design. | Design elements are easy to access, understand, and use. | Keep the interface simple, create consistency, use common UI elements, placement in page layout, strategically use color and texture, use typography to help increase scannability, legibility and readability, and inform your users of location, actions, or errors. | Plan a website by using sketches, wireframes, and site maps. | . ",
