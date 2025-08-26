@@ -2,7 +2,7 @@
 layout: default
 title: HTTP and HTTPS
 parent: Web Dev Advanced
-nav_order: 1
+nav_order: 2
 ---
 
 # HTTP and HTTPS
@@ -78,6 +78,14 @@ You should be able to access `https://localhost` in the browser. You will have t
 ## Creating a TLS Certificate with Certbot and Let's Encrypt
 
 If you have a website available on the public internet (on port 80) and a domain name on public DNS, you can use [certbot](https://certbot.eff.org/) to create an SSL certificate with a free authority called "Let's Encrypt".
+
+Don't forget to open the right ports on the firewall.
+
+```bash
+sudo firewall-cmd --add-port 80/tcp --permanent
+sudo firewall-cmd --add-port 443/tcp --permanent
+sudo firewall-cmd --reload
+```
 
 Here is a great article on setting up certbot with nginx: [https://dev.to/yousufbasir/setting-up-nginx-with-certbot-for-https-on-your-web-application-n1i](https://dev.to/yousufbasir/setting-up-nginx-with-certbot-for-https-on-your-web-application-n1i) for a public website.
 

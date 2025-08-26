@@ -1747,7 +1747,7 @@
   },"291": {
     "doc": "HTTP and HTTPS",
     "title": "Creating a TLS Certificate with Certbot and Let’s Encrypt",
-    "content": "If you have a website available on the public internet (on port 80) and a domain name on public DNS, you can use certbot to create an SSL certificate with a free authority called “Let’s Encrypt”. Here is a great article on setting up certbot with nginx: https://dev.to/yousufbasir/setting-up-nginx-with-certbot-for-https-on-your-web-application-n1i for a public website. ",
+    "content": "If you have a website available on the public internet (on port 80) and a domain name on public DNS, you can use certbot to create an SSL certificate with a free authority called “Let’s Encrypt”. Don’t forget to open the right ports on the firewall. sudo firewall-cmd --add-port 80/tcp --permanent sudo firewall-cmd --add-port 443/tcp --permanent sudo firewall-cmd --reload . Here is a great article on setting up certbot with nginx: https://dev.to/yousufbasir/setting-up-nginx-with-certbot-for-https-on-your-web-application-n1i for a public website. ",
     "url": "https://cs.dbuckley.dev/docs/web-dev/http-https/#creating-a-tls-certificate-with-certbot-and-lets-encrypt",
     "relUrl": "/docs/web-dev/http-https/#creating-a-tls-certificate-with-certbot-and-lets-encrypt"
   },"292": {
