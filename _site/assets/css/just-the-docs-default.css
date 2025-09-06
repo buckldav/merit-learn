@@ -7198,9 +7198,12 @@ figure.highlight code {
   }
 }
 .fade-in {
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-  -o-animation: fadein 2s; /* Opera < 12.1 */
+  -webkit-animation: fadein 2s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s;
+  /* Firefox < 16 */
+  -o-animation: fadein 2s;
+  /* Opera < 12.1 */
   animation: fadein 2s;
 }
 
@@ -7229,6 +7232,14 @@ figure.highlight code {
   to {
     opacity: 1;
   }
+}
+blockquote {
+  font-style: italic;
+  border-left: #aa1d23 solid 2px;
+  background: #f0f2f5;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0.125rem 0.25rem 0.125rem 40px;
 }
 
 /*# sourceMappingURL=just-the-docs-default.css.map */

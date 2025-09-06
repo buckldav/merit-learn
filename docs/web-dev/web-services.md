@@ -48,7 +48,7 @@ dG  - Delete to the end of the file
 ## Ports
 
 - A service can (and usually is) bound to a numbered port. The port is where users can connect to the service. For example, a website running on port 3000 can be accessed locally at `http://localhost:3000`.
-- Ports less than 1024 are "privileged" (only accessible by services running as root).
+- Ports less than 1024 are "privileged" (only accessible by services running as root). [Further reading from W3](https://www.w3.org/Daemon/User/Installation/PrivilegedPorts.html).
 - There are various reserved default ports for common services. Here are just a few.
 
 | port | service / protocol |
