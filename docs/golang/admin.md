@@ -93,8 +93,14 @@ This application will not have public registration. Therefore, we can create use
 package utils
 
 import (
+	"errors"
 	"queenbee/models"
 )
+
+type LoginReq struct {
+	Email    string `form:"email"`
+	Password string `form:"password"`
+}
 
 func SaveUser(user *models.User) (*models.User, error) {
 	hashed, err := HashPassword([]byte(user.Password))
@@ -108,6 +114,28 @@ func SaveUser(user *models.User) (*models.User, error) {
 	}
 	user.Id = uint64(id)
 	return user, nil
+}
+
+func GetUserByEmail(email string) (*models.User, error) {
+	user := models.User{Email: email}
+	err := models.O.Read(&user, "Email")
+	if err != nil {
+		return nil, err
+	}
+	return &user, nil
+}
+
+func Authenticate(login *LoginReq) (*models.User, error) {
+	user, err := GetUserByEmail(login.Email)
+	if err != nil {
+		return nil, err
+	}
+	if CheckPassword([]byte(user.Password), []byte(login.Password)) {
+		return user, nil
+	} else {
+		err = errors.New("password validation failed.")
+		return nil, err
+	}
 }
 ```
 

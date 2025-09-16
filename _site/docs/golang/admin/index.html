@@ -43,8 +43,14 @@
 </span></code></pre></div></div><h2 id="create-user-script"> <a href="#create-user-script" aria-labelledby="create-user-script" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Create User Script</h2><p>This application will not have public registration. Therefore, we can create users with a script. Let’s start by writing a utility function that ensures that the user password gets hashed on save to database.</p><p><code class="language-plaintext highlighter-rouge">utils/user.go</code></p><div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">utils</span>
 
 <span class="k">import</span> <span class="p">(</span>
+	<span class="s">"errors"</span>
 	<span class="s">"queenbee/models"</span>
 <span class="p">)</span>
+
+<span class="k">type</span> <span class="n">LoginReq</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="n">Email</span>    <span class="kt">string</span> <span class="s">`form:"email"`</span>
+	<span class="n">Password</span> <span class="kt">string</span> <span class="s">`form:"password"`</span>
+<span class="p">}</span>
 
 <span class="k">func</span> <span class="n">SaveUser</span><span class="p">(</span><span class="n">user</span> <span class="o">*</span><span class="n">models</span><span class="o">.</span><span class="n">User</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="n">models</span><span class="o">.</span><span class="n">User</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
 	<span class="n">hashed</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">HashPassword</span><span class="p">([]</span><span class="kt">byte</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">Password</span><span class="p">))</span>
@@ -58,6 +64,28 @@
 	<span class="p">}</span>
 	<span class="n">user</span><span class="o">.</span><span class="n">Id</span> <span class="o">=</span> <span class="kt">uint64</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
 	<span class="k">return</span> <span class="n">user</span><span class="p">,</span> <span class="no">nil</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">GetUserByEmail</span><span class="p">(</span><span class="n">email</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="n">models</span><span class="o">.</span><span class="n">User</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">user</span> <span class="o">:=</span> <span class="n">models</span><span class="o">.</span><span class="n">User</span><span class="p">{</span><span class="n">Email</span><span class="o">:</span> <span class="n">email</span><span class="p">}</span>
+	<span class="n">err</span> <span class="o">:=</span> <span class="n">models</span><span class="o">.</span><span class="n">O</span><span class="o">.</span><span class="n">Read</span><span class="p">(</span><span class="o">&amp;</span><span class="n">user</span><span class="p">,</span> <span class="s">"Email"</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="no">nil</span><span class="p">,</span> <span class="n">err</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="o">&amp;</span><span class="n">user</span><span class="p">,</span> <span class="no">nil</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">Authenticate</span><span class="p">(</span><span class="n">login</span> <span class="o">*</span><span class="n">LoginReq</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="n">models</span><span class="o">.</span><span class="n">User</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+	<span class="n">user</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">GetUserByEmail</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">Email</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="no">nil</span><span class="p">,</span> <span class="n">err</span>
+	<span class="p">}</span>
+	<span class="k">if</span> <span class="n">CheckPassword</span><span class="p">([]</span><span class="kt">byte</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">Password</span><span class="p">),</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">Password</span><span class="p">))</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">user</span><span class="p">,</span> <span class="no">nil</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="n">err</span> <span class="o">=</span> <span class="n">errors</span><span class="o">.</span><span class="n">New</span><span class="p">(</span><span class="s">"password validation failed."</span><span class="p">)</span>
+		<span class="k">return</span> <span class="no">nil</span><span class="p">,</span> <span class="n">err</span>
+	<span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div><p>Then, we can write a script to create a user on the command line. Here are a few concepts the script uses.</p><ul><li><code class="language-plaintext highlighter-rouge">readName()</code>: Uses a buffer from <code class="language-plaintext highlighter-rouge">bufio.Reader</code> to get user input from the command line. The reader includes the <code class="language-plaintext highlighter-rouge">\n</code> (newline) character, so that gets trimmed on the following line with <code class="language-plaintext highlighter-rouge">strings.TrimSpace</code>. If there is an error, the programs exits with a code 1. In general, code 0 is “OK” and everything else greater than 0 is an error.<li><code class="language-plaintext highlighter-rouge">readEmail()</code>: Regular expression matching: Ensures that user input matches a certain format. In this case, we are matching against a pattern for email to make sure it’s a real email.<li><code class="language-plaintext highlighter-rouge">readPassword()</code>: Uses a hidden input function called <code class="language-plaintext highlighter-rouge">term.ReadPassword</code> to read the password and then does a check to make sure they entered it correctly and that the password is sufficiently long.</ul><p><code class="language-plaintext highlighter-rouge">scripts/create_user.go</code></p><div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
 
