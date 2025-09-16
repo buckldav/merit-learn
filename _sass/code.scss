@@ -15,6 +15,7 @@ pre.highlight,
 figure.highlight {
   @include fs-5;
   line-height: 1.1;
+  position: relative;
   padding: $sp-3;
   margin-top: 0;
   margin-bottom: 0;
@@ -28,216 +29,365 @@ figure.highlight {
   }
 }
 
+.copy-code-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: $link-color;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 10;
+  /* Ensure it appears above other elements */
+}
+
 .highlighter-rouge {
   margin-bottom: $sp-3;
 }
 
 .highlight .c {
   color: #586e75;
-} // comment //
+}
+
+// comment //
 .highlight .err {
   color: #93a1a1;
-} // error //
+}
+
+// error //
 .highlight .g {
   color: #93a1a1;
-} // generic //
+}
+
+// generic //
 .highlight .k {
   color: #859900;
-} // keyword //
+}
+
+// keyword //
 .highlight .l {
   color: #93a1a1;
-} // literal //
+}
+
+// literal //
 .highlight .n {
   color: #93a1a1;
-} // name //
+}
+
+// name //
 .highlight .o {
   color: #859900;
-} // operator //
+}
+
+// operator //
 .highlight .x {
   color: #cb4b16;
-} // other //
+}
+
+// other //
 .highlight .p {
   color: #93a1a1;
-} // punctuation //
+}
+
+// punctuation //
 .highlight .cm {
   color: #586e75;
-} // comment.multiline //
+}
+
+// comment.multiline //
 .highlight .cp {
   color: #859900;
-} // comment.preproc //
+}
+
+// comment.preproc //
 .highlight .c1 {
   color: #586e75;
-} // comment.single //
+}
+
+// comment.single //
 .highlight .cs {
   color: #859900;
-} // comment.special //
+}
+
+// comment.special //
 .highlight .gd {
   color: #2aa198;
-} // generic.deleted //
+}
+
+// generic.deleted //
 .highlight .ge {
   font-style: italic;
   color: #93a1a1;
-} // generic.emph //
+}
+
+// generic.emph //
 .highlight .gr {
   color: #dc322f;
-} // generic.error //
+}
+
+// generic.error //
 .highlight .gh {
   color: #cb4b16;
-} // generic.heading //
+}
+
+// generic.heading //
 .highlight .gi {
   color: #859900;
-} // generic.inserted //
+}
+
+// generic.inserted //
 .highlight .go {
   color: #93a1a1;
-} // generic.output //
+}
+
+// generic.output //
 .highlight .gp {
   color: #93a1a1;
-} // generic.prompt //
+}
+
+// generic.prompt //
 .highlight .gs {
   font-weight: bold;
   color: #93a1a1;
-} // generic.strong //
+}
+
+// generic.strong //
 .highlight .gu {
   color: #cb4b16;
-} // generic.subheading //
+}
+
+// generic.subheading //
 .highlight .gt {
   color: #93a1a1;
-} // generic.traceback //
+}
+
+// generic.traceback //
 .highlight .kc {
   color: #cb4b16;
-} // keyword.constant //
+}
+
+// keyword.constant //
 .highlight .kd {
   color: #268bd2;
-} // keyword.declaration //
+}
+
+// keyword.declaration //
 .highlight .kn {
   color: #859900;
-} // keyword.namespace //
+}
+
+// keyword.namespace //
 .highlight .kp {
   color: #859900;
-} // keyword.pseudo //
+}
+
+// keyword.pseudo //
 .highlight .kr {
   color: #268bd2;
-} // keyword.reserved //
+}
+
+// keyword.reserved //
 .highlight .kt {
   color: #dc322f;
-} // keyword.type //
+}
+
+// keyword.type //
 .highlight .ld {
   color: #93a1a1;
-} // literal.date //
+}
+
+// literal.date //
 .highlight .m {
   color: #2aa198;
-} // literal.number //
+}
+
+// literal.number //
 .highlight .s {
   color: #2aa198;
-} // literal.string //
+}
+
+// literal.string //
 .highlight .na {
   color: #555;
-} // name.attribute //
+}
+
+// name.attribute //
 .highlight .nb {
   color: #b58900;
-} // name.builtin //
+}
+
+// name.builtin //
 .highlight .nc {
   color: #268bd2;
-} // name.class //
+}
+
+// name.class //
 .highlight .no {
   color: #cb4b16;
-} // name.constant //
+}
+
+// name.constant //
 .highlight .nd {
   color: #268bd2;
-} // name.decorator //
+}
+
+// name.decorator //
 .highlight .ni {
   color: #cb4b16;
-} // name.entity //
+}
+
+// name.entity //
 .highlight .ne {
   color: #cb4b16;
-} // name.exception //
+}
+
+// name.exception //
 .highlight .nf {
   color: #268bd2;
-} // name.function //
+}
+
+// name.function //
 .highlight .nl {
   color: #555;
-} // name.label //
+}
+
+// name.label //
 .highlight .nn {
   color: #93a1a1;
-} // name.namespace //
+}
+
+// name.namespace //
 .highlight .nx {
   color: #555;
-} // name.other //
+}
+
+// name.other //
 .highlight .py {
   color: #93a1a1;
-} // name.property //
+}
+
+// name.property //
 .highlight .nt {
   color: #268bd2;
-} // name.tag //
+}
+
+// name.tag //
 .highlight .nv {
   color: #268bd2;
-} // name.variable //
+}
+
+// name.variable //
 .highlight .ow {
   color: #859900;
-} // operator.word //
+}
+
+// operator.word //
 .highlight .w {
   color: #93a1a1;
-} // text.whitespace //
+}
+
+// text.whitespace //
 .highlight .mf {
   color: #2aa198;
-} // literal.number.float //
+}
+
+// literal.number.float //
 .highlight .mh {
   color: #2aa198;
-} // literal.number.hex //
+}
+
+// literal.number.hex //
 .highlight .mi {
   color: #2aa198;
-} // literal.number.integer //
+}
+
+// literal.number.integer //
 .highlight .mo {
   color: #2aa198;
-} // literal.number.oct //
+}
+
+// literal.number.oct //
 .highlight .sb {
   color: #586e75;
-} // literal.string.backtick //
+}
+
+// literal.string.backtick //
 .highlight .sc {
   color: #2aa198;
-} // literal.string.char //
+}
+
+// literal.string.char //
 .highlight .sd {
   color: #93a1a1;
-} // literal.string.doc //
+}
+
+// literal.string.doc //
 .highlight .s2 {
   color: #2aa198;
-} // literal.string.double //
+}
+
+// literal.string.double //
 .highlight .se {
   color: #cb4b16;
-} // literal.string.escape //
+}
+
+// literal.string.escape //
 .highlight .sh {
   color: #93a1a1;
-} // literal.string.heredoc //
+}
+
+// literal.string.heredoc //
 .highlight .si {
   color: #2aa198;
-} // literal.string.interpol //
+}
+
+// literal.string.interpol //
 .highlight .sx {
   color: #2aa198;
-} // literal.string.other //
+}
+
+// literal.string.other //
 .highlight .sr {
   color: #dc322f;
-} // literal.string.regex //
+}
+
+// literal.string.regex //
 .highlight .s1 {
   color: #2aa198;
-} // literal.string.single //
+}
+
+// literal.string.single //
 .highlight .ss {
   color: #2aa198;
-} // literal.string.symbol //
+}
+
+// literal.string.symbol //
 .highlight .bp {
   color: #268bd2;
-} // name.builtin.pseudo //
+}
+
+// name.builtin.pseudo //
 .highlight .vc {
   color: #268bd2;
-} // name.variable.class //
+}
+
+// name.variable.class //
 .highlight .vg {
   color: #268bd2;
-} // name.variable.global //
+}
+
+// name.variable.global //
 .highlight .vi {
   color: #268bd2;
-} // name.variable.instance //
+}
+
+// name.variable.instance //
 .highlight .il {
   color: #2aa198;
-} // literal.number.integer.long //
+}
+
+// literal.number.integer.long //
 
 //
 // Code examples (rendered)
@@ -250,8 +400,8 @@ figure.highlight {
   border: 1px solid $border-color;
   border-radius: $border-radius;
 
-  + .highlighter-rouge,
-  + figure.highlight {
+  +.highlighter-rouge,
+  +figure.highlight {
     position: relative;
     margin-top: -$sp-4;
     border-right: 1px solid $border-color;

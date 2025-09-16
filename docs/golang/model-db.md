@@ -106,7 +106,12 @@ func (c *ContactController) Post() {
 			Email:   contact.Email,
 			Message: contact.Message,
 		}
-		models.O.Insert(&contactDb)
+		_, err := models.O.Insert(&contactDb)
+		if err != nil {
+			c.Data["Result"] = "ERROR: Could not save to database. " + err.Error()
+		} else {
+			c.Data["Result"] = "Contact form received!"
+		}
 	}
 }
 ```

@@ -8,7 +8,7 @@
   flex-wrap: wrap;
   background-color: $sidebar-color;
 
-  @include mq(md) {
+  @include mq(lg) {
     flex-wrap: nowrap;
     position: fixed;
     width: $nav-width-md;
@@ -18,23 +18,21 @@
     align-items: flex-end;
   }
 
-  @include mq(lg) {
+  @include mq(xl) {
     width: calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
     min-width: $nav-width;
   }
 }
 
 .main {
-  @include mq(md) {
+  @include mq(lg) {
     position: relative;
     max-width: $content-width;
     margin-left: $nav-width-md;
   }
 
-  @include mq(lg) {
-    margin-left: calc(
-      (100% - #{$nav-width + $content-width}) / 2 + #{$nav-width}
-    );
+  @include mq(xl) {
+    margin-left: calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
   }
 }
 
@@ -43,7 +41,7 @@
   padding-top: $gutter-spacing-sm;
   padding-bottom: $gutter-spacing-sm;
 
-  @include mq(md) {
+  @include mq(lg) {
     padding-top: $gutter-spacing;
     padding-bottom: $gutter-spacing;
   }
@@ -54,7 +52,7 @@
   display: none;
   background-color: $sidebar-color;
 
-  @include mq(md) {
+  @include mq(lg) {
     display: flex;
     justify-content: space-between;
     height: $header-height;
@@ -65,7 +63,7 @@
   &.nav-open {
     display: block;
 
-    @include mq(md) {
+    @include mq(lg) {
       display: flex;
     }
   }
@@ -76,7 +74,7 @@
 .site-footer {
   width: 100%;
 
-  @include mq(lg) {
+  @include mq(xl) {
     width: $nav-width;
   }
 }
@@ -88,7 +86,7 @@
     display: block;
   }
 
-  @include mq(md) {
+  @include mq(lg) {
     display: block;
     padding-top: $sp-8;
     padding-bottom: $gutter-spacing-sm;
@@ -102,7 +100,7 @@
   min-height: $header-height;
   align-items: center;
 
-  @include mq(md) {
+  @include mq(lg) {
     height: $header-height;
     max-height: $header-height;
     border-bottom: $border $border-color;
@@ -120,7 +118,7 @@
   color: $body-heading-color;
   @include fs-6;
 
-  @include mq(md) {
+  @include mq(lg) {
     padding-top: $sp-2;
     padding-bottom: $sp-2;
     @include fs-5;
@@ -145,27 +143,23 @@
   align-items: center;
 }
 
-@include mq(md) {
+@include mq(lg) {
   .site-header .site-button {
     display: none;
   }
 }
 
 .site-title:hover {
-  background-image: linear-gradient(
-    -90deg,
-    rgba($feedback-color, 1) 0%,
-    rgba($feedback-color, 0.8) 80%,
-    rgba($feedback-color, 0) 100%
-  );
+  background-image: linear-gradient(-90deg,
+      rgba($feedback-color, 1) 0%,
+      rgba($feedback-color, 0.8) 80%,
+      rgba($feedback-color, 0) 100%);
 }
 
 .site-button:hover {
-  background-image: linear-gradient(
-    -90deg,
-    rgba($feedback-color, 1) 0%,
-    rgba($feedback-color, 0.8) 100%
-  );
+  background-image: linear-gradient(-90deg,
+      rgba($feedback-color, 1) 0%,
+      rgba($feedback-color, 0.8) 100%);
 }
 
 // stylelint-disable selector-max-type
@@ -175,7 +169,7 @@ body {
   padding-bottom: $sp-10;
   overflow-y: scroll;
 
-  @include mq(md) {
+  @include mq(lg) {
     position: static;
     padding-bottom: 0;
   }
@@ -193,7 +187,7 @@ body {
   color: $grey-dk-000;
   @include fs-2;
 
-  @include mq(md) {
+  @include mq(lg) {
     position: static;
     justify-self: end;
   }

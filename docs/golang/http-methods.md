@@ -199,3 +199,16 @@ func sendEmail(contact Contact) error {
 	return err
 }
 ```
+
+If you want your message to have HTML instead of plaintext, here is an example of the `body` and `message` variables.
+
+```go
+body := "<b>Name: </b>" + contact.Name + "<br><b>Email: </b>" + contact.Email + "<br><b>Message: </b>" + contact.Message
+message := []byte("To: " + strings.Join(to[:], ",") + "\r\n" +
+	"From: " + from + "\r\n" +
+.	"Subject: " + subject + "\r\n" +
+	"MIME-Version: 1.0\r\n" +
+	"Content-Type: text/html; charset=UTF-8\r\n" +
+	"\r\n" + // This empty line separates the headers from the body
+	body)
+```
