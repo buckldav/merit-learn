@@ -7,6 +7,10 @@ nav_order: 6
 
 # Users and Admin Interface Part 1
 
+Intro video: How are passwords cracked? Watch at least the first 7 minutes.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7U-RbOKanYs?si=_nzNBXK1_t3ShzLw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Password Crytography
 
 It's a bad idea to store passwords in plaintext <sup><i>[citation needed]</i></sup>. We will use `bcrypt`, a common and easy to implement [hashing algorithm](https://www.authgear.com/post/password-hashing-how-to-pick-the-right-hashing-function) to encrypt user passwords. Hashing algorithms are one-way cryptography, meaning that you can't undo the encryption. When users authenticate, their password input is hashed and compared with the hash stored on the database.
