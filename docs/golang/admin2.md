@@ -148,7 +148,7 @@ beego.Router("/admin/contacts/:id", &controllers.ContactDetailController{})
 beego.Router("/admin/contacts", &controllers.ContactListController{})
 ```
 
-`admin/read.go`
+`views/admin/read.go`
 
 ```html
 {{ '{{' }} template "admin/layout.tpl" . }}
@@ -175,7 +175,7 @@ beego.Router("/admin/contacts", &controllers.ContactListController{})
 {{ '{{' }} end }}
 ```
 
-`admin/list.tpl`
+`views/admin/list.tpl`
 
 ```html
 {{ '{{' }} template "admin/layout.tpl" . }}

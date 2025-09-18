@@ -125,7 +125,7 @@
 <span class="p">}</span>
 </code></pre></div></div><p><code class="language-plaintext highlighter-rouge">routers/router.go</code></p><p>Add these two routes.</p><div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">beego</span><span class="o">.</span><span class="n">Router</span><span class="p">(</span><span class="s">"/admin/contacts/:id"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">controllers</span><span class="o">.</span><span class="n">ContactDetailController</span><span class="p">{})</span>
 <span class="n">beego</span><span class="o">.</span><span class="n">Router</span><span class="p">(</span><span class="s">"/admin/contacts"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">controllers</span><span class="o">.</span><span class="n">ContactListController</span><span class="p">{})</span>
-</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">admin/read.go</code></p><div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{ template "admin/layout.tpl" . }}
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">views/admin/read.go</code></p><div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{ template "admin/layout.tpl" . }}
 {{ define "content" }}
 <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-4xl"</span><span class="nt">&gt;</span>{{.Title}}<span class="nt">&lt;/h1&gt;</span>
 
@@ -147,7 +147,7 @@
   <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span>
 {{ end }}
-</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">admin/list.tpl</code></p><div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{ template "admin/layout.tpl" . }}
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">views/admin/list.tpl</code></p><div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{ template "admin/layout.tpl" . }}
 {{ define "content" }}
 <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-4xl"</span><span class="nt">&gt;</span>{{.Title}}<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table w-full"</span><span class="nt">&gt;</span>
