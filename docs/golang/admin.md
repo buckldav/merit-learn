@@ -258,7 +258,7 @@ Session authentication is how we can authorize logged-in users. When a user logs
 <details markdown="block">
   <summary>What is the difference between authentication and authorization?</summary>
 
-  - Authentication is when a user logs in, typically with a credential like a password. Happens one time. Provides the user with a session or token
+  - Authentication is when a user logs in, typically with a credential like a password. Happens one time. Provides the user with a session or token.
   - Authorization is when a user presents a session cookie or token header in a request and the server allows them access to their resources.
 
 </details>
