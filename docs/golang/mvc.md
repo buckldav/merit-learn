@@ -47,7 +47,7 @@ go mod tidy
 
 ### 2. Understanding the Project Structure
 
-```tree
+```
 .
 ├── conf
 │   └── app.conf
