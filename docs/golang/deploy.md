@@ -153,6 +153,13 @@ Make a request to your teacher to create a DNS record for your app. Example: `A 
 
 **Docker Compose** is a way to configure and manage containers. Create a file called `docker-compose.yaml` with the following. *Change `myapp` to be the name of your app*.
 
+To try running this file locally, you'll need to create two Docker networks.
+
+```bash
+docker network create pg
+docker network create traefik
+```
+
 ```yaml
 networks:
   # these are for connecting with postgres and traefik later
@@ -192,6 +199,7 @@ docker save -o $NAME.tar $NAME
 sftp $SSH_DEST <<EOF
 put $(pwd)/$NAME.tar
 put $(pwd)/docker-compose.yaml
+put $(pwd)/.env .env
 exit
 EOF
 # ssh load image and stop existing containers
