@@ -55,6 +55,7 @@
 <span class="k">COPY</span><span class="s"> --from=builder /app/static ./static/</span>
 <span class="k">COPY</span><span class="s"> --from=builder /app/views ./views/</span>
 <span class="k">COPY</span><span class="s"> --from=builder /app/conf/app.conf ./conf/</span>
+<span class="k">COPY</span><span class="s"> .env .env</span>
 
 <span class="c"># Create user to run app so it's not run as root</span>
 <span class="k">RUN </span>useradd appuser
@@ -87,7 +88,7 @@ docker network create traefik
     <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
     <span class="na">external</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">services</span><span class="pi">:</span>
-  <span class="na">stopwatch</span><span class="pi">:</span>
+  <span class="na">myapp</span><span class="pi">:</span>
     <span class="na">container_name</span><span class="pi">:</span> <span class="s">myapp</span>
     <span class="na">image</span><span class="pi">:</span> <span class="s">myapp</span>
     <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
@@ -97,9 +98,9 @@ docker network create traefik
     <span class="na">labels</span><span class="pi">:</span>
       <span class="c1"># this is so the traefik proxy connects your domain to your app</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.enable=true"</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.http.routers.stopwatch.rule=Host(`myapp.meritprepacademy.app`)"</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.http.routers.stopwatch.entrypoints=web"</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.http.services.stopwatch.loadbalancer.server.port=8080"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.http.routers.myapp.rule=Host(`myapp.meritprepacademy.app`)"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.http.routers.myapp.entrypoints=web"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.http.services.myapp.loadbalancer.server.port=8080"</span>
 </code></pre></div></div><h3 id="deploy"> <a href="#deploy" aria-labelledby="deploy" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Deploy</h3><p>Make a script file called <code class="language-plaintext highlighter-rouge">deploy.sh</code>. This a script you can run to deploy to the server using Docker and FTP!</p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">NAME</span><span class="o">=</span>myapp
 <span class="nv">SSH_DEST</span><span class="o">=</span>buckley
 docker build <span class="nb">.</span> <span class="nt">-t</span> <span class="nv">$NAME</span>

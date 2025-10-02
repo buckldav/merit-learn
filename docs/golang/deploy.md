@@ -108,6 +108,7 @@ COPY --from=builder /app/server .
 COPY --from=builder /app/static ./static/
 COPY --from=builder /app/views ./views/
 COPY --from=builder /app/conf/app.conf ./conf/
+COPY .env .env
 
 # Create user to run app so it's not run as root
 RUN useradd appuser
@@ -170,7 +171,7 @@ networks:
     driver: bridge
     external: true
 services:
-  stopwatch:
+  myapp:
     container_name: myapp
     image: myapp
     restart: unless-stopped
@@ -180,9 +181,9 @@ services:
     labels:
       # this is so the traefik proxy connects your domain to your app
       - "traefik.enable=true"
-      - "traefik.http.routers.stopwatch.rule=Host(`myapp.meritprepacademy.app`)"
-      - "traefik.http.routers.stopwatch.entrypoints=web"
-      - "traefik.http.services.stopwatch.loadbalancer.server.port=8080"
+      - "traefik.http.routers.myapp.rule=Host(`myapp.meritprepacademy.app`)"
+      - "traefik.http.routers.myapp.entrypoints=web"
+      - "traefik.http.services.myapp.loadbalancer.server.port=8080"
 ```
 
 ### Deploy
