@@ -98,6 +98,7 @@ docker network create traefik
     <span class="na">labels</span><span class="pi">:</span>
       <span class="c1"># this is so the traefik proxy connects your domain to your app</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.enable=true"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.docker.network=traefik"</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.http.routers.myapp.rule=Host(`myapp.meritprepacademy.app`)"</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.http.routers.myapp.entrypoints=web"</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">traefik.http.services.myapp.loadbalancer.server.port=8080"</span>

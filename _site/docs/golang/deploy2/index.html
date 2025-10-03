@@ -3,7 +3,7 @@
     <span class="na">driver</span><span class="pi">:</span> <span class="s">bridge</span>
     <span class="na">external</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">services</span><span class="pi">:</span>
-  <span class="na">stopwatch</span><span class="pi">:</span>
+  <span class="na">postgres</span><span class="pi">:</span>
     <span class="na">container_name</span><span class="pi">:</span> <span class="s">postgres</span>
     <span class="na">image</span><span class="pi">:</span> <span class="s">postgres:15</span>
     <span class="na">networks</span><span class="pi">:</span>
@@ -12,4 +12,59 @@
       <span class="pi">-</span> <span class="s">.env</span>
     <span class="na">ports</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">5432:5432"</span>
-</code></pre></div></div><p><em>to be continued</em></p><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-000 mb-0">Published by Merit Academy under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons License</a>.</p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/buckldav/learn-merit/tree/master/docs/golang/deploy2.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><div class="search-overlay"></div></div><script src="/assets/js/copy-code.js"></script>
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">.env</code></p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DATABASE_DRIVER</span><span class="o">=</span>postgres <span class="c"># sqlite3</span>
+<span class="nv">DATABASE_URL</span><span class="o">=</span>postgres://your_username:your_password@localhost:5432/your_username?sslmode<span class="o">=</span>disable
+<span class="nv">POSTGRES_USER</span><span class="o">=</span>your_username
+<span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>your_password
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">app.conf</code></p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>appname <span class="o">=</span> stopwatch
+httpport <span class="o">=</span> 8080
+runmode <span class="o">=</span> prod
+sessionon <span class="o">=</span> <span class="nb">true</span>
+
+<span class="c"># Enable logging</span>
+loglevel <span class="o">=</span> info  <span class="c"># Adjust as needed</span>
+logfile <span class="o">=</span> /var/log/app.log  <span class="c"># Path to log file</span>
+
+<span class="c"># Session configuration</span>
+sessionprovider <span class="o">=</span> postgresql  
+sessionproviderconfig <span class="o">=</span> postgres://your_username:your_password@postgres/your_username?sslmode<span class="o">=</span><span class="nb">false
+</span>sessioncookie <span class="o">=</span> <span class="nb">true
+</span>sessiongcmaxlifetime <span class="o">=</span> 3600  <span class="c"># Session lifetime in seconds</span>
+
+<span class="c"># Security settings</span>
+allowcrossdomain <span class="o">=</span> <span class="nb">false</span>  <span class="c"># Set to true if you need CORS</span>
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">models/default.go</code></p><p>Make sure to add the <code class="language-plaintext highlighter-rouge">pq</code> import so that you can Postgres.</p><div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">models</span>
+
+<span class="k">import</span> <span class="p">(</span>
+	<span class="s">"log"</span>
+	<span class="s">"os"</span>
+	<span class="s">"time"</span>
+
+	<span class="s">"github.com/beego/beego/v2/client/orm"</span>
+	<span class="n">_</span> <span class="s">"github.com/lib/pq"</span>
+	<span class="n">_</span> <span class="s">"github.com/mattn/go-sqlite3"</span>
+<span class="p">)</span>
+</code></pre></div></div><p>Then, your <code class="language-plaintext highlighter-rouge">InitDB</code> should look like this.</p><div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">InitDB</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">driverName</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"DATABASE_DRIVER"</span><span class="p">)</span>
+	<span class="n">dataSource</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"DATABASE_URL"</span><span class="p">)</span>
+	<span class="n">driver</span> <span class="o">:=</span> <span class="n">orm</span><span class="o">.</span><span class="n">DRSqlite</span>
+	<span class="k">if</span> <span class="n">driverName</span> <span class="o">==</span> <span class="s">"postgres"</span> <span class="p">{</span>
+		<span class="n">driver</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">DRPostgres</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="n">driverName</span> <span class="o">=</span> <span class="s">"sqlite3"</span>
+		<span class="n">dataSource</span> <span class="o">=</span> <span class="s">"./stopwatch.db"</span>
+	<span class="p">}</span>
+	<span class="n">orm</span><span class="o">.</span><span class="n">RegisterDriver</span><span class="p">(</span><span class="n">driverName</span><span class="p">,</span> <span class="n">driver</span><span class="p">)</span>
+	<span class="n">orm</span><span class="o">.</span><span class="n">RegisterDataBase</span><span class="p">(</span><span class="s">"default"</span><span class="p">,</span> <span class="n">driverName</span><span class="p">,</span> <span class="n">dataSource</span><span class="p">)</span>
+	<span class="n">orm</span><span class="o">.</span><span class="n">RegisterModel</span><span class="p">(</span>
+    	<span class="nb">new</span><span class="p">(</span><span class="n">ContactModel</span><span class="p">),</span>
+    	<span class="nb">new</span><span class="p">(</span><span class="n">User</span><span class="p">),</span>
+	<span class="p">)</span>
+	<span class="n">O</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">NewOrm</span><span class="p">()</span>
+
+	<span class="n">err</span> <span class="o">:=</span> <span class="n">orm</span><span class="o">.</span><span class="n">RunSyncdb</span><span class="p">(</span><span class="s">"default"</span><span class="p">,</span> <span class="no">false</span><span class="p">,</span> <span class="no">true</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+		<span class="n">log</span><span class="o">.</span><span class="n">Fatalf</span><span class="p">(</span><span class="s">"Failed to sync database: %v"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-000 mb-0">Published by Merit Academy under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons License</a>.</p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/buckldav/learn-merit/tree/master/docs/golang/deploy2.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><div class="search-overlay"></div></div><script src="/assets/js/copy-code.js"></script>
