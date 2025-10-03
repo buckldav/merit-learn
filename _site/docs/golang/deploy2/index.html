@@ -12,7 +12,8 @@
       <span class="pi">-</span> <span class="s">.env</span>
     <span class="na">ports</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">5432:5432"</span>
-</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">.env</code></p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DATABASE_DRIVER</span><span class="o">=</span>postgres <span class="c"># sqlite3</span>
+</code></pre></div></div><p>Run the docker compose file with this:</p><div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose <span class="nt">-f</span> postgres.docker-compose.yaml up <span class="nt">-d</span>
+</code></pre></div></div><p>Then, you will need to manually create a session table.</p><p><code class="language-plaintext highlighter-rouge">.env</code></p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DATABASE_DRIVER</span><span class="o">=</span>postgres <span class="c"># sqlite3</span>
 <span class="nv">DATABASE_URL</span><span class="o">=</span>postgres://your_username:your_password@localhost:5432/your_username?sslmode<span class="o">=</span>disable
 <span class="nv">POSTGRES_USER</span><span class="o">=</span>your_username
 <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>your_password
@@ -27,12 +28,13 @@ logfile <span class="o">=</span> /var/log/app.log  <span class="c"># Path to log
 
 <span class="c"># Session configuration</span>
 sessionprovider <span class="o">=</span> postgresql  
-sessionproviderconfig <span class="o">=</span> postgres://your_username:your_password@postgres/your_username?sslmode<span class="o">=</span><span class="nb">false
-</span>sessioncookie <span class="o">=</span> <span class="nb">true
+sessionproviderconfig <span class="o">=</span> postgres://your_username:your_password@localhost:5432/your_username?sslmode<span class="o">=</span>disable
+sessioncookie <span class="o">=</span> <span class="nb">true
 </span>sessiongcmaxlifetime <span class="o">=</span> 3600  <span class="c"># Session lifetime in seconds</span>
 
 <span class="c"># Security settings</span>
 allowcrossdomain <span class="o">=</span> <span class="nb">false</span>  <span class="c"># Set to true if you need CORS</span>
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">main.go</code></p><p>For your session to be stored on postgres, you need to make sure you add this import to <code class="language-plaintext highlighter-rouge">main.go</code>.</p><div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_</span> <span class="s">"github.com/beego/beego/v2/server/web/session/postgres"</span>
 </code></pre></div></div><p><code class="language-plaintext highlighter-rouge">models/default.go</code></p><p>Make sure to add the <code class="language-plaintext highlighter-rouge">pq</code> import so that you can Postgres.</p><div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">models</span>
 
 <span class="k">import</span> <span class="p">(</span>
@@ -45,6 +47,7 @@ allowcrossdomain <span class="o">=</span> <span class="nb">false</span>  <span c
 	<span class="n">_</span> <span class="s">"github.com/mattn/go-sqlite3"</span>
 <span class="p">)</span>
 </code></pre></div></div><p>Then, your <code class="language-plaintext highlighter-rouge">InitDB</code> should look like this.</p><div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">InitDB</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c">// NEW: Configure database from env</span>
 	<span class="n">driverName</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"DATABASE_DRIVER"</span><span class="p">)</span>
 	<span class="n">dataSource</span> <span class="o">:=</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"DATABASE_URL"</span><span class="p">)</span>
 	<span class="n">driver</span> <span class="o">:=</span> <span class="n">orm</span><span class="o">.</span><span class="n">DRSqlite</span>
@@ -56,15 +59,30 @@ allowcrossdomain <span class="o">=</span> <span class="nb">false</span>  <span c
 	<span class="p">}</span>
 	<span class="n">orm</span><span class="o">.</span><span class="n">RegisterDriver</span><span class="p">(</span><span class="n">driverName</span><span class="p">,</span> <span class="n">driver</span><span class="p">)</span>
 	<span class="n">orm</span><span class="o">.</span><span class="n">RegisterDataBase</span><span class="p">(</span><span class="s">"default"</span><span class="p">,</span> <span class="n">driverName</span><span class="p">,</span> <span class="n">dataSource</span><span class="p">)</span>
+	<span class="c">// You already have this part.</span>
 	<span class="n">orm</span><span class="o">.</span><span class="n">RegisterModel</span><span class="p">(</span>
-    	<span class="nb">new</span><span class="p">(</span><span class="n">ContactModel</span><span class="p">),</span>
-    	<span class="nb">new</span><span class="p">(</span><span class="n">User</span><span class="p">),</span>
+		<span class="nb">new</span><span class="p">(</span><span class="n">ContactModel</span><span class="p">),</span>
+        	<span class="nb">new</span><span class="p">(</span><span class="n">User</span><span class="p">),</span>
 	<span class="p">)</span>
 	<span class="n">O</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">NewOrm</span><span class="p">()</span>
 
 	<span class="n">err</span> <span class="o">:=</span> <span class="n">orm</span><span class="o">.</span><span class="n">RunSyncdb</span><span class="p">(</span><span class="s">"default"</span><span class="p">,</span> <span class="no">false</span><span class="p">,</span> <span class="no">true</span><span class="p">)</span>
 	<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
 		<span class="n">log</span><span class="o">.</span><span class="n">Fatalf</span><span class="p">(</span><span class="s">"Failed to sync database: %v"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="c">// NEW: Create session table</span>
+	<span class="k">if</span> <span class="n">driverName</span> <span class="o">==</span> <span class="s">"postgres"</span> <span class="p">{</span>
+		<span class="n">_</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">O</span><span class="o">.</span><span class="n">Raw</span><span class="p">(</span><span class="s">`CREATE TABLE IF NOT EXISTS "session" (
+			"session_key" CHAR(64) NOT NULL,
+			"session_data" BYTEA,
+			"session_expiry" BIGINT NOT NULL,
+			PRIMARY KEY ("session_key")
+		);`</span><span class="p">)</span><span class="o">.</span><span class="n">Exec</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+			<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"table `session` created"</span><span class="p">)</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"`session` table not created, application may not work"</span><span class="p">)</span>
+		<span class="p">}</span>
 	<span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-000 mb-0">Published by Merit Academy under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons License</a>.</p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/buckldav/learn-merit/tree/master/docs/golang/deploy2.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><div class="search-overlay"></div></div><script src="/assets/js/copy-code.js"></script>

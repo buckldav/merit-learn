@@ -32,6 +32,14 @@ services:
       - "5432:5432"
 ```
 
+Run the docker compose file with this:
+
+```bash
+docker compose -f postgres.docker-compose.yaml up -d
+```
+
+Then, you will need to manually create a session table.
+
 `.env`
 
 ```sh
@@ -55,12 +63,20 @@ logfile = /var/log/app.log  # Path to log file
 
 # Session configuration
 sessionprovider = postgresql  
-sessionproviderconfig = postgres://your_username:your_password@postgres/your_username?sslmode=false
+sessionproviderconfig = postgres://your_username:your_password@localhost:5432/your_username?sslmode=disable
 sessioncookie = true
 sessiongcmaxlifetime = 3600  # Session lifetime in seconds
 
 # Security settings
 allowcrossdomain = false  # Set to true if you need CORS
+```
+
+`main.go`
+
+For your session to be stored on postgres, you need to make sure you add this import to `main.go`.
+
+```go
+_ "github.com/beego/beego/v2/server/web/session/postgres"
 ```
 
 `models/default.go`
@@ -85,6 +101,7 @@ Then, your `InitDB` should look like this.
 
 ```go
 func InitDB() {
+	// NEW: Configure database from env
 	driverName := os.Getenv("DATABASE_DRIVER")
 	dataSource := os.Getenv("DATABASE_URL")
 	driver := orm.DRSqlite
@@ -96,15 +113,30 @@ func InitDB() {
 	}
 	orm.RegisterDriver(driverName, driver)
 	orm.RegisterDataBase("default", driverName, dataSource)
+	// You already have this part.
 	orm.RegisterModel(
-    	new(ContactModel),
-    	new(User),
+		new(ContactModel),
+        	new(User),
 	)
 	O = orm.NewOrm()
 
 	err := orm.RunSyncdb("default", false, true)
 	if err != nil {
 		log.Fatalf("Failed to sync database: %v", err)
+	}
+	// NEW: Create session table
+	if driverName == "postgres" {
+		_, err = O.Raw(`CREATE TABLE IF NOT EXISTS "session" (
+			"session_key" CHAR(64) NOT NULL,
+			"session_data" BYTEA,
+			"session_expiry" BIGINT NOT NULL,
+			PRIMARY KEY ("session_key")
+		);`).Exec()
+		if err != nil {
+			fmt.Println("table `session` created")
+		} else {
+			fmt.Println("`session` table not created, application may not work")
+		}
 	}
 }
 ```
