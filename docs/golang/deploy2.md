@@ -141,6 +141,13 @@ func InitDB() {
 }
 ```
 
+Test locally with
+
+```sh
+docker compose -f postgres.docker-compose.yaml up -d
+bee run
+```
+
 ## Production database
 
 You need to create a Postgres Database. First, create some passwords. 

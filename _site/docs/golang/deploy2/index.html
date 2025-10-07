@@ -85,6 +85,8 @@ allowcrossdomain <span class="o">=</span> <span class="nb">false</span>  <span c
 		<span class="p">}</span>
 	<span class="p">}</span>
 <span class="p">}</span>
+</code></pre></div></div><p>Test locally with</p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose <span class="nt">-f</span> postgres.docker-compose.yaml up <span class="nt">-d</span>
+bee run
 </code></pre></div></div><h2 id="production-database"> <a href="#production-database" aria-labelledby="production-database" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Production database</h2><p>You need to create a Postgres Database. First, create some passwords.</p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set these yourself</span>
 <span class="c"># It is nice to be lowercase/numeric (no caps), so I'd recommend generating with</span>
 <span class="c"># NEW_USER=$(openssl rand -hex 20)</span>
