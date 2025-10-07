@@ -75,7 +75,7 @@ allowcrossdomain <span class="o">=</span> <span class="nb">false</span>  <span c
 		<span class="n">_</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">O</span><span class="o">.</span><span class="n">Raw</span><span class="p">(</span><span class="s">`CREATE TABLE IF NOT EXISTS "session" (
 			"session_key" CHAR(64) NOT NULL,
 			"session_data" BYTEA,
-			"session_expiry" BIGINT NOT NULL,
+			"session_expiry" TIMESTAMP NOT NULL,
 			PRIMARY KEY ("session_key")
 		);`</span><span class="p">)</span><span class="o">.</span><span class="n">Exec</span><span class="p">()</span>
 		<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>

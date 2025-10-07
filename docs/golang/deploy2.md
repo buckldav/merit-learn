@@ -129,7 +129,7 @@ func InitDB() {
 		_, err = O.Raw(`CREATE TABLE IF NOT EXISTS "session" (
 			"session_key" CHAR(64) NOT NULL,
 			"session_data" BYTEA,
-			"session_expiry" BIGINT NOT NULL,
+			"session_expiry" TIMESTAMP NOT NULL,
 			PRIMARY KEY ("session_key")
 		);`).Exec()
 		if err != nil {
