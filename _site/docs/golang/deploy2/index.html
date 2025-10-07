@@ -17,7 +17,7 @@
 <span class="nv">DATABASE_URL</span><span class="o">=</span>postgres://your_username:your_password@localhost:5432/your_username?sslmode<span class="o">=</span>disable
 <span class="nv">POSTGRES_USER</span><span class="o">=</span>your_username
 <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>your_password
-</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">app.conf</code></p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>appname <span class="o">=</span> stopwatch
+</code></pre></div></div><p><code class="language-plaintext highlighter-rouge">app.conf</code></p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>appname <span class="o">=</span> myapp
 httpport <span class="o">=</span> 8080
 runmode <span class="o">=</span> prod
 sessionon <span class="o">=</span> <span class="nb">true</span>
@@ -55,7 +55,7 @@ allowcrossdomain <span class="o">=</span> <span class="nb">false</span>  <span c
 		<span class="n">driver</span> <span class="o">=</span> <span class="n">orm</span><span class="o">.</span><span class="n">DRPostgres</span>
 	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
 		<span class="n">driverName</span> <span class="o">=</span> <span class="s">"sqlite3"</span>
-		<span class="n">dataSource</span> <span class="o">=</span> <span class="s">"./stopwatch.db"</span>
+		<span class="n">dataSource</span> <span class="o">=</span> <span class="s">"./myapp.db"</span>
 	<span class="p">}</span>
 	<span class="n">orm</span><span class="o">.</span><span class="n">RegisterDriver</span><span class="p">(</span><span class="n">driverName</span><span class="p">,</span> <span class="n">driver</span><span class="p">)</span>
 	<span class="n">orm</span><span class="o">.</span><span class="n">RegisterDataBase</span><span class="p">(</span><span class="s">"default"</span><span class="p">,</span> <span class="n">driverName</span><span class="p">,</span> <span class="n">dataSource</span><span class="p">)</span>
@@ -85,4 +85,33 @@ allowcrossdomain <span class="o">=</span> <span class="nb">false</span>  <span c
 		<span class="p">}</span>
 	<span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-000 mb-0">Published by Merit Academy under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons License</a>.</p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/buckldav/learn-merit/tree/master/docs/golang/deploy2.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><div class="search-overlay"></div></div><script src="/assets/js/copy-code.js"></script>
+</code></pre></div></div><h2 id="production-database"> <a href="#production-database" aria-labelledby="production-database" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Production database</h2><p>You need to create a Postgres Database. First, create some passwords.</p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set these yourself</span>
+<span class="c"># It is nice to be lowercase/numeric (no caps), so I'd recommend generating with</span>
+<span class="c"># NEW_USER=$(openssl rand -hex 20)</span>
+<span class="nv">NEW_USER</span><span class="o">=</span>abcdefd566beb912fa25701cda117894b5e8fd5f
+<span class="nv">NEW_PASS</span><span class="o">=</span>abcdef0af13364f51f80a8ee4b0f89011db96382
+</code></pre></div></div><p>Here is a script, make a file like <code class="language-plaintext highlighter-rouge">create_db.sh</code> and run with <code class="language-plaintext highlighter-rouge">sh create_db.sh</code>.</p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run this to create the database</span>
+docker <span class="nb">exec</span> <span class="nt">-it</span> postgres sh <span class="nt">-c</span> <span class="s2">"psql -U </span><span class="se">\$</span><span class="s2">POSTGRES_USER -c 'CREATE DATABASE </span><span class="se">\"</span><span class="nv">$NEW_USER</span><span class="se">\"</span><span class="s2">'; </span><span class="se">\</span><span class="s2">
+psql -U </span><span class="se">\$</span><span class="s2">POSTGRES_USER -d </span><span class="se">\"</span><span class="nv">$NEW_USER</span><span class="se">\"</span><span class="s2"> -c 'CREATE USER </span><span class="se">\"</span><span class="nv">$NEW_USER</span><span class="se">\"</span><span class="s2"> WITH PASSWORD '</span><span class="se">\'</span><span class="s2">'</span><span class="nv">$NEW_PASS</span><span class="s2">'</span><span class="se">\'</span><span class="s2">';'; </span><span class="se">\</span><span class="s2">
+psql -U </span><span class="se">\$</span><span class="s2">POSTGRES_USER -d </span><span class="se">\"</span><span class="nv">$NEW_USER</span><span class="se">\"</span><span class="s2"> -c 'GRANT ALL PRIVILEGES ON DATABASE </span><span class="se">\"</span><span class="nv">$NEW_USER</span><span class="se">\"</span><span class="s2"> TO </span><span class="se">\"</span><span class="nv">$NEW_USER</span><span class="se">\"</span><span class="s2">;'; </span><span class="se">\</span><span class="s2">
+psql -U </span><span class="se">\$</span><span class="s2">POSTGRES_USER -d </span><span class="se">\"</span><span class="nv">$NEW_USER</span><span class="se">\"</span><span class="s2"> -c 'GRANT USAGE, CREATE ON SCHEMA public TO </span><span class="se">\"</span><span class="nv">$NEW_USER</span><span class="se">\"</span><span class="s2">;'; </span><span class="se">\</span><span class="s2">
+psql -U </span><span class="se">\$</span><span class="s2">POSTGRES_USER -d </span><span class="se">\"</span><span class="nv">$NEW_USER</span><span class="se">\"</span><span class="s2"> -c 'GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO </span><span class="se">\"</span><span class="nv">$NEW_USER</span><span class="se">\"</span><span class="s2">;'"</span>
+</code></pre></div></div><h3 id="conf-and-env-with-production-database"> <a href="#conf-and-env-with-production-database" aria-labelledby="conf-and-env-with-production-database" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Conf and env with production database</h3><p>Make a production conf file based on your <code class="language-plaintext highlighter-rouge">app.conf</code>.</p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp </span>conf/app.conf conf/prod.conf
+<span class="nb">echo</span> <span class="s2">"conf/prod.conf"</span> <span class="o">&gt;&gt;</span> .gitignore
+</code></pre></div></div><p>Modify <code class="language-plaintext highlighter-rouge">conf/prod.conf</code> to have your production database creds.</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sessionproviderconfig = postgres://USERNAME:PASSWORD@postgres:5432/USERNAME?sslmode=disable
+</code></pre></div></div><p>Also make a <code class="language-plaintext highlighter-rouge">.env.prod</code></p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> .env .env.prod
+<span class="nb">echo</span> <span class="s2">".env.prod"</span> <span class="o">&gt;&gt;</span> .gitignore
+</code></pre></div></div><p>Modify it to have your variables.</p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DATABASE_DRIVER</span><span class="o">=</span>postgres <span class="c"># sqlite3</span>
+<span class="nv">DATABASE_URL</span><span class="o">=</span>postgres://USERNAME:PASSWORD@postgres:5432/PASSWORD?sslmode<span class="o">=</span>disable
+<span class="nv">POSTGRES_USER</span><span class="o">=</span>USERNAME
+<span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>PASSWORD
+</code></pre></div></div><p>Modify <code class="language-plaintext highlighter-rouge">Dockerfile</code> to use the <code class="language-plaintext highlighter-rouge">prod.conf</code>.</p><div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Copy the rest of the application code from host to image</span>
+<span class="k">COPY</span><span class="s"> . .</span>
+<span class="c"># NEW: Overwrite the app.conf with prod version</span>
+<span class="k">COPY</span><span class="s"> ./conf/prod.conf ./conf/app.conf </span>
+
+<span class="c">#### .........</span>
+<span class="k">COPY</span><span class="s"> --from=builder /app/conf/app.conf ./conf/</span>
+<span class="c"># NEW: Use .env.prod</span>
+<span class="k">COPY</span><span class="s"> .env.prod .env</span>
+</code></pre></div></div><p>Deploy and see if it works.</p><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-000 mb-0">Published by Merit Academy under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons License</a>.</p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/buckldav/learn-merit/tree/master/docs/golang/deploy2.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><div class="search-overlay"></div></div><script src="/assets/js/copy-code.js"></script>

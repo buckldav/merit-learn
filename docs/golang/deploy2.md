@@ -52,7 +52,7 @@ POSTGRES_PASSWORD=your_password
 `app.conf`
 
 ```sh
-appname = stopwatch
+appname = myapp
 httpport = 8080
 runmode = prod
 sessionon = true
@@ -109,7 +109,7 @@ func InitDB() {
 		driver = orm.DRPostgres
 	} else {
 		driverName = "sqlite3"
-		dataSource = "./stopwatch.db"
+		dataSource = "./myapp.db"
 	}
 	orm.RegisterDriver(driverName, driver)
 	orm.RegisterDataBase("default", driverName, dataSource)
@@ -140,3 +140,73 @@ func InitDB() {
 	}
 }
 ```
+
+## Production database
+
+You need to create a Postgres Database. First, create some passwords. 
+
+```sh
+# Set these yourself
+# It is nice to be lowercase/numeric (no caps), so I'd recommend generating with
+# NEW_USER=$(openssl rand -hex 20)
+NEW_USER=abcdefd566beb912fa25701cda117894b5e8fd5f
+NEW_PASS=abcdef0af13364f51f80a8ee4b0f89011db96382
+```
+
+Here is a script, make a file like `create_db.sh` and run with `sh create_db.sh`.
+
+```sh
+# Run this to create the database
+docker exec -it postgres sh -c "psql -U \$POSTGRES_USER -c 'CREATE DATABASE \"$NEW_USER\"'; \
+psql -U \$POSTGRES_USER -d \"$NEW_USER\" -c 'CREATE USER \"$NEW_USER\" WITH PASSWORD '\''$NEW_PASS'\'';'; \
+psql -U \$POSTGRES_USER -d \"$NEW_USER\" -c 'GRANT ALL PRIVILEGES ON DATABASE \"$NEW_USER\" TO \"$NEW_USER\";'; \
+psql -U \$POSTGRES_USER -d \"$NEW_USER\" -c 'GRANT USAGE, CREATE ON SCHEMA public TO \"$NEW_USER\";'; \
+psql -U \$POSTGRES_USER -d \"$NEW_USER\" -c 'GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO \"$NEW_USER\";'"
+```
+
+### Conf and env with production database
+
+Make a production conf file based on your `app.conf`.
+
+```sh 
+cp conf/app.conf conf/prod.conf
+echo "conf/prod.conf" >> .gitignore
+```
+
+Modify `conf/prod.conf` to have your production database creds.
+
+```
+sessionproviderconfig = postgres://USERNAME:PASSWORD@postgres:5432/USERNAME?sslmode=disable
+```
+
+Also make a `.env.prod`
+
+```sh
+cp .env .env.prod
+echo ".env.prod" >> .gitignore
+```
+
+Modify it to have your variables.
+
+```sh
+DATABASE_DRIVER=postgres # sqlite3
+DATABASE_URL=postgres://USERNAME:PASSWORD@postgres:5432/PASSWORD?sslmode=disable
+POSTGRES_USER=USERNAME
+POSTGRES_PASSWORD=PASSWORD
+```
+
+Modify `Dockerfile` to use the `prod.conf`.
+
+```Dockerfile
+# Copy the rest of the application code from host to image
+COPY . .
+# NEW: Overwrite the app.conf with prod version
+COPY ./conf/prod.conf ./conf/app.conf 
+
+#### .........
+COPY --from=builder /app/conf/app.conf ./conf/
+# NEW: Use .env.prod
+COPY .env.prod .env
+```
+
+Deploy and see if it works.
