@@ -153,16 +153,23 @@ bee run
 You need to create a Postgres Database. First, create some passwords. 
 
 ```sh
-# Set these yourself
-# It is nice to be lowercase/numeric (no caps), so I'd recommend generating with
-# NEW_USER=$(openssl rand -hex 20)
-NEW_USER=abcdefd566beb912fa25701cda117894b5e8fd5f
-NEW_PASS=abcdef0af13364f51f80a8ee4b0f89011db96382
 ```
 
 Here is a script, make a file like `create_db.sh` and run with `sh create_db.sh`.
 
 ```sh
+touch create_db.sh
+echo "create_db.sh" >> .gitignore
+```
+
+File contents of `create_db.sh`:
+
+```sh
+# Set these yourself
+# It is nice to be lowercase/numeric (no caps), so I'd recommend generating with
+# NEW_USER=$(openssl rand -hex 20)
+NEW_USER=abcdefd566beb912fa25701cda117894b5e8fd5f
+NEW_PASS=abcdef0af13364f51f80a8ee4b0f89011db96382
 # Run this to create the database
 docker exec -it postgres sh -c "psql -U \$POSTGRES_USER -c 'CREATE DATABASE \"$NEW_USER\"'; \
 psql -U \$POSTGRES_USER -d \"$NEW_USER\" -c 'CREATE USER \"$NEW_USER\" WITH PASSWORD '\''$NEW_PASS'\'';'; \
