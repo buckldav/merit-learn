@@ -226,6 +226,8 @@ COPY ./conf/prod.conf ./conf/app.conf
 # Ensure you have all of these COPY statements.
 COPY --from=builder /app/server .
 COPY --from=builder /app/static ./static/
+COPY --from=builder /app/models ./models/
+COPY --from=builder /app/utils ./utils/
 COPY --from=builder /app/views ./views/
 COPY --from=builder /app/conf/app.conf ./conf/
 COPY --from=builder /app/go.* .

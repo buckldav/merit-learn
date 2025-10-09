@@ -118,6 +118,8 @@ psql -U </span><span class="se">\$</span><span class="s2">POSTGRES_USER -d </spa
 <span class="c"># Ensure you have all of these COPY statements.</span>
 <span class="k">COPY</span><span class="s"> --from=builder /app/server .</span>
 <span class="k">COPY</span><span class="s"> --from=builder /app/static ./static/</span>
+<span class="k">COPY</span><span class="s"> --from=builder /app/models ./models/</span>
+<span class="k">COPY</span><span class="s"> --from=builder /app/utils ./utils/</span>
 <span class="k">COPY</span><span class="s"> --from=builder /app/views ./views/</span>
 <span class="k">COPY</span><span class="s"> --from=builder /app/conf/app.conf ./conf/</span>
 <span class="k">COPY</span><span class="s"> --from=builder /app/go.* .</span>
