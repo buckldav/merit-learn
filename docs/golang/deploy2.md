@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Beego Part 8 - Deploy Part 2
+title: Beego Part 9 - Deploy Part 2
 parent: Golang
 nav_order: "91"
 ---
@@ -38,7 +38,12 @@ Run the docker compose file with this:
 docker compose -f postgres.docker-compose.yaml up -d
 ```
 
+### Session
+
+For your application to hook up to postgres and sessions to be managed properly, we need to modify our `.env`, `app.conf`, and `InitDB` function from models. 
 Then, you will need to manually create a session table.
+
+For right now in dev, the credentials can just be `your_username` and `your_password`. These will obviously change for production.
 
 `.env`
 
@@ -89,7 +94,6 @@ package models
 import (
 	"log"
 	"os"
-	"time"
 
 	"github.com/beego/beego/v2/client/orm"
 	_ "github.com/lib/pq"
@@ -141,7 +145,7 @@ func InitDB() {
 }
 ```
 
-Test locally with
+Test locally with:
 
 ```sh
 docker compose -f postgres.docker-compose.yaml up -d
@@ -150,12 +154,13 @@ bee run
 
 ## Production database
 
-You need to create a Postgres Database. First, create some passwords. 
+You need to create a Postgres Database. First, create a username and password. Each should be randomly generated, and it is nice if the username is lowercase. Therefore, running a command like this should get you what you need: 
 
 ```sh
+openssl rand -hex 20
 ```
 
-Here is a script, make a file like `create_db.sh` and run with `sh create_db.sh`.
+Here is a script, make a file like `create_db.sh` and run with `sh create_db.sh`. You will only need to create a production database once.
 
 ```sh
 touch create_db.sh
@@ -187,7 +192,7 @@ cp conf/app.conf conf/prod.conf
 echo "conf/prod.conf" >> .gitignore
 ```
 
-Modify `conf/prod.conf` to have your production database creds.
+Modify `conf/prod.conf` to have your production database creds. Ensure that you replace `USERNAME` and `PASSWORD` with your generated credentials.
 
 ```
 sessionproviderconfig = postgres://USERNAME:PASSWORD@postgres:5432/USERNAME?sslmode=disable
@@ -223,4 +228,4 @@ COPY --from=builder /app/conf/app.conf ./conf/
 COPY .env.prod .env
 ```
 
-Deploy and see if it works.
+Deploy and see if it works!
