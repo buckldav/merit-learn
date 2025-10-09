@@ -115,7 +115,14 @@ psql -U </span><span class="se">\$</span><span class="s2">POSTGRES_USER -d </spa
 <span class="k">COPY</span><span class="s"> ./conf/prod.conf ./conf/app.conf </span>
 
 <span class="c">#### .........</span>
+<span class="c"># Ensure you have all of these COPY statements.</span>
+<span class="k">COPY</span><span class="s"> --from=builder /app/server .</span>
+<span class="k">COPY</span><span class="s"> --from=builder /app/static ./static/</span>
+<span class="k">COPY</span><span class="s"> --from=builder /app/views ./views/</span>
 <span class="k">COPY</span><span class="s"> --from=builder /app/conf/app.conf ./conf/</span>
-<span class="c"># NEW: Use .env.prod</span>
+<span class="k">COPY</span><span class="s"> --from=builder /app/go.* .</span>
+<span class="k">COPY</span><span class="s"> --from=builder /app/scripts ./scripts/</span>
 <span class="k">COPY</span><span class="s"> .env.prod .env</span>
-</code></pre></div></div><p>Deploy and see if it works!</p><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-000 mb-0">Published by Merit Academy under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons License</a>.</p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/buckldav/learn-merit/tree/master/docs/golang/deploy2.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><div class="search-overlay"></div></div><script src="/assets/js/copy-code.js"></script>
+</code></pre></div></div><p>Deploy and see if it works!</p><p>You can create a user with:</p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">CONTAINER_NAME</span><span class="o">=</span>myapp
+docker <span class="nb">exec</span> <span class="nt">-it</span> <span class="nv">$CONTAINER_NAME</span> go run scripts/create_user.go
+</code></pre></div></div><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-000 mb-0">Published by Merit Academy under a <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons License</a>.</p><div class="d-flex mt-2"><p class="text-small text-grey-dk-000 mb-0"> <a href="https://github.com/buckldav/learn-merit/tree/master/docs/golang/deploy2.md" id="edit-this-page">Edit this page on GitHub</a></p></div></footer></div></div><div class="search-overlay"></div></div><script src="/assets/js/copy-code.js"></script>

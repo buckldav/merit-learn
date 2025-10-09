@@ -223,9 +223,21 @@ COPY . .
 COPY ./conf/prod.conf ./conf/app.conf 
 
 #### .........
+# Ensure you have all of these COPY statements.
+COPY --from=builder /app/server .
+COPY --from=builder /app/static ./static/
+COPY --from=builder /app/views ./views/
 COPY --from=builder /app/conf/app.conf ./conf/
-# NEW: Use .env.prod
+COPY --from=builder /app/go.* .
+COPY --from=builder /app/scripts ./scripts/
 COPY .env.prod .env
 ```
 
 Deploy and see if it works!
+
+You can create a user with:
+
+```sh
+CONTAINER_NAME=myapp
+docker exec -it $CONTAINER_NAME go run scripts/create_user.go
+```
