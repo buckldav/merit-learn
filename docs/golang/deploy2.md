@@ -209,7 +209,7 @@ Modify it to have your variables.
 
 ```sh
 DATABASE_DRIVER=postgres # sqlite3
-DATABASE_URL=postgres://USERNAME:PASSWORD@postgres:5432/PASSWORD?sslmode=disable
+DATABASE_URL=postgres://USERNAME:PASSWORD@postgres:5432/USERNAME?sslmode=disable
 POSTGRES_USER=USERNAME
 POSTGRES_PASSWORD=PASSWORD
 ```

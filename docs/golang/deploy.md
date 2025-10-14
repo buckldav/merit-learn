@@ -93,7 +93,7 @@ RUN CGO_ENABLED=1 GOOS=linux go build -o server .
 
 # Stage 2: Runner
 # Use a Debian-based image for better compatibility with CGO
-FROM go:1.24-trixie
+FROM golang:1.24-trixie
 
 # Install necessary packages for CGO and SQLite
 RUN apt-get update && apt-get install -y --no-install-recommends \

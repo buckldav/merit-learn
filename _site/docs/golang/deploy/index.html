@@ -40,7 +40,7 @@
 
 <span class="c"># Stage 2: Runner</span>
 <span class="c"># Use a Debian-based image for better compatibility with CGO</span>
-<span class="k">FROM</span><span class="s"> go:1.24-trixie</span>
+<span class="k">FROM</span><span class="s"> golang:1.24-trixie</span>
 
 <span class="c"># Install necessary packages for CGO and SQLite</span>
 <span class="k">RUN </span>apt-get update <span class="o">&amp;&amp;</span> apt-get <span class="nb">install</span> <span class="nt">-y</span> <span class="nt">--no-install-recommends</span> <span class="se">\

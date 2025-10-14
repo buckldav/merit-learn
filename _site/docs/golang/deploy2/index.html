@@ -106,7 +106,7 @@ psql -U </span><span class="se">\$</span><span class="s2">POSTGRES_USER -d </spa
 </code></pre></div></div><p>Also make a <code class="language-plaintext highlighter-rouge">.env.prod</code></p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp</span> .env .env.prod
 <span class="nb">echo</span> <span class="s2">".env.prod"</span> <span class="o">&gt;&gt;</span> .gitignore
 </code></pre></div></div><p>Modify it to have your variables.</p><div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DATABASE_DRIVER</span><span class="o">=</span>postgres <span class="c"># sqlite3</span>
-<span class="nv">DATABASE_URL</span><span class="o">=</span>postgres://USERNAME:PASSWORD@postgres:5432/PASSWORD?sslmode<span class="o">=</span>disable
+<span class="nv">DATABASE_URL</span><span class="o">=</span>postgres://USERNAME:PASSWORD@postgres:5432/USERNAME?sslmode<span class="o">=</span>disable
 <span class="nv">POSTGRES_USER</span><span class="o">=</span>USERNAME
 <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>PASSWORD
 </code></pre></div></div><p>Modify <code class="language-plaintext highlighter-rouge">Dockerfile</code> to use the <code class="language-plaintext highlighter-rouge">prod.conf</code>.</p><div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Copy the rest of the application code from host to image</span>
