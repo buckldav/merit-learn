@@ -3,10 +3,6 @@ title: Welcome!
 description: Merit Academy CS is a place to learn programming. It provides direction to the resources you need to learn the fundamentals.
 ---
 
-Merit Academy CS is a place to learn programming. It provides direction to the resources you need to learn the fundamentals.
-
----
-
 ## About the project
 
 Merit Academy CS's content is published by Merit Academy under a [Creative Commons License](https://creativecommons.org/licenses/by-sa/4.0/).
@@ -32,4 +28,4 @@ Merit Academy CS is committed to fostering a welcoming community.
 
 ## About our school
 
-Merit Academy is a 7-12 charter school in Springville, Utah. We offer both online and in-person courses. Click [here](https://cs.meritacademy.tech) to see the CS Courses we offer. If you'd like to know more about the school, including enrollment, visit [https://meritprepacademy.org](https://meritprepacademy.org).
+Merit Academy is a 7-12 charter school in Springville, Utah. We offer both online and in-person courses. If you'd like to know more about the school, including enrollment and CTE offerings, visit [https://meritacademy.org](https://meritacademy.org).
