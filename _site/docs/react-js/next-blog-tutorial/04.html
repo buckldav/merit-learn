@@ -1,87 +1,174 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Next.js Blog Tutorial - Part 4 – Merit Academy Tech U</title>
-<style>
-/* Default styles provided by pandoc.
+  <title>Next.js Blog Tutorial - Part 4 – Merit Academy CS</title>
+  <style>
+    /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-</style>
+    span.smallcaps {
+      font-variant: small-caps;
+    }
+
+    div.columns {
+      display: flex;
+      gap: 1.5em;
+    }
+
+    div.column {
+      flex: auto;
+    }
+
+    @media screen {
+      div.columns {
+        gap: min(4vw, 1.5em);
+      }
+
+      div.column {
+        overflow-x: auto;
+      }
+    }
+
+    div.hanging-indent {
+      margin-left: 1.5em;
+      text-indent: -1.5em;
+    }
+
+    ul.task-list {
+      list-style: none;
+    }
+
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em;
+      /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
+      vertical-align: middle;
+    }
+
+    /* CSS for syntax highlighting */
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    pre>code.sourceCode {
+      white-space: pre;
+      position: relative;
+    }
+
+    pre>code.sourceCode>span {
+      display: inline-block;
+      line-height: 1.25;
+    }
+
+    pre>code.sourceCode>span:empty {
+      height: 1.2em;
+    }
+
+    .sourceCode {
+      overflow: visible;
+    }
+
+    code.sourceCode>span {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    div.sourceCode {
+      margin: 1em 0;
+    }
+
+    pre.sourceCode {
+      margin: 0;
+    }
+
+    @media screen {
+      div.sourceCode {
+        overflow: auto;
+      }
+    }
+
+    @media print {
+      pre>code.sourceCode {
+        white-space: pre-wrap;
+      }
+
+      pre>code.sourceCode>span {
+        text-indent: -5em;
+        padding-left: 5em;
+      }
+    }
+
+    pre.numberSource code {
+      counter-reset: source-line 0;
+    }
+
+    pre.numberSource code>span {
+      position: relative;
+      left: -4em;
+      counter-increment: source-line;
+    }
+
+    pre.numberSource code>span>a:first-child::before {
+      content: counter(source-line);
+      position: relative;
+      left: -1em;
+      text-align: right;
+      vertical-align: baseline;
+      border: none;
+      display: inline-block;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 0 4px;
+      width: 4em;
+    }
+
+    pre.numberSource {
+      margin-left: 3em;
+      padding-left: 4px;
+    }
+
+    div.sourceCode {}
+
+    @media screen {
+      pre>code.sourceCode>span>a:first-child::before {
+        text-decoration: underline;
+      }
+    }
+  </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-971e9fbb5c95271eba3f977a140ca80a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+  <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+  <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+  <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+  <meta name="quarto:offset" content="../../../">
+  <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+  <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+  <script src="../../../site_libs/quarto-html/popper.min.js"></script>
+  <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+  <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css"
+    rel="stylesheet" id="quarto-text-highlighting-styles">
+  <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../../site_libs/bootstrap/bootstrap-971e9fbb5c95271eba3f977a140ca80a.min.css" rel="stylesheet"
+    append-hash="true" id="quarto-bootstrap" data-mode="light">
+  <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -114,897 +201,1033 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <body class="nav-sidebar docked quarto-light">
 
-<div id="quarto-search-results"></div>
+  <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/react-js/index.html">React.js</a></li><li class="breadcrumb-item"><a href="../../../docs/react-js/next-blog-tutorial/index.html">Next.js Blog Tutorial</a></li><li class="breadcrumb-item"><a href="../../../docs/react-js/next-blog-tutorial/04.html">Part 4 - Search Engine Optimization</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+    <nav class="quarto-secondary-nav">
+      <div class="container-fluid d-flex">
+        <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button"
+          data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false"
+          aria-label="Toggle sidebar navigation"
+          onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <i class="bi bi-layout-text-sidebar-reverse"></i>
+        </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../../docs/react-js/index.html">React.js</a></li>
+            <li class="breadcrumb-item"><a href="../../../docs/react-js/next-blog-tutorial/index.html">Next.js Blog
+                Tutorial</a></li>
+            <li class="breadcrumb-item"><a href="../../../docs/react-js/next-blog-tutorial/04.html">Part 4 - Search
+                Engine Optimization</a></li>
+          </ol>
+        </nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse"
+          data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false"
+          aria-label="Toggle sidebar navigation"
+          onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../../">Merit Academy Tech U</a> 
-    </div>
+        <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+          <i class="bi bi-search"></i>
+        </button>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
+    </nav>
+  </header>
+  <!-- content -->
+  <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+    <!-- sidebar -->
+    <nav id="quarto-sidebar"
+      class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+      <div class="pt-lg-2 mt-2 text-left sidebar-header">
+        <div class="sidebar-title mb-0 py-0">
+          <a href="../../../">Merit Academy CS</a>
+        </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+          <div id="quarto-search" class="" title="Search"></div>
         </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/git/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <div class="sidebar-menu-container">
+        <ul class="list-unstyled mt-1">
+          <li class="sidebar-item">
+            <div class="sidebar-item-container">
+              <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Home</span></a>
+            </div>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/git/markdown/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Markdown</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/git/markdown/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub and Markdown</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/git/markdown/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Replit and Markdown</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/git/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub Projects</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/git/10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub Pages with Jekyll</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/processing/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Processing - Intro to CS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+            <div class="sidebar-item-container">
+              <a href="../../../docs/git/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">GitHub</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/git/markdown/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Markdown</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/git/markdown/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">GitHub and Markdown</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/git/markdown/02.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Replit and Markdown</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/git/02.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">GitHub Projects</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/git/10.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">GitHub Pages with Jekyll</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/processing/basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Processing Basics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/basics/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">What is a Programming Language?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/basics/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">First Processing Program</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/basics/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pizza Time!</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/basics/04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quiz Game - Logic and Control Flow</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/basics/05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Snowflake App</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/basics/06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Input Validator</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
+            <div class="sidebar-item-container">
+              <a href="../../../docs/processing/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Processing - Intro to CS</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/processing/basics/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Processing Basics</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/basics/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">What is a Programming Language?</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/basics/02.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">First Processing Program</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/basics/03.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Pizza Time!</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/basics/04.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Quiz Game - Logic and Control Flow</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/basics/05.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Snowflake App</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/basics/06.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Input Validator</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/processing/data-structures/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Data Structures</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/data-structures/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">What are Data Structures?</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/data-structures/02.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Pokemon Information Science</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/data-structures/03.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Dinosaur Game Clone</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/processing/data-structures/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Structures</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/data-structures/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">What are Data Structures?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/data-structures/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pokemon Information Science</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/data-structures/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dinosaur Game Clone</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/web-dev-basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Web Dev Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev-basics/html.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">HTML</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev-basics/css-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CSS Basics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev-basics/css-layouts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CSS Layouts</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev-basics/well-formed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Well-Formed Websites</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev-basics/the-internet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The Internet</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/web-dev/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Web Dev Advanced</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev/web-services.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to Web Services</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev/http-https.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">HTTP and HTTPS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev/docker.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Docker</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev/systemd-ftp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">systemd and FTP</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/golang/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Golang</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to Go</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/mvc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 1 - MVC Web Development</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/tailwind.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 2 - Styling with Tailwind</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/http-methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 3 - HTTP Methods and Forms</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/model-db.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 4 - Models and SQL Databases</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/admin.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 5 - Users and Admin Interface Part 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/admin2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 6 - Users and Admin Interface Part 2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/env.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 7 - Environment</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/deploy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 8 - Deploy Part 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/deploy2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 9 - Deploy Part 2</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/javascript/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JavaScript</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+            <div class="sidebar-item-container">
+              <a href="../../../docs/web-dev-basics/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Web Dev Basics</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev-basics/html.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">HTML</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev-basics/css-basics.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">CSS Basics</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev-basics/css-layouts.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">CSS Layouts</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev-basics/well-formed.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Well-Formed Websites</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev-basics/the-internet.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">The Internet</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/javascript/basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JavaScript Basics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Variables and Functions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Types and Objects</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The Document and Window Objects</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Logic and Control Flow</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Events</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">String, Number, and Array Methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/unit-project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unit Project - To Do App</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/for-teachers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">For Teachers</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/games/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JavaScript Games</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/forms/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JavaScript Forms</span></a>
-  </div>
-</li>
+            <div class="sidebar-item-container">
+              <a href="../../../docs/web-dev/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Web Dev Advanced</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev/web-services.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Intro to Web Services</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev/http-https.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">HTTP and HTTPS</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev/docker.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Docker</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev/systemd-ftp.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">systemd and FTP</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/javascript/api/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">REST APIs with Express.js</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/api/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to Express.js</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/react-js/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React.js</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+            <div class="sidebar-item-container">
+              <a href="../../../docs/golang/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Golang</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/intro.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Intro to Go</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/mvc.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 1 - MVC Web Development</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/tailwind.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 2 - Styling with Tailwind</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/http-methods.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 3 - HTTP Methods and Forms</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/model-db.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 4 - Models and SQL Databases</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/admin.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 5 - Users and Admin Interface Part 1</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/admin2.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 6 - Users and Admin Interface Part 2</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/env.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 7 - Environment</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/deploy.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 8 - Deploy Part 1</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/deploy2.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 9 - Deploy Part 2</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/react-js/basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React.js Basics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/basics/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React State and Props</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/basics/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React w/Fetch API</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
+            <div class="sidebar-item-container">
+              <a href="../../../docs/javascript/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">JavaScript</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/javascript/basics/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">JavaScript Basics</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Variables and Functions</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/02.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Data Types and Objects</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/03.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">The Document and Window Objects</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/04.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Logic and Control Flow</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/05.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Events</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/06.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">String, Number, and Array Methods</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/unit-project.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Unit Project - To Do App</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/for-teachers.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">For Teachers</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/javascript/games/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">JavaScript Games</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/javascript/forms/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">JavaScript Forms</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/javascript/api/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">REST APIs with Express.js</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/api/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Intro to Express.js</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/react-js/next-blog-tutorial/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Next.js Blog Tutorial</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/next-blog-tutorial/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Part 1 - Next.js Project Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/next-blog-tutorial/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Part 2 - Blog Posts and CSS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/next-blog-tutorial/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Part 3 - Components and DRYness</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/next-blog-tutorial/04.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Part 4 - Search Engine Optimization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/next-blog-tutorial/05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Part 5 - APIs and Databases</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Learn Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/python/objects.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Objects in Python</span></a>
-  </div>
-</li>
+            <div class="sidebar-item-container">
+              <a href="../../../docs/react-js/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">React.js</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/react-js/basics/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">React.js Basics</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/basics/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">React State and Props</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/basics/02.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">React w/Fetch API</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/react-js/next-blog-tutorial/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Next.js Blog Tutorial</span></a>
+                  <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 show">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/next-blog-tutorial/01.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Part 1 - Next.js Project Setup</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/next-blog-tutorial/02.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Part 2 - Blog Posts and CSS</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/next-blog-tutorial/03.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Part 3 - Components and DRYness</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/next-blog-tutorial/04.html"
+                        class="sidebar-item-text sidebar-link active">
+                        <span class="menu-text">Part 4 - Search Engine Optimization</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/next-blog-tutorial/05.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Part 5 - APIs and Databases</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/python/pyxel/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Learn Pyxel</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/python/pyxel/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Physics Engine</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/python/projects.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python Projects</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/unity-and-cs/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unity and C#</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 show">  
+            <div class="sidebar-item-container">
+              <a href="../../../docs/python/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Learn Python</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/python/objects.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Objects in Python</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/python/pyxel/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Learn Pyxel</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/python/pyxel/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Physics Engine</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/python/projects.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Python Projects</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/unity-and-cs/platformer-basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Platformer Basics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/platformer-basics/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating a Unity Project</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/platformer-basics/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating a Player</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/platformer-basics/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating a Tilemap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/platformer-basics/04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Adding Tiles</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/platformer-basics/05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Scripting</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/platformer-basics/06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Platformer Extras</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
+            <div class="sidebar-item-container">
+              <a href="../../../docs/unity-and-cs/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Unity and C#</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/unity-and-cs/platformer-basics/index.html"
+                    class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Platformer Basics</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/platformer-basics/01.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Creating a Unity Project</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/platformer-basics/02.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Creating a Player</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/platformer-basics/03.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Creating a Tilemap</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/platformer-basics/04.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Adding Tiles</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/platformer-basics/05.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Scripting</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/platformer-basics/06.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Platformer Extras</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/unity-and-cs/top-down-game/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Top Down Game</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/top-down-game/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Project Setup and Folders</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/top-down-game/02.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Creating a Player and Tilemap</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/top-down-game/03.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Heads-Up Display</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/top-down-game/04.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Collectibles</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/top-down-game/05.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Prefabs and Scenes</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/top-down-game/06.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Traverse Through Scenes and Doors</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/unity-and-cs/animation.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Animation Basics</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/unity-and-cs/state-machines/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">State Machines</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/state-machines/01.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Getting Started</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/state-machines/02.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Enemy States</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/state-machines/03.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">States and Animation</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/unity-and-cs/resources.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Extra Resources</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/unity-and-cs/top-down-game/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Top Down Game</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/top-down-game/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Project Setup and Folders</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/top-down-game/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating a Player and Tilemap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/top-down-game/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Heads-Up Display</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/top-down-game/04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Collectibles</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/top-down-game/05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Prefabs and Scenes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/top-down-game/06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Traverse Through Scenes and Doors</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/animation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Animation Basics</span></a>
-  </div>
-</li>
+            <div class="sidebar-item-container">
+              <a href="../../../docs/java-greenfoot/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Java with Greenfoot</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/java-greenfoot/turtley-amazing/index.html"
+                    class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Turtley Amazing</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/01.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Introduction</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/02.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Setup</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/03.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Drawing a Line</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/04.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Turning</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/05.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Changing Colors</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/06.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Repetition</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/07.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Better Spirals</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/08.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Loopy Colors</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/09.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Modulo to the Rescue</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/10.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Enormous Lists</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/java-greenfoot/turtle-snowflakes/index.html"
+                    class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Turtle Snowflakes</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtle-snowflakes/01.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Introduction</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtle-snowflakes/02.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Using Loops to Create Shapes</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/unity-and-cs/state-machines/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">State Machines</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/state-machines/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Getting Started</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/state-machines/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Enemy States</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/state-machines/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">States and Animation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Extra Resources</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/java-greenfoot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Java with Greenfoot</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth1 show">  
+            <div class="sidebar-item-container">
+              <a href="../../../docs/algorithms/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Algorithms</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/algorithms/01.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Strings Part 1</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/java-greenfoot/turtley-amazing/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Turtley Amazing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <div class="sidebar-item-container">
+              <a href="../../../docs/mobile-apps/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Mobile Apps</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/mobile-apps/01.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Mobile App Project Setup</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/mobile-apps/02.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Markup Languages</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
-      <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Drawing a Line</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Turning</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Changing Colors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Repetition</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Better Spirals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Loopy Colors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Modulo to the Rescue</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Enormous Lists</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/java-greenfoot/turtle-snowflakes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Turtle Snowflakes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtle-snowflakes/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtle-snowflakes/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Using Loops to Create Shapes</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/algorithms/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Algorithms</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/algorithms/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Strings Part 1</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/mobile-apps/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Mobile Apps</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/mobile-apps/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Mobile App Project Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/mobile-apps/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Markup Languages</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
+    </nav>
+    <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse"
+      data-bs-target=".quarto-sidebar-collapse-item"></div>
+    <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#search-engine-optimization" id="toc-search-engine-optimization" class="nav-link active" data-scroll-target="#search-engine-optimization">Search Engine Optimization</a></li>
-  <li><a href="#what-is-metadata" id="toc-what-is-metadata" class="nav-link" data-scroll-target="#what-is-metadata">What is metadata?</a>
-  <ul class="collapse">
-  <li><a href="#adding-metadata-to-the-blog-component" id="toc-adding-metadata-to-the-blog-component" class="nav-link" data-scroll-target="#adding-metadata-to-the-blog-component">Adding Metadata to the Blog Component</a></li>
-  <li><a href="#meta-keywords-deprecated" id="toc-meta-keywords-deprecated" class="nav-link" data-scroll-target="#meta-keywords-deprecated">Meta Keywords (deprecated)</a></li>
-  </ul></li>
-  <li><a href="#what-is-microdata" id="toc-what-is-microdata" class="nav-link" data-scroll-target="#what-is-microdata">What is Microdata?</a>
-  <ul class="collapse">
-  <li><a href="#schema.org-microdata-for-blog-posts" id="toc-schema.org-microdata-for-blog-posts" class="nav-link" data-scroll-target="#schema.org-microdata-for-blog-posts">Schema.org Microdata for Blog Posts</a></li>
-  <li><a href="#in-our-blog-component" id="toc-in-our-blog-component" class="nav-link" data-scroll-target="#in-our-blog-component">In our Blog Component</a></li>
-  </ul></li>
-  <li><a href="#robots.txt" id="toc-robots.txt" class="nav-link" data-scroll-target="#robots.txt"><code>robots.txt</code></a></li>
-  <li><a href="#lighthouse-audit" id="toc-lighthouse-audit" class="nav-link" data-scroll-target="#lighthouse-audit">Lighthouse Audit</a>
-  <ul class="collapse">
-  <li><a href="#other-essential-seo-tools" id="toc-other-essential-seo-tools" class="nav-link" data-scroll-target="#other-essential-seo-tools">Other Essential SEO Tools</a></li>
-  </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/buckldav/learn-merit/edit/main/docs/react-js/next-blog-tutorial/04.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+      <nav id="TOC" role="doc-toc" class="toc-active">
+        <h2 id="toc-title">On this page</h2>
+
+        <ul>
+          <li><a href="#search-engine-optimization" id="toc-search-engine-optimization" class="nav-link active"
+              data-scroll-target="#search-engine-optimization">Search Engine Optimization</a></li>
+          <li><a href="#what-is-metadata" id="toc-what-is-metadata" class="nav-link"
+              data-scroll-target="#what-is-metadata">What is metadata?</a>
+            <ul class="collapse">
+              <li><a href="#adding-metadata-to-the-blog-component" id="toc-adding-metadata-to-the-blog-component"
+                  class="nav-link" data-scroll-target="#adding-metadata-to-the-blog-component">Adding Metadata to the
+                  Blog Component</a></li>
+              <li><a href="#meta-keywords-deprecated" id="toc-meta-keywords-deprecated" class="nav-link"
+                  data-scroll-target="#meta-keywords-deprecated">Meta Keywords (deprecated)</a></li>
+            </ul>
+          </li>
+          <li><a href="#what-is-microdata" id="toc-what-is-microdata" class="nav-link"
+              data-scroll-target="#what-is-microdata">What is Microdata?</a>
+            <ul class="collapse">
+              <li><a href="#schema.org-microdata-for-blog-posts" id="toc-schema.org-microdata-for-blog-posts"
+                  class="nav-link" data-scroll-target="#schema.org-microdata-for-blog-posts">Schema.org Microdata for
+                  Blog Posts</a></li>
+              <li><a href="#in-our-blog-component" id="toc-in-our-blog-component" class="nav-link"
+                  data-scroll-target="#in-our-blog-component">In our Blog Component</a></li>
+            </ul>
+          </li>
+          <li><a href="#robots.txt" id="toc-robots.txt" class="nav-link"
+              data-scroll-target="#robots.txt"><code>robots.txt</code></a></li>
+          <li><a href="#lighthouse-audit" id="toc-lighthouse-audit" class="nav-link"
+              data-scroll-target="#lighthouse-audit">Lighthouse Audit</a>
+            <ul class="collapse">
+              <li><a href="#other-essential-seo-tools" id="toc-other-essential-seo-tools" class="nav-link"
+                  data-scroll-target="#other-essential-seo-tools">Other Essential SEO Tools</a></li>
+            </ul>
+          </li>
+          <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+        </ul>
+        <div class="toc-actions">
+          <ul>
+            <li><a href="https://github.com/buckldav/learn-merit/edit/main/docs/react-js/next-blog-tutorial/04.md"
+                class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
+    <!-- main -->
+    <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/react-js/index.html">React.js</a></li><li class="breadcrumb-item"><a href="../../../docs/react-js/next-blog-tutorial/index.html">Next.js Blog Tutorial</a></li><li class="breadcrumb-item"><a href="../../../docs/react-js/next-blog-tutorial/04.html">Part 4 - Search Engine Optimization</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Next.js Blog Tutorial - Part 4</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+      <header id="title-block-header" class="quarto-title-block default">
+        <nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../../docs/react-js/index.html">React.js</a></li>
+            <li class="breadcrumb-item"><a href="../../../docs/react-js/next-blog-tutorial/index.html">Next.js Blog
+                Tutorial</a></li>
+            <li class="breadcrumb-item"><a href="../../../docs/react-js/next-blog-tutorial/04.html">Part 4 - Search
+                Engine Optimization</a></li>
+          </ol>
+        </nav>
+        <div class="quarto-title">
+          <h1 class="title">Next.js Blog Tutorial - Part 4</h1>
+        </div>
 
 
-<p>Search Engine Optimization (SEO) including metadata and microdata.</p>
-<p>Starting code: <a href="https://replit.com/@buckldav/next-tut-3">https://replit.com/@buckldav/next-tut-3</a>.</p>
-<section id="search-engine-optimization" class="level2">
-<h2 class="anchored" data-anchor-id="search-engine-optimization">Search Engine Optimization</h2>
-<p>Search Engine Optimization (SEO) is the process of making a site more accessible to web crawlers. If you are thinking about how your content is organized and following best practices, you are likely already doing many things that make a site search engine optimized.</p>
-<p>Some of search engine optimization is enigmatic and can only be discovered through trial and error. Some SEO strategies are outside the scope of this tutorial (like having a domain name). However the following strategies are implementable for any site.</p>
-<ul>
-<li>Adding metadata in the head.</li>
-<li>Adding microdata in the markup.</li>
-<li>Adding a <code>robots.txt</code> file at the project root.</li>
-</ul>
-</section>
-<section id="what-is-metadata" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-metadata">What is metadata?</h2>
-<p>In an HTML file, there are two main sections, the <code>&lt;head&gt;</code> and the <code>&lt;body&gt;</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+
+        <div class="quarto-title-meta">
+
+
+
+
+        </div>
+
+
+
+      </header>
+
+
+      <p>Search Engine Optimization (SEO) including metadata and microdata.</p>
+      <p>Starting code: <a href="https://replit.com/@buckldav/next-tut-3">https://replit.com/@buckldav/next-tut-3</a>.
+      </p>
+      <section id="search-engine-optimization" class="level2">
+        <h2 class="anchored" data-anchor-id="search-engine-optimization">Search Engine Optimization</h2>
+        <p>Search Engine Optimization (SEO) is the process of making a site more accessible to web crawlers. If you are
+          thinking about how your content is organized and following best practices, you are likely already doing many
+          things that make a site search engine optimized.</p>
+        <p>Some of search engine optimization is enigmatic and can only be discovered through trial and error. Some SEO
+          strategies are outside the scope of this tutorial (like having a domain name). However the following
+          strategies are implementable for any site.</p>
+        <ul>
+          <li>Adding metadata in the head.</li>
+          <li>Adding microdata in the markup.</li>
+          <li>Adding a <code>robots.txt</code> file at the project root.</li>
+        </ul>
+      </section>
+      <section id="what-is-metadata" class="level2">
+        <h2 class="anchored" data-anchor-id="what-is-metadata">What is metadata?</h2>
+        <p>In an HTML file, there are two main sections, the <code>&lt;head&gt;</code> and the
+          <code>&lt;body&gt;</code>.</p>
+        <div class="code-copy-outer-scaffold">
+          <div class="sourceCode" id="cb1">
+            <pre
+              class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Metadata goes here --&gt;</span></span>
@@ -1012,14 +1235,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Content goes here --&gt;</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Metadata</strong> is the background data of a site including the <code>&lt;title&gt;</code>, character set, viewport, description, author, and more. Some metadata ensures that the site operates correctly (like using a <code>&lt;link&gt;</code> tag to load a stylesheet) and some metadata is just text describing the page. Web crawlers can read the metadata (in addition to reading the content in the body) to determine what the site is about.</p>
-<section id="adding-metadata-to-the-blog-component" class="level3">
-<h3 class="anchored" data-anchor-id="adding-metadata-to-the-blog-component">Adding Metadata to the Blog Component</h3>
-<p>Next.js provides us with many features to help us write metadata. We will employ two of them. (You can apply meta tags in any HTML <code>&lt;head&gt;</code>, of course, not just in Next apps).</p>
-<p>First, we will use the <code>&lt;Head&gt;</code> component (notice the capital “H”) to add markup to be put in the <code>&lt;head&gt;</code> of the compiled HTML document. We will leverage the props that we’ve passed to the component to populate our metadata.</p>
-<p><code>components/Blog.js</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;Head&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre>
+          </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+        </div>
+        <p><strong>Metadata</strong> is the background data of a site including the <code>&lt;title&gt;</code>,
+          character set, viewport, description, author, and more. Some metadata ensures that the site operates correctly
+          (like using a <code>&lt;link&gt;</code> tag to load a stylesheet) and some metadata is just text describing
+          the page. Web crawlers can read the metadata (in addition to reading the content in the body) to determine
+          what the site is about.</p>
+        <section id="adding-metadata-to-the-blog-component" class="level3">
+          <h3 class="anchored" data-anchor-id="adding-metadata-to-the-blog-component">Adding Metadata to the Blog
+            Component</h3>
+          <p>Next.js provides us with many features to help us write metadata. We will employ two of them. (You can
+            apply meta tags in any HTML <code>&lt;head&gt;</code>, of course, not just in Next apps).</p>
+          <p>First, we will use the <code>&lt;Head&gt;</code> component (notice the capital “H”) to add markup to be put
+            in the <code>&lt;head&gt;</code> of the compiled HTML document. We will leverage the props that we’ve passed
+            to the component to populate our metadata.</p>
+          <p><code>components/Blog.js</code></p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb2">
+              <pre
+                class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;Head&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;title&gt;</span>My Next App | <span class="va">{</span>props<span class="op">.</span><span class="at">title</span><span class="va">}</span><span class="kw">&lt;/title&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;meta</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="ot">name</span><span class="op">=</span><span class="st">"description"</span></span>
@@ -1027,16 +1263,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">/&gt;</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;meta</span> <span class="ot">name</span><span class="op">=</span><span class="st">"author"</span> <span class="ot">content</span><span class="op">=</span><span class="va">{</span>props<span class="op">.</span><span class="at">author</span><span class="va">}</span> <span class="kw">/&gt;</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;link</span> <span class="ot">rel</span><span class="op">=</span><span class="st">"icon"</span> <span class="ot">href</span><span class="op">=</span><span class="st">"/favicon.ico"</span> <span class="kw">/&gt;</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/Head&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Second, observe the <code>&lt;meta&gt;</code> tags generated by Next.js when we visit a blog post and inspect the resultant HTML.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../../assets/images/nextjs/tutorial/04/01-meta-inspect.PNG" class="img-fluid figure-img"></p>
-<figcaption>Meta Inspect</figcaption>
-</figure>
-</div>
-<p>Here’s a brief explanation of each meta tag:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"viewport"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"width=device-width"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;/Head&gt;</span></span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+          <p>Second, observe the <code>&lt;meta&gt;</code> tags generated by Next.js when we visit a blog post and
+            inspect the resultant HTML.</p>
+          <div class="quarto-figure quarto-figure-center">
+            <figure class="figure">
+              <p><img src="../../../assets/images/nextjs/tutorial/04/01-meta-inspect.PNG" class="img-fluid figure-img">
+              </p>
+              <figcaption>Meta Inspect</figcaption>
+            </figure>
+          </div>
+          <p>Here’s a brief explanation of each meta tag:</p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb3">
+              <pre
+                class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"viewport"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"width=device-width"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Ensures the site is sized to the device (desktop, tablet, phone, etc.).</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">"utf-8"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
@@ -1048,52 +1291,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>better. Often shows up in a site's preview in search results.</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">"author"</span><span class="ot"> content</span><span class="op">=</span><span class="st">"David Buckley"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>Indicates who the author is.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Here’s how that data might be displayed in search results:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../../assets/images/nextjs/tutorial/04/02-meta-google.PNG" class="img-fluid figure-img"></p>
-<figcaption>Meta in Search Results</figcaption>
-</figure>
-</div>
-<section id="next.js-prerendering" class="level4">
-<h4 class="anchored" data-anchor-id="next.js-prerendering">Next.js Prerendering</h4>
-<p>Another SEO feature that Next.js has is <a href="https://nextjs.org/docs/basic-features/pages#two-forms-of-pre-rendering">prerendering</a>, meaning that the HTML pages are generated on the server, thus making them more readable by web crawlers and increasing load times (increasing page ranking). Most other JavaScript apps lack this feature by default.</p>
-</section>
-</section>
-<section id="meta-keywords-deprecated" class="level3">
-<h3 class="anchored" data-anchor-id="meta-keywords-deprecated">Meta Keywords (deprecated)</h3>
-<p>There is a meta tag called keywords that is an archaic way of trying to boost site rankings (example: <code>&lt;meta name="keywords" content="instagram facebook tiktok"&gt;</code>). You can see how this could get abused by people spamming popular brand names and phrases in an effort to get noticed. Google’s famous Page Rank algorithm was revolutionary in that it largely ignored this meta tag and instead looked at a site holistically to determine its category and ranking.</p>
-<p><em>Source: <a href="https://en.wikipedia.org/wiki/Meta_element#The_keywords_attribute">https://en.wikipedia.org/wiki/Meta_element#The_keywords_attribute</a>.</em></p>
-</section>
-</section>
-<section id="what-is-microdata" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-microdata">What is Microdata?</h2>
-<p>Microdata is metadata that we can add to our content tags. This can help further organize content and even create rich results in search engines.</p>
-<p>_Source: <a href="https://en.wikipedia.org/wiki/Microdata_(HTML)">https://en.wikipedia.org/wiki/Microdata_(HTML)</a>._</p>
-<p>Here’s an example of a hotel with rich results. Notice the information displayed on the right (address, phone, etc.). Here is a <a href="https://schema.org/docs/hotels.html">link</a> with suggested microdata for hotels.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../../assets/images/nextjs/tutorial/04/03-hotel-seo-example.PNG" class="img-fluid figure-img"></p>
-<figcaption>Hotel Rich Results</figcaption>
-</figure>
-</div>
-<p>Our blog will not have rich results, but the microdata is still helpful for Google’s web crawlers to index our site and understand what’s going on. Google does have a <a href="https://search.google.com/test/rich-results">tool</a> to preview rich results for a page that you can use in the future if you’d like.</p>
-<section id="schema.org-microdata-for-blog-posts" class="level3">
-<h3 class="anchored" data-anchor-id="schema.org-microdata-for-blog-posts">Schema.org Microdata for Blog Posts</h3>
-<p>Schema.org contains definitions for many types of content, from <a href="https://schema.org/docs/full.html">Airlines to Vehicles</a>. We will be using Schema’s <a href="https://schema.org/Article">article definition</a> for our blog.</p>
-<p>Visit <a href="https://schema.org/Article#examples">https://schema.org/Article#examples</a> and Click on “Microdata” for Example 1. Notice the <code>itemscope</code>, <code>itemtype</code>, and <code>itemprop</code> attributes.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> itemscope itemtype</span><span class="op">=</span><span class="st">"https://schema.org/Article"</span><span class="dt">&gt;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>Indicates who the author is.</span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+          <p>Here’s how that data might be displayed in search results:</p>
+          <div class="quarto-figure quarto-figure-center">
+            <figure class="figure">
+              <p><img src="../../../assets/images/nextjs/tutorial/04/02-meta-google.PNG" class="img-fluid figure-img">
+              </p>
+              <figcaption>Meta in Search Results</figcaption>
+            </figure>
+          </div>
+          <section id="next.js-prerendering" class="level4">
+            <h4 class="anchored" data-anchor-id="next.js-prerendering">Next.js Prerendering</h4>
+            <p>Another SEO feature that Next.js has is <a
+                href="https://nextjs.org/docs/basic-features/pages#two-forms-of-pre-rendering">prerendering</a>, meaning
+              that the HTML pages are generated on the server, thus making them more readable by web crawlers and
+              increasing load times (increasing page ranking). Most other JavaScript apps lack this feature by default.
+            </p>
+          </section>
+        </section>
+        <section id="meta-keywords-deprecated" class="level3">
+          <h3 class="anchored" data-anchor-id="meta-keywords-deprecated">Meta Keywords (deprecated)</h3>
+          <p>There is a meta tag called keywords that is an archaic way of trying to boost site rankings (example:
+            <code>&lt;meta name="keywords" content="instagram facebook tiktok"&gt;</code>). You can see how this could
+            get abused by people spamming popular brand names and phrases in an effort to get noticed. Google’s famous
+            Page Rank algorithm was revolutionary in that it largely ignored this meta tag and instead looked at a site
+            holistically to determine its category and ranking.</p>
+          <p><em>Source: <a
+                href="https://en.wikipedia.org/wiki/Meta_element#The_keywords_attribute">https://en.wikipedia.org/wiki/Meta_element#The_keywords_attribute</a>.</em>
+          </p>
+        </section>
+      </section>
+      <section id="what-is-microdata" class="level2">
+        <h2 class="anchored" data-anchor-id="what-is-microdata">What is Microdata?</h2>
+        <p>Microdata is metadata that we can add to our content tags. This can help further organize content and even
+          create rich results in search engines.</p>
+        <p>_Source: <a
+            href="https://en.wikipedia.org/wiki/Microdata_(HTML)">https://en.wikipedia.org/wiki/Microdata_(HTML)</a>._
+        </p>
+        <p>Here’s an example of a hotel with rich results. Notice the information displayed on the right (address,
+          phone, etc.). Here is a <a href="https://schema.org/docs/hotels.html">link</a> with suggested microdata for
+          hotels.</p>
+        <div class="quarto-figure quarto-figure-center">
+          <figure class="figure">
+            <p><img src="../../../assets/images/nextjs/tutorial/04/03-hotel-seo-example.PNG"
+                class="img-fluid figure-img"></p>
+            <figcaption>Hotel Rich Results</figcaption>
+          </figure>
+        </div>
+        <p>Our blog will not have rich results, but the microdata is still helpful for Google’s web crawlers to index
+          our site and understand what’s going on. Google does have a <a
+            href="https://search.google.com/test/rich-results">tool</a> to preview rich results for a page that you can
+          use in the future if you’d like.</p>
+        <section id="schema.org-microdata-for-blog-posts" class="level3">
+          <h3 class="anchored" data-anchor-id="schema.org-microdata-for-blog-posts">Schema.org Microdata for Blog Posts
+          </h3>
+          <p>Schema.org contains definitions for many types of content, from <a
+              href="https://schema.org/docs/full.html">Airlines to Vehicles</a>. We will be using Schema’s <a
+              href="https://schema.org/Article">article definition</a> for our blog.</p>
+          <p>Visit <a href="https://schema.org/Article#examples">https://schema.org/Article#examples</a> and Click on
+            “Microdata” for Example 1. Notice the <code>itemscope</code>, <code>itemtype</code>, and
+            <code>itemprop</code> attributes.</p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb4">
+              <pre
+                class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> itemscope itemtype</span><span class="op">=</span><span class="st">"https://schema.org/Article"</span><span class="dt">&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> itemprop</span><span class="op">=</span><span class="st">"name"</span><span class="dt">&gt;</span>How to Tie a Reef Knot<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  by <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> itemprop</span><span class="op">=</span><span class="st">"author"</span><span class="dt">&gt;</span>John Doe<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  ...</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="in-our-blog-component" class="level3">
-<h3 class="anchored" data-anchor-id="in-our-blog-component">In our Blog Component</h3>
-<p>Add the following microdata to the Blog component.</p>
-<p><code>components/Blog.js</code></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;article</span> <span class="ot">itemscope</span> <span class="ot">itemtype</span><span class="op">=</span><span class="st">"https://schema.org/Article"</span><span class="kw">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+        </section>
+        <section id="in-our-blog-component" class="level3">
+          <h3 class="anchored" data-anchor-id="in-our-blog-component">In our Blog Component</h3>
+          <p>Add the following microdata to the Blog component.</p>
+          <p><code>components/Blog.js</code></p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb5">
+              <pre
+                class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;article</span> <span class="ot">itemscope</span> <span class="ot">itemtype</span><span class="op">=</span><span class="st">"https://schema.org/Article"</span><span class="kw">&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;header&gt;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;h1</span> <span class="ot">itemprop</span><span class="op">=</span><span class="st">"name"</span><span class="kw">&gt;</span><span class="va">{</span>props<span class="op">.</span><span class="at">title</span><span class="va">}</span><span class="kw">&lt;/h1&gt;</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p</span> <span class="ot">itemprop</span><span class="op">=</span><span class="st">"datePublished"</span><span class="kw">&gt;</span><span class="va">{</span>props<span class="op">.</span><span class="at">date</span><span class="va">}</span><span class="kw">&lt;/p&gt;</span></span>
@@ -1103,312 +1381,323 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;/header&gt;</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;div</span> <span class="ot">itemprop</span><span class="op">=</span><span class="st">"articleBody"</span><span class="kw">&gt;</span><span class="va">{</span>props<span class="op">.</span><span class="at">children</span><span class="va">}</span><span class="kw">&lt;/div&gt;</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/article&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="robots.txt" class="level2">
-<h2 class="anchored" data-anchor-id="robots.txt"><code>robots.txt</code></h2>
-<p>This is a file that defines rules for web crawlers. We won’t add any rules, but we do need the file. Add it to your <code>public/</code> folder.</p>
-<pre><code>public/
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/article&gt;</span></span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+        </section>
+      </section>
+      <section id="robots.txt" class="level2">
+        <h2 class="anchored" data-anchor-id="robots.txt"><code>robots.txt</code></h2>
+        <p>This is a file that defines rules for web crawlers. We won’t add any rules, but we do need the file. Add it
+          to your <code>public/</code> folder.</p>
+        <pre><code>public/
   favicon.ico
   robots.txt</code></pre>
-<p>Read more about robots.txt <a href="https://developers.google.com/search/docs/advanced/robots/intro">here</a>.</p>
-</section>
-<section id="lighthouse-audit" class="level2">
-<h2 class="anchored" data-anchor-id="lighthouse-audit">Lighthouse Audit</h2>
-<p>There are several tools to check our site’s SEO, one of which is the Lighthouse Audit in Chrome DevTools. While at <code>/blog/post1</code> in a tab, open DevTools with <kbd>F12</kbd> or <kbd>Ctrl + Shift + I</kbd> and navigate to the “Lighthouse” tab. Check the “SEO” box and the “Desktop” radio button.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../../assets/images/nextjs/tutorial/04/04-seo-lighthouse.PNG" class="img-fluid figure-img"></p>
-<figcaption>Lighthouse Config</figcaption>
-</figure>
-</div>
-<p>When you generate the report and if you have done everything, we should see a score of 100!</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../../assets/images/nextjs/tutorial/04/05-seo-results.PNG" class="img-fluid figure-img"></p>
-<figcaption>SEO Results</figcaption>
-</figure>
-</div>
-<section id="other-essential-seo-tools" class="level3">
-<h3 class="anchored" data-anchor-id="other-essential-seo-tools">Other Essential SEO Tools</h3>
-<ul>
-<li><a href="https://search.google.com/search-console/about">Google Search Console</a></li>
-<li><a href="https://validator.w3.org/">w3 Validator</a></li>
-<li><a href="https://validator.schema.org/">Schema Validator</a></li>
-</ul>
-</section>
-</section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>We have learned basics of SEO including metadata and microdata. We also learned how to perform a lighthouse audit in Chrome DevTools to check our site’s SEO.</p>
-<p>Finished code: <a href="https://replit.com/@buckldav/next-tut-4">https://replit.com/@buckldav/next-tut-4</a>.</p>
-<section id="learning-targets" class="level6">
-<h6 class="anchored" data-anchor-id="learning-targets">Learning Targets</h6>
-<p>Standard 4.6 - Use meta tags for page documentation and search engine optimization (SEO)</p>
-<ul>
-<li>Specify page description, keywords, viewport, and author using meta tags.</li>
-<li>Declare encoding using meta tags.</li>
-<li>Understand principles of search engine optimization.</li>
-</ul>
+        <p>Read more about robots.txt <a
+            href="https://developers.google.com/search/docs/advanced/robots/intro">here</a>.</p>
+      </section>
+      <section id="lighthouse-audit" class="level2">
+        <h2 class="anchored" data-anchor-id="lighthouse-audit">Lighthouse Audit</h2>
+        <p>There are several tools to check our site’s SEO, one of which is the Lighthouse Audit in Chrome DevTools.
+          While at <code>/blog/post1</code> in a tab, open DevTools with <kbd>F12</kbd> or <kbd>Ctrl + Shift + I</kbd>
+          and navigate to the “Lighthouse” tab. Check the “SEO” box and the “Desktop” radio button.</p>
+        <div class="quarto-figure quarto-figure-center">
+          <figure class="figure">
+            <p><img src="../../../assets/images/nextjs/tutorial/04/04-seo-lighthouse.PNG" class="img-fluid figure-img">
+            </p>
+            <figcaption>Lighthouse Config</figcaption>
+          </figure>
+        </div>
+        <p>When you generate the report and if you have done everything, we should see a score of 100!</p>
+        <div class="quarto-figure quarto-figure-center">
+          <figure class="figure">
+            <p><img src="../../../assets/images/nextjs/tutorial/04/05-seo-results.PNG" class="img-fluid figure-img"></p>
+            <figcaption>SEO Results</figcaption>
+          </figure>
+        </div>
+        <section id="other-essential-seo-tools" class="level3">
+          <h3 class="anchored" data-anchor-id="other-essential-seo-tools">Other Essential SEO Tools</h3>
+          <ul>
+            <li><a href="https://search.google.com/search-console/about">Google Search Console</a></li>
+            <li><a href="https://validator.w3.org/">w3 Validator</a></li>
+            <li><a href="https://validator.schema.org/">Schema Validator</a></li>
+          </ul>
+        </section>
+      </section>
+      <section id="summary" class="level2">
+        <h2 class="anchored" data-anchor-id="summary">Summary</h2>
+        <p>We have learned basics of SEO including metadata and microdata. We also learned how to perform a lighthouse
+          audit in Chrome DevTools to check our site’s SEO.</p>
+        <p>Finished code: <a href="https://replit.com/@buckldav/next-tut-4">https://replit.com/@buckldav/next-tut-4</a>.
+        </p>
+        <section id="learning-targets" class="level6">
+          <h6 class="anchored" data-anchor-id="learning-targets">Learning Targets</h6>
+          <p>Standard 4.6 - Use meta tags for page documentation and search engine optimization (SEO)</p>
+          <ul>
+            <li>Specify page description, keywords, viewport, and author using meta tags.</li>
+            <li>Declare encoding using meta tags.</li>
+            <li>Understand principles of search engine optimization.</li>
+          </ul>
 
 
-</section>
-</section>
+        </section>
+      </section>
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
+    </main> <!-- /main -->
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const icon = "";
+        const anchorJS = new window.AnchorJS();
+        anchorJS.options = {
+          placement: 'right',
+          icon: icon
+        };
+        anchorJS.add('.anchored');
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {
+              return true;
+            }
+          }
+          return false;
         }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
+        const onCopySuccess = function (e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button,
+              {
+                trigger: "manual",
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]
+              });
+            tooltip.show();
+          }
+          setTimeout(function () {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
         }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const getTextToCopy = function (trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
         }
-      }
-      return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp("https:\/\/cs\.dbuckley\.dev");
-      var isInternal = (href) => {
+        var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
+        }
+        // Inspect non-navigation links and adorn them if external
+        var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i = 0; i < links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
           }
         }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function (el) {
+              return el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'quarto',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+          window.tippy(el, config);
         }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i = 0; i < noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function () {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch { }
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
             } else {
-              container.appendChild(child.cloneNode(true));
-              break;
+              return "";
             }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
-          }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
+        const xrefs = window.document.querySelectorAll('a.quarto-xref');
+        const processXRef = (id, note) => {
+          // Strip column container classes
+          const stripColumnClz = (el) => {
+            el.classList.remove("page-full", "page-columns");
+            if (el.children) {
+              for (const child of el.children) {
+                stripColumnClz(child);
+              }
+            }
+          }
+          stripColumnClz(note)
+          if (id === null || id.startsWith('sec-')) {
+            // Special case sections, only their first couple elements
+            const container = document.createElement("div");
+            if (note.children && note.children.length > 2) {
+              container.appendChild(note.children[0].cloneNode(true));
+              for (let i = 1; i < note.children.length; i++) {
+                const child = note.children[i];
+                if (child.tagName === "P" && child.innerText === "") {
+                  continue;
+                } else {
+                  container.appendChild(child.cloneNode(true));
+                  break;
+                }
+              }
+              if (window.Quarto?.typesetMath) {
+                window.Quarto.typesetMath(container);
+              }
+              return container.innerHTML
+            } else {
+              if (window.Quarto?.typesetMath) {
+                window.Quarto.typesetMath(note);
+              }
+              return note.innerHTML;
+            }
+          } else {
+            // Remove any anchor links if they are present
+            const anchorLink = note.querySelector('a.anchorjs-link');
+            if (anchorLink) {
+              anchorLink.remove();
+            }
+            if (window.Quarto?.typesetMath) {
+              window.Quarto.typesetMath(note);
+            }
+            if (note.classList.contains("callout")) {
+              return note.outerHTML;
+            } else {
+              return note.innerHTML;
+            }
+          }
+        }
+        for (var i = 0; i < xrefs.length; i++) {
+          const xref = xrefs[i];
+          tippyHover(xref, undefined, function (instance) {
+            instance.disable();
+            let url = xref.getAttribute('href');
+            let hash = undefined;
+            if (url.startsWith('#')) {
+              hash = url;
+            } else {
+              try { hash = new URL(url).hash; } catch { }
+            }
+            if (hash) {
+              const id = hash.replace(/^#\/?/, "");
+              const note = window.document.getElementById(id);
+              if (note !== null) {
+                try {
+                  const html = processXRef(id, note.cloneNode(true));
+                  instance.setContent(html);
+                } finally {
+                  instance.enable();
+                  instance.show();
+                }
+              } else {
+                // See if we can fetch this
+                fetch(url.split('#')[0])
+                  .then(res => res.text())
+                  .then(html => {
+                    const parser = new DOMParser();
+                    const htmlDoc = parser.parseFromString(html, "text/html");
+                    const note = htmlDoc.getElementById(id);
+                    if (note !== null) {
+                      const html = processXRef(id, note);
+                      instance.setContent(html);
+                    }
+                  }).finally(() => {
+                    instance.enable();
+                    instance.show();
+                  });
+              }
+            } else {
+              // See if we can fetch a full url (with no hash to target)
+              // This is a special case and we should probably do some content thinning / targeting
+              fetch(url)
+                .then(res => res.text())
+                .then(html => {
+                  const parser = new DOMParser();
+                  const htmlDoc = parser.parseFromString(html, "text/html");
+                  const note = htmlDoc.querySelector('main.content');
+                  if (note !== null) {
+                    // This should only happen for chapter cross references
+                    // (since there is no id in the URL)
+                    // remove the first header
+                    if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                      note.children[0].remove();
+                    }
+                    const html = processXRef(null, note);
+                    instance.setContent(html);
+                  }
+                }).finally(() => {
+                  instance.enable();
+                  instance.show();
+                });
+            }
+          }, function (instance) {
+          });
+        }
         let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
+        const selectorForAnnotation = (cell, annotation) => {
           let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          let lineAttr = 'data-code-annotation="' + annotation + '"';
           const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
           return selector;
         }
@@ -1425,11 +1714,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           let height = null;
           let parent = null;
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
             if (lineIds.length > 1) {
               const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
               const bottom = lastEl.offsetTop + lastEl.offsetHeight;
@@ -1472,32 +1761,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           });
           selectedAnnoteEl = undefined;
         };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
+        // Handle positioning of the toggle
+        window.addEventListener(
+          "resize",
+          throttle(() => {
+            elRect = undefined;
+            if (selectedAnnoteEl) {
+              selectCodeLines(selectedAnnoteEl);
+            }
+          }, 10)
+        );
+        function throttle(fn, ms) {
+          let throttle = false;
+          let timer;
+          return (...args) => {
+            if (!throttle) { // first call gets through
               fn.apply(this, args);
               throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
+            } else { // all the others get throttled
+              if (timer) clearTimeout(timer); // cancel #2
               timer = setTimeout(() => {
                 fn.apply(this, args);
                 timer = throttle = false;
               }, ms);
-          }
-        };
-      }
+            }
+          };
+        }
         // Attach click handler to the DT
         const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
         for (const annoteDlNode of annoteDls) {
@@ -1518,61 +1807,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             }
           });
         }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
-  });
-  </script>
-</div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>Published by Merit Academy under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons License</a>.</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/buckldav/learn-merit/edit/main/docs/react-js/next-blog-tutorial/04.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
-    <div class="nav-footer-right">
-      &nbsp;
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i = 0; i < bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function () {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function (cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+    </script>
+  </div> <!-- /content -->
+  <footer class="footer">
+    <div class="nav-footer">
+      <div class="nav-footer-left">
+        &nbsp;
+      </div>
+      <div class="nav-footer-center">
+        <p>Published by Merit Academy under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+            License</a>.</p>
+        <div class="toc-actions d-sm-block d-md-none">
+          <ul>
+            <li><a href="https://github.com/buckldav/learn-merit/edit/main/docs/react-js/next-blog-tutorial/04.md"
+                class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-footer-right">
+        &nbsp;
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 
 
 
-</body></html>
+</body>
+
+</html>

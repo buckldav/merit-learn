@@ -1,87 +1,174 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dinosaur Game Clone – Merit Academy Tech U</title>
-<style>
-/* Default styles provided by pandoc.
+  <title>Dinosaur Game Clone – Merit Academy CS</title>
+  <style>
+    /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-</style>
+    span.smallcaps {
+      font-variant: small-caps;
+    }
+
+    div.columns {
+      display: flex;
+      gap: 1.5em;
+    }
+
+    div.column {
+      flex: auto;
+    }
+
+    @media screen {
+      div.columns {
+        gap: min(4vw, 1.5em);
+      }
+
+      div.column {
+        overflow-x: auto;
+      }
+    }
+
+    div.hanging-indent {
+      margin-left: 1.5em;
+      text-indent: -1.5em;
+    }
+
+    ul.task-list {
+      list-style: none;
+    }
+
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em;
+      /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
+      vertical-align: middle;
+    }
+
+    /* CSS for syntax highlighting */
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    pre>code.sourceCode {
+      white-space: pre;
+      position: relative;
+    }
+
+    pre>code.sourceCode>span {
+      display: inline-block;
+      line-height: 1.25;
+    }
+
+    pre>code.sourceCode>span:empty {
+      height: 1.2em;
+    }
+
+    .sourceCode {
+      overflow: visible;
+    }
+
+    code.sourceCode>span {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    div.sourceCode {
+      margin: 1em 0;
+    }
+
+    pre.sourceCode {
+      margin: 0;
+    }
+
+    @media screen {
+      div.sourceCode {
+        overflow: auto;
+      }
+    }
+
+    @media print {
+      pre>code.sourceCode {
+        white-space: pre-wrap;
+      }
+
+      pre>code.sourceCode>span {
+        text-indent: -5em;
+        padding-left: 5em;
+      }
+    }
+
+    pre.numberSource code {
+      counter-reset: source-line 0;
+    }
+
+    pre.numberSource code>span {
+      position: relative;
+      left: -4em;
+      counter-increment: source-line;
+    }
+
+    pre.numberSource code>span>a:first-child::before {
+      content: counter(source-line);
+      position: relative;
+      left: -1em;
+      text-align: right;
+      vertical-align: baseline;
+      border: none;
+      display: inline-block;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 0 4px;
+      width: 4em;
+    }
+
+    pre.numberSource {
+      margin-left: 3em;
+      padding-left: 4px;
+    }
+
+    div.sourceCode {}
+
+    @media screen {
+      pre>code.sourceCode>span>a:first-child::before {
+        text-decoration: underline;
+      }
+    }
+  </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-971e9fbb5c95271eba3f977a140ca80a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+  <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+  <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+  <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+  <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+  <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+  <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+  <meta name="quarto:offset" content="../../../">
+  <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+  <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+  <script src="../../../site_libs/quarto-html/popper.min.js"></script>
+  <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+  <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+  <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+  <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css"
+    rel="stylesheet" id="quarto-text-highlighting-styles">
+  <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+  <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../../site_libs/bootstrap/bootstrap-971e9fbb5c95271eba3f977a140ca80a.min.css" rel="stylesheet"
+    append-hash="true" id="quarto-bootstrap" data-mode="light">
+  <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -114,905 +201,1044 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <body class="nav-sidebar docked quarto-light">
 
-<div id="quarto-search-results"></div>
+  <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/processing/index.html">Processing - Intro to CS</a></li><li class="breadcrumb-item"><a href="../../../docs/processing/data-structures/index.html">Data Structures</a></li><li class="breadcrumb-item"><a href="../../../docs/processing/data-structures/03.html">Dinosaur Game Clone</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+    <nav class="quarto-secondary-nav">
+      <div class="container-fluid d-flex">
+        <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button"
+          data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false"
+          aria-label="Toggle sidebar navigation"
+          onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <i class="bi bi-layout-text-sidebar-reverse"></i>
+        </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../../docs/processing/index.html">Processing - Intro to CS</a></li>
+            <li class="breadcrumb-item"><a href="../../../docs/processing/data-structures/index.html">Data
+                Structures</a></li>
+            <li class="breadcrumb-item"><a href="../../../docs/processing/data-structures/03.html">Dinosaur Game
+                Clone</a></li>
+          </ol>
+        </nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse"
+          data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false"
+          aria-label="Toggle sidebar navigation"
+          onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../../">Merit Academy Tech U</a> 
-    </div>
+        <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+          <i class="bi bi-search"></i>
+        </button>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
+    </nav>
+  </header>
+  <!-- content -->
+  <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+    <!-- sidebar -->
+    <nav id="quarto-sidebar"
+      class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+      <div class="pt-lg-2 mt-2 text-left sidebar-header">
+        <div class="sidebar-title mb-0 py-0">
+          <a href="../../../">Merit Academy CS</a>
+        </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+          <div id="quarto-search" class="" title="Search"></div>
         </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/git/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <div class="sidebar-menu-container">
+        <ul class="list-unstyled mt-1">
+          <li class="sidebar-item">
+            <div class="sidebar-item-container">
+              <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Home</span></a>
+            </div>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/git/markdown/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Markdown</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/git/markdown/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub and Markdown</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/git/markdown/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Replit and Markdown</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/git/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub Projects</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/git/10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GitHub Pages with Jekyll</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/processing/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Processing - Intro to CS</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+            <div class="sidebar-item-container">
+              <a href="../../../docs/git/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">GitHub</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/git/markdown/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Markdown</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/git/markdown/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">GitHub and Markdown</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/git/markdown/02.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Replit and Markdown</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/git/02.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">GitHub Projects</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/git/10.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">GitHub Pages with Jekyll</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/processing/basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Processing Basics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/basics/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">What is a Programming Language?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/basics/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">First Processing Program</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/basics/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pizza Time!</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/basics/04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quiz Game - Logic and Control Flow</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/basics/05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Snowflake App</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/basics/06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Input Validator</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
+            <div class="sidebar-item-container">
+              <a href="../../../docs/processing/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Processing - Intro to CS</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/processing/basics/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Processing Basics</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/basics/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">What is a Programming Language?</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/basics/02.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">First Processing Program</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/basics/03.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Pizza Time!</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/basics/04.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Quiz Game - Logic and Control Flow</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/basics/05.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Snowflake App</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/basics/06.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Input Validator</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/processing/data-structures/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Data Structures</span></a>
+                  <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/data-structures/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">What are Data Structures?</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/data-structures/02.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Pokemon Information Science</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/processing/data-structures/03.html"
+                        class="sidebar-item-text sidebar-link active">
+                        <span class="menu-text">Dinosaur Game Clone</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/processing/data-structures/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Structures</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/data-structures/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">What are Data Structures?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/data-structures/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pokemon Information Science</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/processing/data-structures/03.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Dinosaur Game Clone</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/web-dev-basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Web Dev Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev-basics/html.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">HTML</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev-basics/css-basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CSS Basics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev-basics/css-layouts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CSS Layouts</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev-basics/well-formed.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Well-Formed Websites</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev-basics/the-internet.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The Internet</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/web-dev/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Web Dev Advanced</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev/web-services.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to Web Services</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev/http-https.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">HTTP and HTTPS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev/docker.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Docker</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/web-dev/systemd-ftp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">systemd and FTP</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/golang/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Golang</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to Go</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/mvc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 1 - MVC Web Development</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/tailwind.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 2 - Styling with Tailwind</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/http-methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 3 - HTTP Methods and Forms</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/model-db.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 4 - Models and SQL Databases</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/admin.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 5 - Users and Admin Interface Part 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/admin2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 6 - Users and Admin Interface Part 2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/env.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 7 - Environment</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/deploy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 8 - Deploy Part 1</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/golang/deploy2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Beego Part 9 - Deploy Part 2</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/javascript/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JavaScript</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+            <div class="sidebar-item-container">
+              <a href="../../../docs/web-dev-basics/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Web Dev Basics</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev-basics/html.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">HTML</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev-basics/css-basics.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">CSS Basics</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev-basics/css-layouts.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">CSS Layouts</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev-basics/well-formed.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Well-Formed Websites</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev-basics/the-internet.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">The Internet</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/javascript/basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JavaScript Basics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Variables and Functions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Types and Objects</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The Document and Window Objects</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Logic and Control Flow</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Events</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">String, Number, and Array Methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/unit-project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unit Project - To Do App</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/basics/for-teachers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">For Teachers</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/games/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JavaScript Games</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/forms/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JavaScript Forms</span></a>
-  </div>
-</li>
+            <div class="sidebar-item-container">
+              <a href="../../../docs/web-dev/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Web Dev Advanced</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev/web-services.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Intro to Web Services</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev/http-https.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">HTTP and HTTPS</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev/docker.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Docker</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/web-dev/systemd-ftp.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">systemd and FTP</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/javascript/api/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">REST APIs with Express.js</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/javascript/api/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Intro to Express.js</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/react-js/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React.js</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+            <div class="sidebar-item-container">
+              <a href="../../../docs/golang/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Golang</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/intro.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Intro to Go</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/mvc.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 1 - MVC Web Development</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/tailwind.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 2 - Styling with Tailwind</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/http-methods.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 3 - HTTP Methods and Forms</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/model-db.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 4 - Models and SQL Databases</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/admin.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 5 - Users and Admin Interface Part 1</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/admin2.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 6 - Users and Admin Interface Part 2</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/env.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 7 - Environment</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/deploy.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 8 - Deploy Part 1</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/golang/deploy2.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Beego Part 9 - Deploy Part 2</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/react-js/basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React.js Basics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/basics/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React State and Props</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/basics/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">React w/Fetch API</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
+            <div class="sidebar-item-container">
+              <a href="../../../docs/javascript/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">JavaScript</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/javascript/basics/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">JavaScript Basics</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Variables and Functions</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/02.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Data Types and Objects</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/03.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">The Document and Window Objects</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/04.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Logic and Control Flow</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/05.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Events</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/06.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">String, Number, and Array Methods</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/unit-project.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Unit Project - To Do App</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/basics/for-teachers.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">For Teachers</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/javascript/games/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">JavaScript Games</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/javascript/forms/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">JavaScript Forms</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/javascript/api/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">REST APIs with Express.js</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/javascript/api/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Intro to Express.js</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/react-js/next-blog-tutorial/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Next.js Blog Tutorial</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/next-blog-tutorial/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Part 1 - Next.js Project Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/next-blog-tutorial/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Part 2 - Blog Posts and CSS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/next-blog-tutorial/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Part 3 - Components and DRYness</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/next-blog-tutorial/04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Part 4 - Search Engine Optimization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/react-js/next-blog-tutorial/05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Part 5 - APIs and Databases</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/python/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Learn Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/python/objects.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Objects in Python</span></a>
-  </div>
-</li>
+            <div class="sidebar-item-container">
+              <a href="../../../docs/react-js/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">React.js</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/react-js/basics/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">React.js Basics</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/basics/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">React State and Props</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/basics/02.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">React w/Fetch API</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/react-js/next-blog-tutorial/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Next.js Blog Tutorial</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/next-blog-tutorial/01.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Part 1 - Next.js Project Setup</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/next-blog-tutorial/02.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Part 2 - Blog Posts and CSS</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/next-blog-tutorial/03.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Part 3 - Components and DRYness</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/next-blog-tutorial/04.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Part 4 - Search Engine Optimization</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/react-js/next-blog-tutorial/05.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Part 5 - APIs and Databases</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/python/pyxel/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Learn Pyxel</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/python/pyxel/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Physics Engine</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/python/projects.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python Projects</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/unity-and-cs/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Unity and C#</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 show">  
+            <div class="sidebar-item-container">
+              <a href="../../../docs/python/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Learn Python</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/python/objects.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Objects in Python</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/python/pyxel/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Learn Pyxel</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/python/pyxel/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Physics Engine</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/python/projects.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Python Projects</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/unity-and-cs/platformer-basics/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Platformer Basics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/platformer-basics/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating a Unity Project</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/platformer-basics/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating a Player</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/platformer-basics/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating a Tilemap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/platformer-basics/04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Adding Tiles</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/platformer-basics/05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Scripting</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/platformer-basics/06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Platformer Extras</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
+            <div class="sidebar-item-container">
+              <a href="../../../docs/unity-and-cs/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Unity and C#</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/unity-and-cs/platformer-basics/index.html"
+                    class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Platformer Basics</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/platformer-basics/01.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Creating a Unity Project</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/platformer-basics/02.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Creating a Player</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/platformer-basics/03.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Creating a Tilemap</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/platformer-basics/04.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Adding Tiles</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/platformer-basics/05.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Scripting</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/platformer-basics/06.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Platformer Extras</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/unity-and-cs/top-down-game/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Top Down Game</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/top-down-game/01.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Project Setup and Folders</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/top-down-game/02.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Creating a Player and Tilemap</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/top-down-game/03.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Heads-Up Display</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/top-down-game/04.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Collectibles</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/top-down-game/05.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Prefabs and Scenes</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/top-down-game/06.html" class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Traverse Through Scenes and Doors</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/unity-and-cs/animation.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Animation Basics</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/unity-and-cs/state-machines/index.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">State Machines</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/state-machines/01.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Getting Started</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/state-machines/02.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Enemy States</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/unity-and-cs/state-machines/03.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">States and Animation</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/unity-and-cs/resources.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Extra Resources</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/unity-and-cs/top-down-game/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Top Down Game</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/top-down-game/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Project Setup and Folders</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/top-down-game/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Creating a Player and Tilemap</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/top-down-game/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Heads-Up Display</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/top-down-game/04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Collectibles</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/top-down-game/05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Prefabs and Scenes</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/top-down-game/06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Traverse Through Scenes and Doors</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/animation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Animation Basics</span></a>
-  </div>
-</li>
+            <div class="sidebar-item-container">
+              <a href="../../../docs/java-greenfoot/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Java with Greenfoot</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/java-greenfoot/turtley-amazing/index.html"
+                    class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Turtley Amazing</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/01.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Introduction</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/02.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Setup</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/03.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Drawing a Line</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/04.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Turning</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/05.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Changing Colors</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/06.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Repetition</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/07.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Better Spirals</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/08.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Loopy Colors</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/09.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Modulo to the Rescue</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtley-amazing/10.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Enormous Lists</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/java-greenfoot/turtle-snowflakes/index.html"
+                    class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Turtle Snowflakes</span></a>
+                  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false"
+                    aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2"></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth2 ">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtle-snowflakes/01.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Introduction</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="../../../docs/java-greenfoot/turtle-snowflakes/02.html"
+                        class="sidebar-item-text sidebar-link">
+                        <span class="menu-text">Using Loops to Create Shapes</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/unity-and-cs/state-machines/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">State Machines</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/state-machines/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Getting Started</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/state-machines/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Enemy States</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/state-machines/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">States and Animation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/unity-and-cs/resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Extra Resources</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/java-greenfoot/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Java with Greenfoot</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth1 show">  
+            <div class="sidebar-item-container">
+              <a href="../../../docs/algorithms/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Algorithms</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/algorithms/01.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Strings Part 1</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
           <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/java-greenfoot/turtley-amazing/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Turtley Amazing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-22" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <div class="sidebar-item-container">
+              <a href="../../../docs/mobile-apps/index.html" class="sidebar-item-text sidebar-link">
+                <span class="menu-text">Mobile Apps</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="true"
+                aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth1 show">
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/mobile-apps/01.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Mobile App Project Setup</span></a>
+                </div>
+              </li>
+              <li class="sidebar-item">
+                <div class="sidebar-item-container">
+                  <a href="../../../docs/mobile-apps/02.html" class="sidebar-item-text sidebar-link">
+                    <span class="menu-text">Markup Languages</span></a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
-      <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Drawing a Line</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Turning</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Changing Colors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Repetition</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Better Spirals</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Loopy Colors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Modulo to the Rescue</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtley-amazing/10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Enormous Lists</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/java-greenfoot/turtle-snowflakes/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Turtle Snowflakes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-23" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtle-snowflakes/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/java-greenfoot/turtle-snowflakes/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Using Loops to Create Shapes</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/algorithms/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Algorithms</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-24" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/algorithms/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Strings Part 1</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../../docs/mobile-apps/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Mobile Apps</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-25" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/mobile-apps/01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Mobile App Project Setup</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../docs/mobile-apps/02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Markup Languages</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
+    </nav>
+    <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse"
+      data-bs-target=".quarto-sidebar-collapse-item"></div>
+    <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link active" data-scroll-target="#how-it-works">How it Works</a>
-  <ul class="collapse">
-  <li><a href="#multiple-script-files" id="toc-multiple-script-files" class="nav-link" data-scroll-target="#multiple-script-files">1. Multiple Script Files</a></li>
-  <li><a href="#globals" id="toc-globals" class="nav-link" data-scroll-target="#globals">2. Globals</a></li>
-  <li><a href="#classes-make-objects" id="toc-classes-make-objects" class="nav-link" data-scroll-target="#classes-make-objects">3. Classes Make Objects</a></li>
-  <li><a href="#the-other-javascript-files" id="toc-the-other-javascript-files" class="nav-link" data-scroll-target="#the-other-javascript-files">4. The Other JavaScript Files</a></li>
-  </ul></li>
-  <li><a href="#make-an-enemy-randomly-spawn-and-move" id="toc-make-an-enemy-randomly-spawn-and-move" class="nav-link" data-scroll-target="#make-an-enemy-randomly-spawn-and-move">Make an Enemy Randomly Spawn and Move</a></li>
-  <li><a href="#spawn-the-enemy-off-screen" id="toc-spawn-the-enemy-off-screen" class="nav-link" data-scroll-target="#spawn-the-enemy-off-screen">Spawn the Enemy Off Screen</a></li>
-  <li><a href="#spawn-more-enemies" id="toc-spawn-more-enemies" class="nav-link" data-scroll-target="#spawn-more-enemies">Spawn More Enemies</a></li>
-  <li><a href="#speed-enemies-up" id="toc-speed-enemies-up" class="nav-link" data-scroll-target="#speed-enemies-up">Speed Enemies Up</a></li>
-  <li><a href="#game-over-screen" id="toc-game-over-screen" class="nav-link" data-scroll-target="#game-over-screen">Game Over Screen</a></li>
-  <li><a href="#final-code" id="toc-final-code" class="nav-link" data-scroll-target="#final-code">Final Code</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/buckldav/learn-merit/edit/main/docs/processing/data-structures/03.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+      <nav id="TOC" role="doc-toc" class="toc-active">
+        <h2 id="toc-title">On this page</h2>
+
+        <ul>
+          <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link active"
+              data-scroll-target="#how-it-works">How it Works</a>
+            <ul class="collapse">
+              <li><a href="#multiple-script-files" id="toc-multiple-script-files" class="nav-link"
+                  data-scroll-target="#multiple-script-files">1. Multiple Script Files</a></li>
+              <li><a href="#globals" id="toc-globals" class="nav-link" data-scroll-target="#globals">2. Globals</a></li>
+              <li><a href="#classes-make-objects" id="toc-classes-make-objects" class="nav-link"
+                  data-scroll-target="#classes-make-objects">3. Classes Make Objects</a></li>
+              <li><a href="#the-other-javascript-files" id="toc-the-other-javascript-files" class="nav-link"
+                  data-scroll-target="#the-other-javascript-files">4. The Other JavaScript Files</a></li>
+            </ul>
+          </li>
+          <li><a href="#make-an-enemy-randomly-spawn-and-move" id="toc-make-an-enemy-randomly-spawn-and-move"
+              class="nav-link" data-scroll-target="#make-an-enemy-randomly-spawn-and-move">Make an Enemy Randomly Spawn
+              and Move</a></li>
+          <li><a href="#spawn-the-enemy-off-screen" id="toc-spawn-the-enemy-off-screen" class="nav-link"
+              data-scroll-target="#spawn-the-enemy-off-screen">Spawn the Enemy Off Screen</a></li>
+          <li><a href="#spawn-more-enemies" id="toc-spawn-more-enemies" class="nav-link"
+              data-scroll-target="#spawn-more-enemies">Spawn More Enemies</a></li>
+          <li><a href="#speed-enemies-up" id="toc-speed-enemies-up" class="nav-link"
+              data-scroll-target="#speed-enemies-up">Speed Enemies Up</a></li>
+          <li><a href="#game-over-screen" id="toc-game-over-screen" class="nav-link"
+              data-scroll-target="#game-over-screen">Game Over Screen</a></li>
+          <li><a href="#final-code" id="toc-final-code" class="nav-link" data-scroll-target="#final-code">Final Code</a>
+          </li>
+        </ul>
+        <div class="toc-actions">
+          <ul>
+            <li><a href="https://github.com/buckldav/learn-merit/edit/main/docs/processing/data-structures/03.md"
+                class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
-<!-- main -->
-<main class="content" id="quarto-document-content">
+    <!-- main -->
+    <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/processing/index.html">Processing - Intro to CS</a></li><li class="breadcrumb-item"><a href="../../../docs/processing/data-structures/index.html">Data Structures</a></li><li class="breadcrumb-item"><a href="../../../docs/processing/data-structures/03.html">Dinosaur Game Clone</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Dinosaur Game Clone</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
+      <header id="title-block-header" class="quarto-title-block default">
+        <nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../../docs/processing/index.html">Processing - Intro to CS</a></li>
+            <li class="breadcrumb-item"><a href="../../../docs/processing/data-structures/index.html">Data
+                Structures</a></li>
+            <li class="breadcrumb-item"><a href="../../../docs/processing/data-structures/03.html">Dinosaur Game
+                Clone</a></li>
+          </ol>
+        </nav>
+        <div class="quarto-title">
+          <h1 class="title">Dinosaur Game Clone</h1>
+        </div>
 
 
-<p>Fork this repl to begin: <a href="https://replit.com/@buckldav/DinoGameP5Starter#index.html">https://replit.com/@buckldav/DinoGameP5Starter#index.html</a>. Here’s what we will be doing:</p>
-<ol type="1">
-<li>Adding more enemies.
-<ul>
-<li>Enemies spawn in random positions.</li>
-<li>Enemies speed up as the game goes along.</li>
-<li>Enemies move across the screen.</li>
-<li>If an enemy collides with the player, the game ends.</li>
-</ul></li>
-<li>Adding game over functionality (i.e.&nbsp;end screen, message to player, etc.).</li>
-</ol>
-<section id="how-it-works" class="level2">
-<h2 class="anchored" data-anchor-id="how-it-works">How it Works</h2>
-<section id="multiple-script-files" class="level3">
-<h3 class="anchored" data-anchor-id="multiple-script-files">1. Multiple Script Files</h3>
-<p>In <code>index.html</code>, we have 5 different script files loaded. We could combine all of these scripts to one file, but it’s a good idea in large projects to organize and compartmentalize code.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!--  Files are loaded from top to bottom.  --&gt;</span></span>
+
+        <div class="quarto-title-meta">
+
+
+
+
+        </div>
+
+
+
+      </header>
+
+
+      <p>Fork this repl to begin: <a
+          href="https://replit.com/@buckldav/DinoGameP5Starter#index.html">https://replit.com/@buckldav/DinoGameP5Starter#index.html</a>.
+        Here’s what we will be doing:</p>
+      <ol type="1">
+        <li>Adding more enemies.
+          <ul>
+            <li>Enemies spawn in random positions.</li>
+            <li>Enemies speed up as the game goes along.</li>
+            <li>Enemies move across the screen.</li>
+            <li>If an enemy collides with the player, the game ends.</li>
+          </ul>
+        </li>
+        <li>Adding game over functionality (i.e.&nbsp;end screen, message to player, etc.).</li>
+      </ol>
+      <section id="how-it-works" class="level2">
+        <h2 class="anchored" data-anchor-id="how-it-works">How it Works</h2>
+        <section id="multiple-script-files" class="level3">
+          <h3 class="anchored" data-anchor-id="multiple-script-files">1. Multiple Script Files</h3>
+          <p>In <code>index.html</code>, we have 5 different script files loaded. We could combine all of these scripts
+            to one file, but it’s a good idea in large projects to organize and compartmentalize code.</p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb1">
+              <pre
+                class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!--  Files are loaded from top to bottom.  --&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"globals.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"enemy.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"environment.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"player.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"script.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="globals" class="level3">
-<h3 class="anchored" data-anchor-id="globals">2. Globals</h3>
-<p>Some data is needed throughout the whole program. It’s also convienent to keep similar data together in one spot (i.e.&nbsp;colors) so that if you want to change the color scheme of your entire app or game, you don’t need to comb through files to try to find what you need.</p>
-<p>In <code>globals.js</code> an object called <code>GLOBALS</code> contains colors and a few positions of other objects.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// The const keyword is used instead of let if the data doesn't change</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"script.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+        </section>
+        <section id="globals" class="level3">
+          <h3 class="anchored" data-anchor-id="globals">2. Globals</h3>
+          <p>Some data is needed throughout the whole program. It’s also convienent to keep similar data together in one
+            spot (i.e.&nbsp;colors) so that if you want to change the color scheme of your entire app or game, you don’t
+            need to comb through files to try to find what you need.</p>
+          <p>In <code>globals.js</code> an object called <code>GLOBALS</code> contains colors and a few positions of
+            other objects.</p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb2">
+              <pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// The const keyword is used instead of let if the data doesn't change</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> GLOBALS <span class="op">=</span> {</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">GRAVITY</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">JUMP_STRENGTH</span><span class="op">:</span> <span class="op">-</span><span class="dv">30</span><span class="op">,</span></span>
@@ -1027,12 +1253,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">COLLISION_BOX</span><span class="op">:</span> <span class="st">"pink"</span><span class="op">,</span></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">SCORE</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="classes-make-objects" class="level3">
-<h3 class="anchored" data-anchor-id="classes-make-objects">3. Classes Make Objects</h3>
-<p>Also in the <code>globals.js</code> file is a <code>class Box</code>. <strong>Classes</strong> are templates for creating <strong>objects</strong>. Here’s how the Box class does that.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Box {</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+        </section>
+        <section id="classes-make-objects" class="level3">
+          <h3 class="anchored" data-anchor-id="classes-make-objects">3. Classes Make Objects</h3>
+          <p>Also in the <code>globals.js</code> file is a <code>class Box</code>. <strong>Classes</strong> are
+            templates for creating <strong>objects</strong>. Here’s how the Box class does that.</p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb3">
+              <pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Box {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(x<span class="op">,</span> y<span class="op">,</span> w<span class="op">,</span> h) {</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Class variables start with 'this.'</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">x</span> <span class="op">=</span> x</span>
@@ -1056,51 +1287,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(box<span class="op">.</span><span class="at">y</span>)</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Boxes keep track of position for the object and its collision in our game.</p>
-</section>
-<section id="the-other-javascript-files" class="level3">
-<h3 class="anchored" data-anchor-id="the-other-javascript-files">4. The Other JavaScript Files</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 9%">
-<col style="width: 90%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>File</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>enemy.js</code></td>
-<td>The Enemy class. Enemies can have different pictures. Enemies also end the game if they collide with the player.</td>
-</tr>
-<tr class="even">
-<td><code>environment.js</code></td>
-<td>The Environment class. Contains a ground box to prevent the player from falling forever. <br>Add other background elements in addition to the sky if you’d like.</td>
-</tr>
-<tr class="odd">
-<td><code>globals.js</code></td>
-<td>Contains global constants and the functions <code>updateScore()</code>, <code>showCollisionBox()</code>, and <code>gameOver()</code>.</td>
-</tr>
-<tr class="even">
-<td><code>player.js</code></td>
-<td>The Player class. Update the player’s position and check for collisions.</td>
-</tr>
-<tr class="odd">
-<td><code>script.js</code></td>
-<td>Contains the game logic, which is executed in p5.js’ functions (<code>setup()</code>, <code>draw()</code>, <code>keyPressed()</code>).</td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="make-an-enemy-randomly-spawn-and-move" class="level2">
-<h2 class="anchored" data-anchor-id="make-an-enemy-randomly-spawn-and-move">Make an Enemy Randomly Spawn and Move</h2>
-<p>To figure out how to move the enemy, perhaps we should reference the player’s <code>update()</code> function to see how the player moves.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Player.js</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span></span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+          <p>Boxes keep track of position for the object and its collision in our game.</p>
+        </section>
+        <section id="the-other-javascript-files" class="level3">
+          <h3 class="anchored" data-anchor-id="the-other-javascript-files">4. The Other JavaScript Files</h3>
+          <table class="caption-top table">
+            <colgroup>
+              <col style="width: 9%">
+              <col style="width: 90%">
+            </colgroup>
+            <thead>
+              <tr class="header">
+                <th>File</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="odd">
+                <td><code>enemy.js</code></td>
+                <td>The Enemy class. Enemies can have different pictures. Enemies also end the game if they collide with
+                  the player.</td>
+              </tr>
+              <tr class="even">
+                <td><code>environment.js</code></td>
+                <td>The Environment class. Contains a ground box to prevent the player from falling forever. <br>Add
+                  other background elements in addition to the sky if you’d like.</td>
+              </tr>
+              <tr class="odd">
+                <td><code>globals.js</code></td>
+                <td>Contains global constants and the functions <code>updateScore()</code>,
+                  <code>showCollisionBox()</code>, and <code>gameOver()</code>.</td>
+              </tr>
+              <tr class="even">
+                <td><code>player.js</code></td>
+                <td>The Player class. Update the player’s position and check for collisions.</td>
+              </tr>
+              <tr class="odd">
+                <td><code>script.js</code></td>
+                <td>Contains the game logic, which is executed in p5.js’ functions (<code>setup()</code>,
+                  <code>draw()</code>, <code>keyPressed()</code>).</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+      <section id="make-an-enemy-randomly-spawn-and-move" class="level2">
+        <h2 class="anchored" data-anchor-id="make-an-enemy-randomly-spawn-and-move">Make an Enemy Randomly Spawn and
+          Move</h2>
+        <p>To figure out how to move the enemy, perhaps we should reference the player’s <code>update()</code> function
+          to see how the player moves.</p>
+        <div class="code-copy-outer-scaffold">
+          <div class="sourceCode" id="cb4">
+            <pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Player.js</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">update</span>(env) {</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">// gravity and jumping</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">jumping</span> <span class="op">||</span> <span class="op">!</span><span class="kw">this</span><span class="op">.</span><span class="fu">isGrounded</span>(env)) {</span>
@@ -1108,16 +1349,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">velY</span> <span class="op">+=</span> GLOBALS<span class="op">.</span><span class="at">GRAVITY</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">jumping</span> <span class="op">=</span> <span class="kw">false</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The key part is this line:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">box</span><span class="op">.</span><span class="at">y</span> <span class="op">+=</span> <span class="kw">this</span><span class="op">.</span><span class="at">velY</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The <code>velY</code> (y velocity, can be +, -, or 0) of the player gets added to the y position of box. We can use this same idea in the Enemy class’s code to update its position and move it across the screen.</p>
-<p>Try to add an <code>update()</code> function to the Enemy class and call it in <code>draw()</code> in <code>script.js</code> for each enemy.</p>
-<details>
-<summary>
-Answer
-</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Enemy.js</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+          </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+        </div>
+        <p>The key part is this line:</p>
+        <div class="code-copy-outer-scaffold">
+          <div class="sourceCode" id="cb5">
+            <pre
+              class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">this</span><span class="op">.</span><span class="at">box</span><span class="op">.</span><span class="at">y</span> <span class="op">+=</span> <span class="kw">this</span><span class="op">.</span><span class="at">velY</span></span></code></pre>
+          </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+        </div>
+        <p>The <code>velY</code> (y velocity, can be +, -, or 0) of the player gets added to the y position of box. We
+          can use this same idea in the Enemy class’s code to update its position and move it across the screen.</p>
+        <p>Try to add an <code>update()</code> function to the Enemy class and call it in <code>draw()</code> in
+          <code>script.js</code> for each enemy.</p>
+        <details>
+          <summary>
+            Answer
+          </summary>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb6">
+              <pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Enemy.js</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Enemy {</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(img) {</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">img</span> <span class="op">=</span> img</span>
@@ -1141,9 +1393,14 @@ Answer
 <span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Move the box to the left</span></span>
 <span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">box</span><span class="op">.</span><span class="at">x</span> <span class="op">-=</span> <span class="kw">this</span><span class="op">.</span><span class="at">vel</span></span>
 <span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then, we need to call the <code>update()</code> function in the main <code>script.js</code> for each enemy.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// script.js</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+          <p>Then, we need to call the <code>update()</code> function in the main <code>script.js</code> for each enemy.
+          </p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb7">
+              <pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">// script.js</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">// in the draw() function's for loop:</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> enemies<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  enemies[i]<span class="op">.</span><span class="fu">draw</span>()</span>
@@ -1153,19 +1410,26 @@ Answer
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Add this</span></span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  enemies[i]<span class="op">.</span><span class="fu">update</span>()</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<p>Code at this point: <a href="https://replit.com/@buckldav/DinoGameP5EnemyMove">https://replit.com/@buckldav/DinoGameP5EnemyMove</a>.</p>
-</section>
-<section id="spawn-the-enemy-off-screen" class="level2">
-<h2 class="anchored" data-anchor-id="spawn-the-enemy-off-screen">Spawn the Enemy Off Screen</h2>
-<p>How could you change the <code>Enemy.js</code> constructor so that the Enemy spawns off screen to the right?</p>
-<details>
-<summary>
-Answer
-</summary>
-<p>Here’s one way to go about it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Enemy.js</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+        </details>
+        <p>Code at this point: <a
+            href="https://replit.com/@buckldav/DinoGameP5EnemyMove">https://replit.com/@buckldav/DinoGameP5EnemyMove</a>.
+        </p>
+      </section>
+      <section id="spawn-the-enemy-off-screen" class="level2">
+        <h2 class="anchored" data-anchor-id="spawn-the-enemy-off-screen">Spawn the Enemy Off Screen</h2>
+        <p>How could you change the <code>Enemy.js</code> constructor so that the Enemy spawns off screen to the right?
+        </p>
+        <details>
+          <summary>
+            Answer
+          </summary>
+          <p>Here’s one way to go about it:</p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb8">
+              <pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Enemy.js</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">constructor</span>(img) {</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">img</span> <span class="op">=</span> img</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">// The x position of the box needs to start off screen (windowWidth + GLOBALS.ENEMY_W).</span></span>
@@ -1177,15 +1441,20 @@ Answer
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Try out other numbers for the velocity.</span></span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">vel</span> <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<p>How would you make the enemy spawn at a random y value? Recall the <a href="https://cs.dbuckley.dev/docs/processing/basics/05/">Snowflakes Project</a> if needed.</p>
-<details>
-<summary>
-Answer
-</summary>
-<p>Here’s one way to go about it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Enemy.js</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+        </details>
+        <p>How would you make the enemy spawn at a random y value? Recall the <a
+            href="https://cs.dbuckley.dev/docs/processing/basics/05/">Snowflakes Project</a> if needed.</p>
+        <details>
+          <summary>
+            Answer
+          </summary>
+          <p>Here’s one way to go about it:</p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb9">
+              <pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Enemy.js</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">constructor</span>(img) {</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">img</span> <span class="op">=</span> img</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Calculate the y with GROUND_Y or PLAYER_Y somehow to make it measure off of where those are.</span></span>
@@ -1196,27 +1465,38 @@ Answer
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    GLOBALS<span class="op">.</span><span class="at">ENEMY_H</span></span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">vel</span> <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</section>
-<section id="spawn-more-enemies" class="level2">
-<h2 class="anchored" data-anchor-id="spawn-more-enemies">Spawn More Enemies</h2>
-<p>Here are some questions that need to be answered.</p>
-<ol type="1">
-<li>How to make a lot of enemies quickly?</li>
-<li>Should we make all the enemies at the beginning or make them along the way?</li>
-</ol>
-<details>
-<summary>
-Answer
-</summary>
-<p>For question 2, there is no right answer here, both have merit. The answer to 2 influences the answer to 1. In this walkthrough, I’ll show you the “make them along the way” approach.</p>
-<p>In <code>script.js</code>, check out the <code>setup()</code> function. Near the bottom, there is the line that spawns an enemy.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">// script.js</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+        </details>
+      </section>
+      <section id="spawn-more-enemies" class="level2">
+        <h2 class="anchored" data-anchor-id="spawn-more-enemies">Spawn More Enemies</h2>
+        <p>Here are some questions that need to be answered.</p>
+        <ol type="1">
+          <li>How to make a lot of enemies quickly?</li>
+          <li>Should we make all the enemies at the beginning or make them along the way?</li>
+        </ol>
+        <details>
+          <summary>
+            Answer
+          </summary>
+          <p>For question 2, there is no right answer here, both have merit. The answer to 2 influences the answer to 1.
+            In this walkthrough, I’ll show you the “make them along the way” approach.</p>
+          <p>In <code>script.js</code>, check out the <code>setup()</code> function. Near the bottom, there is the line
+            that spawns an enemy.</p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb10">
+              <pre
+                class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">// script.js</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">// array.push adds an element to the array</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>enemies<span class="op">.</span><span class="fu">push</span>(<span class="kw">new</span> <span class="fu">Enemy</span>(enemyImg1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If we use this line in the <code>draw()</code> function, enemies will spawn every frame.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">// script.js</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>enemies<span class="op">.</span><span class="fu">push</span>(<span class="kw">new</span> <span class="fu">Enemy</span>(enemyImg1))</span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+          <p>If we use this line in the <code>draw()</code> function, enemies will spawn every frame.</p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb11">
+              <pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">// script.js</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  env<span class="op">.</span><span class="fu">draw</span>()</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  player<span class="op">.</span><span class="fu">draw</span>()</span>
@@ -1233,16 +1513,23 @@ Answer
 <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">updateScore</span>()</span>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  player<span class="op">.</span><span class="fu">update</span>(env)</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This may create too many enemies.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../../assets/images/processing/objects/too_many_enemies.png" class="img-fluid figure-img"></p>
-<figcaption>Too many enemies</figcaption>
-</figure>
-</div>
-<p>To solve this, let’s add an if statement that will only add an enemy if the current frame is a multiple of something. To do this, we can use the modulo operator which can get the remainder of division. If the remainder is zero, we can spawn an enemy. Also, our <code>score</code> variable is</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">// script.js</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+          <p>This may create too many enemies.</p>
+          <div class="quarto-figure quarto-figure-center">
+            <figure class="figure">
+              <p><img src="../../../assets/images/processing/objects/too_many_enemies.png" class="img-fluid figure-img">
+              </p>
+              <figcaption>Too many enemies</figcaption>
+            </figure>
+          </div>
+          <p>To solve this, let’s add an if statement that will only add an enemy if the current frame is a multiple of
+            something. To do this, we can use the modulo operator which can get the remainder of division. If the
+            remainder is zero, we can spawn an enemy. Also, our <code>score</code> variable is</p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb12">
+              <pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">// script.js</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">draw</span>() {</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">// ...</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">// The for loop is right here</span></span>
@@ -1252,25 +1539,36 @@ Answer
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">// updateScore()</span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">// ...</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// globals.js</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb13">
+              <pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// globals.js</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> GLOBALS <span class="op">=</span> {</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">// ...</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">SPAWN_RATE</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">// ...</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<p>Here’s the code at this point: <a href="https://replit.com/@buckldav/DinoGameP5EnemySpawn">https://replit.com/@buckldav/DinoGameP5EnemySpawn</a>.</p>
-</section>
-<section id="speed-enemies-up" class="level2">
-<h2 class="anchored" data-anchor-id="speed-enemies-up">Speed Enemies Up</h2>
-<p>In <code>Enemy.js</code>, how could you use the score variable so that the velocity of new enemies increases as the score gets higher?</p>
-<details>
-<summary>
-Answer
-</summary>
-<p>Here’s one way to go about it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Enemy.js</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+        </details>
+        <p>Here’s the code at this point: <a
+            href="https://replit.com/@buckldav/DinoGameP5EnemySpawn">https://replit.com/@buckldav/DinoGameP5EnemySpawn</a>.
+        </p>
+      </section>
+      <section id="speed-enemies-up" class="level2">
+        <h2 class="anchored" data-anchor-id="speed-enemies-up">Speed Enemies Up</h2>
+        <p>In <code>Enemy.js</code>, how could you use the score variable so that the velocity of new enemies increases
+          as the score gets higher?</p>
+        <details>
+          <summary>
+            Answer
+          </summary>
+          <p>Here’s one way to go about it:</p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb14">
+              <pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Enemy.js</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">constructor</span>(img) {</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">img</span> <span class="op">=</span> img</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">box</span> <span class="op">=</span> <span class="kw">new</span> <span class="fu">Box</span>(</span>
@@ -1281,9 +1579,15 @@ Answer
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Just this line needs modified. The number "1000" can be whatever you want.</span></span>
 <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">vel</span> <span class="op">=</span> <span class="dv">3</span> <span class="op">+</span> score <span class="op">/</span> <span class="dv">1000</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>You might consider making that number <code>1000</code> a constant in your <code>globals.js</code>. This practice is called avoiding <strong>“magic numbers”</strong> (numbers that show up out of nowhere in your code). Same thing with the other numbers (<code>250</code> and <code>3</code>). Here’s mine:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Enemy.js</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+          <p>You might consider making that number <code>1000</code> a constant in your <code>globals.js</code>. This
+            practice is called avoiding <strong>“magic numbers”</strong> (numbers that show up out of nowhere in your
+            code). Same thing with the other numbers (<code>250</code> and <code>3</code>). Here’s mine:</p>
+          <div class="code-copy-outer-scaffold">
+            <div class="sourceCode" id="cb15">
+              <pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Enemy.js</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">constructor</span>(img) {</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">img</span> <span class="op">=</span> img</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">box</span> <span class="op">=</span> <span class="kw">new</span> <span class="fu">Box</span>(</span>
@@ -1293,274 +1597,282 @@ Answer
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    GLOBALS<span class="op">.</span><span class="at">ENEMY_H</span></span>
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">this</span><span class="op">.</span><span class="at">vel</span> <span class="op">=</span> GLOBALS<span class="op">.</span><span class="at">ENEMY_V</span> <span class="op">+</span> score <span class="op">*</span> GLOBALS<span class="op">.</span><span class="at">ACCELERATION</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</section>
-<section id="game-over-screen" class="level2">
-<h2 class="anchored" data-anchor-id="game-over-screen">Game Over Screen</h2>
-<p>In <code>globals.js</code>, there is a <code>gameOver()</code> function where you can add background, text, etc. for when the game ends. Try adding everything yourself!</p>
-</section>
-<section id="final-code" class="level2">
-<h2 class="anchored" data-anchor-id="final-code">Final Code</h2>
-<p>The code below doesn’t have a game over screen, but everything else is there. Try adding your own enemy sprites. Change the jump strength and other globals. Get creative, and good luck!</p>
-<p><strong><a href="https://replit.com/@buckldav/DinoGameP5EnemyFinal#enemy.js">https://replit.com/@buckldav/DinoGameP5EnemyFinal#enemy.js</a></strong>.</p>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre>
+            </div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button>
+          </div>
+        </details>
+      </section>
+      <section id="game-over-screen" class="level2">
+        <h2 class="anchored" data-anchor-id="game-over-screen">Game Over Screen</h2>
+        <p>In <code>globals.js</code>, there is a <code>gameOver()</code> function where you can add background, text,
+          etc. for when the game ends. Try adding everything yourself!</p>
+      </section>
+      <section id="final-code" class="level2">
+        <h2 class="anchored" data-anchor-id="final-code">Final Code</h2>
+        <p>The code below doesn’t have a game over screen, but everything else is there. Try adding your own enemy
+          sprites. Change the jump strength and other globals. Get creative, and good luck!</p>
+        <p><strong><a
+              href="https://replit.com/@buckldav/DinoGameP5EnemyFinal#enemy.js">https://replit.com/@buckldav/DinoGameP5EnemyFinal#enemy.js</a></strong>.
+        </p>
 
 
-</section>
+      </section>
 
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
+    </main> <!-- /main -->
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const icon = "";
+        const anchorJS = new window.AnchorJS();
+        anchorJS.options = {
+          placement: 'right',
+          icon: icon
+        };
+        anchorJS.add('.anchored');
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {
+              return true;
+            }
+          }
+          return false;
         }
-      }
-      return false;
-    }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
+        const onCopySuccess = function (e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button,
+              {
+                trigger: "manual",
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]
+              });
+            tooltip.show();
+          }
+          setTimeout(function () {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
         }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
-    }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const getTextToCopy = function (trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
         }
-      }
-      return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp("https:\/\/cs\.dbuckley\.dev");
-      var isInternal = (href) => {
+        var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
+        }
+        // Inspect non-navigation links and adorn them if external
+        var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i = 0; i < links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
           }
         }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
-    }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function (el) {
+              return el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'quarto',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+          window.tippy(el, config);
         }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i = 0; i < noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function () {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch { }
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
             } else {
-              container.appendChild(child.cloneNode(true));
-              break;
+              return "";
             }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
-      } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
-      }
-    }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
-          }
-        } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
-            if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
+        const xrefs = window.document.querySelectorAll('a.quarto-xref');
+        const processXRef = (id, note) => {
+          // Strip column container classes
+          const stripColumnClz = (el) => {
+            el.classList.remove("page-full", "page-columns");
+            if (el.children) {
+              for (const child of el.children) {
+                stripColumnClz(child);
+              }
+            }
+          }
+          stripColumnClz(note)
+          if (id === null || id.startsWith('sec-')) {
+            // Special case sections, only their first couple elements
+            const container = document.createElement("div");
+            if (note.children && note.children.length > 2) {
+              container.appendChild(note.children[0].cloneNode(true));
+              for (let i = 1; i < note.children.length; i++) {
+                const child = note.children[i];
+                if (child.tagName === "P" && child.innerText === "") {
+                  continue;
+                } else {
+                  container.appendChild(child.cloneNode(true));
+                  break;
+                }
+              }
+              if (window.Quarto?.typesetMath) {
+                window.Quarto.typesetMath(container);
+              }
+              return container.innerHTML
+            } else {
+              if (window.Quarto?.typesetMath) {
+                window.Quarto.typesetMath(note);
+              }
+              return note.innerHTML;
+            }
+          } else {
+            // Remove any anchor links if they are present
+            const anchorLink = note.querySelector('a.anchorjs-link');
+            if (anchorLink) {
+              anchorLink.remove();
+            }
+            if (window.Quarto?.typesetMath) {
+              window.Quarto.typesetMath(note);
+            }
+            if (note.classList.contains("callout")) {
+              return note.outerHTML;
+            } else {
+              return note.innerHTML;
+            }
+          }
+        }
+        for (var i = 0; i < xrefs.length; i++) {
+          const xref = xrefs[i];
+          tippyHover(xref, undefined, function (instance) {
+            instance.disable();
+            let url = xref.getAttribute('href');
+            let hash = undefined;
+            if (url.startsWith('#')) {
+              hash = url;
+            } else {
+              try { hash = new URL(url).hash; } catch { }
+            }
+            if (hash) {
+              const id = hash.replace(/^#\/?/, "");
+              const note = window.document.getElementById(id);
+              if (note !== null) {
+                try {
+                  const html = processXRef(id, note.cloneNode(true));
+                  instance.setContent(html);
+                } finally {
+                  instance.enable();
+                  instance.show();
+                }
+              } else {
+                // See if we can fetch this
+                fetch(url.split('#')[0])
+                  .then(res => res.text())
+                  .then(html => {
+                    const parser = new DOMParser();
+                    const htmlDoc = parser.parseFromString(html, "text/html");
+                    const note = htmlDoc.getElementById(id);
+                    if (note !== null) {
+                      const html = processXRef(id, note);
+                      instance.setContent(html);
+                    }
+                  }).finally(() => {
+                    instance.enable();
+                    instance.show();
+                  });
+              }
+            } else {
+              // See if we can fetch a full url (with no hash to target)
+              // This is a special case and we should probably do some content thinning / targeting
+              fetch(url)
+                .then(res => res.text())
+                .then(html => {
+                  const parser = new DOMParser();
+                  const htmlDoc = parser.parseFromString(html, "text/html");
+                  const note = htmlDoc.querySelector('main.content');
+                  if (note !== null) {
+                    // This should only happen for chapter cross references
+                    // (since there is no id in the URL)
+                    // remove the first header
+                    if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                      note.children[0].remove();
+                    }
+                    const html = processXRef(null, note);
+                    instance.setContent(html);
+                  }
+                }).finally(() => {
+                  instance.enable();
+                  instance.show();
+                });
+            }
+          }, function (instance) {
+          });
+        }
         let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
+        const selectorForAnnotation = (cell, annotation) => {
           let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          let lineAttr = 'data-code-annotation="' + annotation + '"';
           const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
           return selector;
         }
@@ -1577,11 +1889,11 @@ Answer
           let height = null;
           let parent = null;
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
             if (lineIds.length > 1) {
               const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
               const bottom = lastEl.offsetTop + lastEl.offsetHeight;
@@ -1624,32 +1936,32 @@ Answer
           });
           selectedAnnoteEl = undefined;
         };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
+        // Handle positioning of the toggle
+        window.addEventListener(
+          "resize",
+          throttle(() => {
+            elRect = undefined;
+            if (selectedAnnoteEl) {
+              selectCodeLines(selectedAnnoteEl);
+            }
+          }, 10)
+        );
+        function throttle(fn, ms) {
+          let throttle = false;
+          let timer;
+          return (...args) => {
+            if (!throttle) { // first call gets through
               fn.apply(this, args);
               throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
+            } else { // all the others get throttled
+              if (timer) clearTimeout(timer); // cancel #2
               timer = setTimeout(() => {
                 fn.apply(this, args);
                 timer = throttle = false;
               }, ms);
-          }
-        };
-      }
+            }
+          };
+        }
         // Attach click handler to the DT
         const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
         for (const annoteDlNode of annoteDls) {
@@ -1670,61 +1982,70 @@ Answer
             }
           });
         }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
-      }
-    }
-  });
-  </script>
-</div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>Published by Merit Academy under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons License</a>.</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/buckldav/learn-merit/edit/main/docs/processing/data-structures/03.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
-    <div class="nav-footer-right">
-      &nbsp;
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i = 0; i < bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function () {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function (cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+    </script>
+  </div> <!-- /content -->
+  <footer class="footer">
+    <div class="nav-footer">
+      <div class="nav-footer-left">
+        &nbsp;
+      </div>
+      <div class="nav-footer-center">
+        <p>Published by Merit Academy under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+            License</a>.</p>
+        <div class="toc-actions d-sm-block d-md-none">
+          <ul>
+            <li><a href="https://github.com/buckldav/learn-merit/edit/main/docs/processing/data-structures/03.md"
+                class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-footer-right">
+        &nbsp;
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 
 
 
-</body></html>
+</body>
+
+</html>
