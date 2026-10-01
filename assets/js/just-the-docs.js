@@ -468,4 +468,26 @@ jtd.onReady(function(){
 
 })(window.jtd = window.jtd || {});
 
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const dialog = document.createElement("dialog");
+    dialog.innerHTML = `
+      <p>
+        This site is no longer being updated, but is here for legacy reasons.
+        Please visit
+        <a href="https://cs.meritprepacademy.app">
+          cs.meritprepacademy.app
+        </a>
+        for the latest site!
+      </p>
+      <button type="button">Close</button>
+    `;
+
+    dialog.querySelector("button").addEventListener("click", () => dialog.close());
+    document.body.appendChild(dialog);
+    dialog.showModal();
+  }, 1000);
+});
+
+
 {% include js/custom.js %}
