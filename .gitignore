@@ -1,8 +1,4 @@
-*.gem
-.bundle
-.ruby-version
-.jekyll-cache
-.sass-cache
-#_site
-node_modules
-not-docs/reviews/*.html
+/.quarto/
+/_site/
+
+**/*.quarto_ipynb

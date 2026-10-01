@@ -1,11 +1,6 @@
 ---
-layout: default
 title: Well-Formed Websites
-parent: Web Dev Basics
-nav_order: 4
 ---
-
-# Well-Formed Websites
 
 ## Strand 2 - Fundamentals of HTML5
 

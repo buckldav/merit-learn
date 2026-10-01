@@ -1,11 +1,6 @@
 ---
-layout: default
-title: Beego Part 6 - Users and Admin Interface Part 2
-parent: Golang
-nav_order: 7
+title: Users and Admin Interface Part 2
 ---
-
-# Users and Admin Interface Part 2
 
 In this section, we will create a <abbr title="Create, Read, Update, Delete">CRUD</abbr> interface to manage contacts.
 
@@ -151,11 +146,11 @@ beego.Router("/admin/contacts", &controllers.ContactListController{})
 `views/admin/read.tpl`
 
 ```html
-{{ '{{' }} template "admin/layout.tpl" . }}
-{{ '{{' }} define "content" }}
-<h1 class="text-4xl">{{ '{{' }}.Title}}</h1>
+{{ template "admin/layout.tpl" . }}
+{{ define "content" }}
+<h1 class="text-4xl">{{.Title}}</h1>
 
-<button class="btn btn-error" onclick="fetch(window.location.href, {method:'DELETE'}).then(()=>{window.location.href = {{ '{{' }}.BaseHref}}})">BALEETED!</button>
+<button class="btn btn-error" onclick="fetch(window.location.href, {method:'DELETE'}).then(()=>{window.location.href = {{.BaseHref}}})">BALEETED!</button>
 <table class="table w-full mt-4">
   <thead>
     <tr>
@@ -164,56 +159,56 @@ beego.Router("/admin/contacts", &controllers.ContactListController{})
     </tr>
   </thead>
   <tbody>
-    {{ '{{' }}range .Item}}
+    {{range .Item}}
     <tr>
-      <td class="border px-4 py-2">{{ '{{' }}.Key}}</td>
-      <td class="border px-4 py-2">{{ '{{' }}.Value}}</td>
+      <td class="border px-4 py-2">{{.Key}}</td>
+      <td class="border px-4 py-2">{{.Value}}</td>
     </tr>
-    {{ '{{' }}end}}
+    {{end}}
   </tbody>
 </table>
-{{ '{{' }} end }}
+{{ end }}
 ```
 
 `views/admin/list.tpl`
 
 ```html
-{{ '{{' }} template "admin/layout.tpl" . }}
-{{ '{{' }} define "content" }}
-<h1 class="text-4xl">{{ '{{' }}.Title}}</h1>
+{{ template "admin/layout.tpl" . }}
+{{ define "content" }}
+<h1 class="text-4xl">{{.Title}}</h1>
 <table class="table w-full">
-  {{ '{{' }}if eq (len .List) 0}} 
+  {{if eq (len .List) 0}} 
   <tr>
     <td colspan="3">No records</td> 
   </tr>
-  {{ '{{' }}else}}
+  {{else}}
   <thead>
     <tr>
-    {{ '{{' }}range index .List 0}}
-      <th class="bg-gray-200">{{ '{{' }}.Key}}</th>
-    {{ '{{' }}end}}
+    {{range index .List 0}}
+      <th class="bg-gray-200">{{.Key}}</th>
+    {{end}}
     </tr>
   </thead>
   <tbody>
-    {{ '{{' }}range .List}}
+    {{range .List}}
     <tr>
-    {{ '{{' }}range .}}
-      {{ '{{' }}if eq .Key "Id"}}
+    {{range .}}
+      {{if eq .Key "Id"}}
         <td class="border px-4 py-2">
-        <a href="{{ '{{' }}$.BaseHref}}/{{ '{{' }}.Value}}">
-        {{ '{{' }}.Value}}
+        <a href="{{$.BaseHref}}/{{.Value}}">
+        {{.Value}}
         </a>
         </td>
       </a>
-      {{ '{{' }}else}}
-        <td class="border px-4 py-2">{{ '{{' }}.Value}}</td>
-      {{ '{{' }}end}}
-    {{ '{{' }}end}}
+      {{else}}
+        <td class="border px-4 py-2">{{.Value}}</td>
+      {{end}}
+    {{end}}
     </tr>
     </a>
-    {{ '{{' }}end}}
+    {{end}}
   </tbody>
-  {{ '{{' }}end}}
+  {{end}}
 </table>
-{{ '{{' }} end }}
+{{ end }}
 ```

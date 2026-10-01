@@ -1,9 +1,7 @@
 ---
-layout: default
 title: Extra Resources
-nav_order: 9
-parent: Unity and C#
-permalink: /docs/unity-cs/extra-resources/
+aliases:
+- /docs/unity-cs/extra-resources/
 ---
 
 ### [AI Follow Tutorial](https://www.youtube.com/watch?v=2SXa10ILJms)

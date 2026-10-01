@@ -1,11 +1,6 @@
 ---
-layout: default
-title: Beego Part 3 - HTTP Methods and Forms
-parent: Golang
-nav_order: 4
+title: HTTP Methods and Forms
 ---
-
-# HTTP Methods and Forms
 
 In web applications, HTTP methods define different behaviors of HTTP requests. For example, getting data from a server has a different method than sending data or deleting data. Here are the common HTTP methods.
 
@@ -27,7 +22,7 @@ You've already worked with the **GET** HTTP method many times, perhaps without e
 
 We will make a contact page that receives contact data, validates it, and returns a message to the user. In the next lesson, we will store this information in a database. Optionally, you can send emails on form submission.
 
-<details markdown="block">
+<details>
   <summary>Which method do you think will be useful for receiving contact data via an HTML Form?</summary>
 
   Answer: **POST** is probably best for this use case.
@@ -38,8 +33,8 @@ Make a contact page with an HTML Form that has the `method="POST"` for a post re
 `views/contact.tpl`
 
 ```html
-{{ '{{' }} template "layout.tpl" . }}
-{{ '{{' }} define "content" }}
+{{ template "layout.tpl" . }}
+{{ define "content" }}
   <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
   <!-- notice the method="POST" for a POST request and the action specificying what route to hit. -->  
   <form method="POST" action="/contact">
@@ -65,15 +60,15 @@ Make a contact page with an HTML Form that has the `method="POST"` for a post re
       <button type="submit" class="btn btn-primary">Send Message</button>
     </div>
   </form>
-  {{ '{{' }} if .Result }}
+  {{ if .Result }}
     <div role="alert" class="alert mt-4 pe-8 w-fit">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info h-6 w-6 shrink-0">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
       </svg>
-      <span>{{ '{{' }} .Result }}</span>
+      <span>{{ .Result }}</span>
     </div>
-  {{ '{{' }} end }}
-{{ '{{' }} end }}
+  {{ end }}
+{{ end }}
 ```
 
 Handling a different HTTP method other than GET is as simple as making a new handler in the controller.

@@ -1,11 +1,6 @@
 ---
-layout: default
-title: Beego Part 5 - Users and Admin Interface Part 1
-parent: Golang
-nav_order: 6
+title: Users and Admin Interface Part 1
 ---
-
-# Users and Admin Interface Part 1
 
 Intro video: How are passwords cracked? Watch at least the first 7 minutes.
 
@@ -57,7 +52,7 @@ type User struct {
 }
 ```
 
-<details markdown="block">
+<details>
   <summary>What does a more complex User model look like?</summary>
 
   Here is an example. 
@@ -255,7 +250,7 @@ func main() {
 
 Session authentication is how we can authorize logged-in users. When a user logs in, a session is created on the server and the ID is stored in a cookie and sent to the browser. On subsequent requests, the cookie is used to match with the user's session and authorize the user.
 
-<details markdown="block">
+<details>
   <summary>What is the difference between authentication and authorization?</summary>
 
   - Authentication is when a user logs in, typically with a credential like a password. Happens one time. Provides the user with a session or token.
@@ -295,11 +290,11 @@ In a new layout file, we will display the logged in user in the navigation bar.
 <!DOCTYPE html>
 <html data-theme="emerald">
 <head>
-<title>{{ '{{' }} .Title }}</title>
+<title>{{ .Title }}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" href="{{ '{{' }}.BaseUrl}}/static/css/output.css">
-{{ '{{' }} block "css" . }}{{ '{{' }} end }}
+<link rel="stylesheet" href="{{.BaseUrl}}/static/css/output.css">
+{{ block "css" . }}{{ end }}
 </head>
 <body>
 <header class="navbar bg-base-100 shadow-lg mb-4">
@@ -312,13 +307,13 @@ In a new layout file, we will display the logged in user in the navigation bar.
   </div>
   
   <div class="navbar-end">
-    {{ '{{' }} if .IsLoggedIn }}
+    {{ if .IsLoggedIn }}
     <div class="dropdown dropdown-end">
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
         <div class="w-10 h-10 rounded-full bg-primary text-primary-content">
-            {{ '{{' }} if .User }}
-              <span class="sr-only">{{ '{{' }} .User.Email }}</span>
-            {{ '{{' }} end }}
+            {{ if .User }}
+              <span class="sr-only">{{ .User.Email }}</span>
+            {{ end }}
             <svg
               style="margin: 7px;"
               xmlns="http://www.w3.org/2000/svg"
@@ -337,7 +332,7 @@ In a new layout file, we will display the logged in user in the navigation bar.
       </div>
       <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
         <li class="menu-title">
-          <span>Welcome, {{ '{{' }} .User.Name}}!</span>
+          <span>Welcome, {{ .User.Name}}!</span>
         </li>
         <li><a href="/profile">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
@@ -353,19 +348,19 @@ In a new layout file, we will display the logged in user in the navigation bar.
         </a></li>
       </ul>
     </div>
-    {{ '{{' }} else }}
+    {{ else }}
     <div class="flex gap-2">
       <a href="/admin/login" class="btn btn-ghost">Login</a>
     </div>
-    {{ '{{' }} end }}
+    {{ end }}
   </div>
 </header>
 
 <div class="container mx-auto px-4">
-{{ '{{' }} block "content" . }}{{ '{{' }} end }}
+{{ block "content" . }}{{ end }}
 </div>
 
-{{ '{{' }} block "js" . }}{{ '{{' }} end }}
+{{ block "js" . }}{{ end }}
 </body>
 </html>
 ```
@@ -375,17 +370,17 @@ Then, we will make a few templates.
 `views/admin/index.tpl`
 
 ```html
-{{ '{{' }} template "admin/layout.tpl" . }}
-{{ '{{' }} define "content" }}
+{{ template "admin/layout.tpl" . }}
+{{ define "content" }}
 <h1 class="text-4xl">Admin</h1>
-{{ '{{' }} end }}
+{{ end }}
 ```
 
 `views/admin/login.tpl`
 
 ```html
-{{ '{{' }} template "admin/layout.tpl" . }}
-{{ '{{' }} define "content" }}
+{{ template "admin/layout.tpl" . }}
+{{ define "content" }}
   <h2 class="text-2xl font-bold mb-4">Login</h2>
   <form method="POST" action="/admin/login">
     <div class="form-control mb-4">
@@ -404,15 +399,15 @@ Then, we will make a few templates.
       <button type="submit" class="btn btn-primary">Log In</button>
     </div>
   </form>
-  {{ '{{' }} if .Result }}
+  {{ if .Result }}
     <div role="alert" class="alert mt-4 pe-8 w-fit">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info h-6 w-6 shrink-0">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
       </svg>
-      <span>{{ '{{' }} .Result }}</span>
+      <span>{{ .Result }}</span>
     </div>
-  {{ '{{' }} end }}
-{{ '{{' }} end }}
+  {{ end }}
+{{ end }}
 ```
 
 ### Admin Controllers
@@ -601,8 +596,8 @@ Here's an accompanying template file.
 `views/profile.tpl`
 
 ```html
-{{ '{{' }} template "admin/layout.tpl" . }}
-{{ '{{' }} define "content" }}
+{{ template "admin/layout.tpl" . }}
+{{ define "content" }}
 <h1 class="text-4xl mb-4">Profile</h1>
 
 <form method="POST" action="/profile">
@@ -610,27 +605,27 @@ Here's an accompanying template file.
     <label class="label">
       <span class="label-text">Name</span>
     </label>
-    <input value="{{ '{{' }}.User.Name}}" type="text" name="name" class="input input-bordered" required />
+    <input value="{{.User.Name}}" type="text" name="name" class="input input-bordered" required />
   </div>
   <div class="form-control mb-4">
     <label class="label">
       <span class="label-text">Email</span>
     </label>
-    <input value="{{ '{{' }}.User.Email}}" type="email" name="email" class="input input-bordered" required />
+    <input value="{{.User.Email}}" type="email" name="email" class="input input-bordered" required />
   </div>
   <div class="form-control">
     <button type="submit" class="btn btn-primary">Update Profile</button>
   </div>
 </form>  
-{{ '{{' }} if .Result }}
+{{ if .Result }}
   <div role="alert" class="alert mt-4 pe-8 w-fit">
     <svg xmlns="http://www.w4.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info h-6 w-6 shrink-0">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
     </svg>
-    <span>{{ '{{' }} .Result }}</span>
+    <span>{{ .Result }}</span>
   </div>
-{{ '{{' }} end }}
-{{ '{{' }} end }}
+{{ end }}
+{{ end }}
 ```
 
 ### Routes

@@ -1,11 +1,6 @@
 ---
-layout: default
 title: Objects in Python
-nav_order: "01"
-parent: Learn Python
 ---
-
-# Objects in Python
 
 ## Intro to Objects
 

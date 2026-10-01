@@ -1,11 +1,6 @@
 ---
-layout: default
-title:  Beego Part 1 - MVC Web Development
-parent: Golang
-nav_order: 2
+title: Beego Part 1 - MVC Web Development
 ---
-
-# Beego Part 1 - MVC Web Development
 
 One common use case for Go is web development. Typically, web development is done with a *framework*. Frameworks build some abstractions and tooling on top of base Go modules like [`net/http`](https://pkg.go.dev/golang.org/x/net/http) and [`html/template`](https://pkg.go.dev/html/template).
 
@@ -47,7 +42,7 @@ go mod tidy
 
 ### 2. Understanding the Project Structure
 
-```
+```bash
 .
 ├── conf
 │   └── app.conf
@@ -91,11 +86,11 @@ We are going to take advantage of templating to make a layout that all pages can
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ '{{' }} .Title }}</title>
+    <title>{{ .Title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="{{ '{{' }}.BaseUrl}}/static/css/output.css">
-     {{ '{{' }} block "css" . }}{{ '{{' }} end }}
+    <link rel="stylesheet" href="{{.BaseUrl}}/static/css/output.css">
+     {{ block "css" . }}{{ end }}
 </head>
 <body>
     <header>
@@ -104,9 +99,9 @@ We are going to take advantage of templating to make a layout that all pages can
         <a href="/contact">Contact</a>
     </header>
     <div>
-        {{ '{{' }} block "content" . }}{{ '{{' }} end }}
+        {{ block "content" . }}{{ end }}
     </div>
-    {{ '{{' }} block "js" . }}{{ '{{' }} end }}
+    {{ block "js" . }}{{ end }}
 </body>
 </html>
 ```
@@ -114,11 +109,11 @@ We are going to take advantage of templating to make a layout that all pages can
 `./views/index.tpl` - Change the file to have just this content.
 
 ```html
-{{ '{{' }} template "layout.tpl" . }}
-{{ '{{' }} define "content" }}
-        <h2>{{ '{{' }} .Title }}</h2>
+{{ template "layout.tpl" . }}
+{{ define "content" }}
+        <h2>{{ .Title }}</h2>
         <p>Welcome to the Home Page!</p>
-{{ '{{' }} end }}
+{{ end }}
 ```
 
 Notice that the layout template has a `block "content"` section that will be later *defined* by each page that uses that template. 
@@ -140,7 +135,7 @@ type MainController struct {
 
 // TODO: modify the Get() http handler to render the "Title"
 func (c *MainController) Get() {
-    // matches with {{ '{{' }} .Title }} in index.tpl and layout.tpl
+    // matches with {{ .Title }} in index.tpl and layout.tpl
     c.Data["Title"] = "Home"
     c.TplName = "index.tpl"
 }
@@ -150,14 +145,14 @@ func (c *MainController) Get() {
 
 Challenge: How would you add an "About Page" at `/about`?
 
-<details markdown="block">
+<details>
   <summary>Show Answer (Controller)</summary>
 
 Here is a possible solution.
 
 <code>./controllers/default.go</code>
 
-```golang
+```go
 package controllers
 
 import (
@@ -185,7 +180,7 @@ func (c *AboutController) Get() {
 
 </details>
 
-<details markdown="block">
+<details>
   <summary>Show Answer (View)</summary>
 
 Here is a possible solution.
@@ -193,23 +188,23 @@ Here is a possible solution.
 <code>./views/about.tpl</code>
 
 ```html
-{{ '{{' }} template "layout.tpl" . }}
-{{ '{{' }} define "content" }}
-    <h2>{{ '{{' }} .Title }}</h2>
+{{ template "layout.tpl" . }}
+{{ define "content" }}
+    <h2>{{ .Title }}</h2>
     <p>Welcome to the About Page!</p>
-{{ '{{' }} end }}
+{{ end }}
 ```
 
 </details>
 
-<details markdown="block">
+<details>
   <summary>Show Answer (Router)</summary>
 
 Here is a possible solution.
 
 <code>./routers/router.go</code>
 
-```golang
+```go
 package routers
 
 import (

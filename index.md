@@ -1,16 +1,9 @@
 ---
-layout: default
-title: Home
-nav_order: 0
-description: "Merit Academy Tech U is a place to learn programming. It provides direction to the resources you need to learn the fundamentals."
-permalink: /
-last_modified_date: 2020-08-05T17:54:08+0000
+title: Welcome!
+description: Merit Academy Tech U is a place to learn programming. It provides direction to the resources you need to learn the fundamentals.
 ---
 
-# Welcome!
-
 Merit Academy Tech U is a place to learn programming. It provides direction to the resources you need to learn the fundamentals.
-{: .fs-6 .fw-300 }
 
 ---
 
@@ -29,13 +22,7 @@ email, or any other method with the owners of this repository before making a ch
 
 #### Thank you to the contributors of Merit Academy Tech U!
 
-<ul class="list-style-none">
-{% for contributor in site.github.contributors %}
-  <li class="d-inline-block mr-1">
-     <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}" width="32" height="32" alt="{{ contributor.login }}"/></a>
-  </li>
-{% endfor %}
-</ul>
+See the [list of contributors on GitHub](https://github.com/buckldav/learn-merit/graphs/contributors).
 
 ### Code of Conduct
 

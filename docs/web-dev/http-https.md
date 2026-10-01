@@ -1,11 +1,6 @@
 ---
-layout: default
 title: HTTP and HTTPS
-parent: Web Dev Advanced
-nav_order: 2
 ---
-
-# HTTP and HTTPS
 
 - How does the internet standardize data transfer?
 - How do websites establish a secure connection for data transfer?
@@ -44,7 +39,7 @@ exit
 
 Uncomment these lines at the `/etc/nginx/nginx.conf` to enable SSL connection with your new certificate.
 
-```nginx
+```conf
 server {
     listen       443 ssl;
     listen       [::]:443 ssl;
@@ -88,4 +83,3 @@ sudo firewall-cmd --reload
 ```
 
 Here is a great article on setting up certbot with nginx: [https://dev.to/yousufbasir/setting-up-nginx-with-certbot-for-https-on-your-web-application-n1i](https://dev.to/yousufbasir/setting-up-nginx-with-certbot-for-https-on-your-web-application-n1i) for a public website.
-

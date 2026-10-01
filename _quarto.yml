@@ -1,0 +1,271 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+  - index.md
+  - docs/**/*.md
+  resources:
+  - assets/**
+website:
+  title: Merit Academy CS
+  site-url: https://cs.meritprepacademy.app
+  repo-url: https://github.com/buckldav/learn-merit
+  repo-actions:
+  - edit
+  search: true
+  sidebar:
+    style: docked
+    search: true
+    contents:
+    - text: Home
+      href: index.md
+    - section: GitHub
+      href: docs/git/index.md
+      contents:
+      - section: Markdown
+        href: docs/git/markdown/index.md
+        contents:
+        - text: GitHub and Markdown
+          href: docs/git/markdown/01.md
+        - text: Replit and Markdown
+          href: docs/git/markdown/02.md
+      - text: GitHub Projects
+        href: docs/git/02.md
+    - section: Processing - Intro to CS
+      href: docs/processing/index.md
+      contents:
+      - section: Processing Basics
+        href: docs/processing/basics/index.md
+        contents:
+        - text: What is a Programming Language?
+          href: docs/processing/basics/01.md
+        - text: First Processing Program
+          href: docs/processing/basics/02.md
+        - text: Pizza Time!
+          href: docs/processing/basics/03.md
+        - text: Quiz Game - Logic and Control Flow
+          href: docs/processing/basics/04.md
+        - text: Snowflake App
+          href: docs/processing/basics/05.md
+        - text: Input Validator
+          href: docs/processing/basics/06.md
+      - section: Data Structures
+        href: docs/processing/data-structures/index.md
+        contents:
+        - text: What are Data Structures?
+          href: docs/processing/data-structures/01.md
+        - text: Pokemon Information Science
+          href: docs/processing/data-structures/02.md
+        - text: Dinosaur Game Clone
+          href: docs/processing/data-structures/03.md
+    - section: Web Dev Basics
+      href: docs/web-dev-basics/index.md
+      contents:
+      - text: HTML
+        href: docs/web-dev-basics/html.md
+      - text: CSS Basics
+        href: docs/web-dev-basics/css-basics.md
+      - text: CSS Layouts
+        href: docs/web-dev-basics/css-layouts.md
+      - text: Well-Formed Websites
+        href: docs/web-dev-basics/well-formed.md
+      - text: The Internet
+        href: docs/web-dev-basics/the-internet.md
+    - section: Web Dev Advanced
+      href: docs/web-dev/index.md
+      contents:
+      - text: Intro to Web Services
+        href: docs/web-dev/web-services.md
+      - text: HTTP and HTTPS
+        href: docs/web-dev/http-https.md
+      - text: Docker
+        href: docs/web-dev/docker.md
+      - text: systemd and FTP
+        href: docs/web-dev/systemd-ftp.md
+    - section: Golang
+      href: docs/golang/index.md
+      contents:
+      - text: Intro to Go
+        href: docs/golang/intro.md
+      - text: Beego Part 1 - MVC Web Development
+        href: docs/golang/mvc.md
+      - text: Beego Part 2 - Styling with Tailwind
+        href: docs/golang/tailwind.md
+      - text: Beego Part 3 - HTTP Methods and Forms
+        href: docs/golang/http-methods.md
+      - text: Beego Part 4 - Models and SQL Databases
+        href: docs/golang/model-db.md
+      - text: Beego Part 5 - Users and Admin Interface Part 1
+        href: docs/golang/admin.md
+      - text: Beego Part 6 - Users and Admin Interface Part 2
+        href: docs/golang/admin2.md
+      - text: Beego Part 7 - Environment
+        href: docs/golang/env.md
+      - text: Beego Part 8 - Deploy Part 1
+        href: docs/golang/deploy.md
+      - text: Beego Part 9 - Deploy Part 2
+        href: docs/golang/deploy2.md
+    - section: JavaScript
+      href: docs/javascript/index.md
+      contents:
+      - section: JavaScript Basics
+        href: docs/javascript/basics/index.md
+        contents:
+        - text: Variables and Functions
+          href: docs/javascript/basics/01.md
+        - text: Data Types and Objects
+          href: docs/javascript/basics/02.md
+        - text: The Document and Window Objects
+          href: docs/javascript/basics/03.md
+        - text: Logic and Control Flow
+          href: docs/javascript/basics/04.md
+        - text: Events
+          href: docs/javascript/basics/05.md
+        - text: String, Number, and Array Methods
+          href: docs/javascript/basics/06.md
+        - text: Unit Project - To Do App
+          href: docs/javascript/basics/unit-project.md
+        - text: For Teachers
+          href: docs/javascript/basics/for-teachers.md
+      - text: JavaScript Games
+        href: docs/javascript/games/index.md
+      - text: JavaScript Forms
+        href: docs/javascript/forms/index.md
+      - section: REST APIs with Express.js
+        href: docs/javascript/api/index.md
+        contents:
+        - text: Intro to Express.js
+          href: docs/javascript/api/01.md
+    - section: React.js
+      href: docs/react-js/index.md
+      contents:
+      - section: React.js Basics
+        href: docs/react-js/basics/index.md
+        contents:
+        - text: React State and Props
+          href: docs/react-js/basics/01.md
+        - text: React w/Fetch API
+          href: docs/react-js/basics/02.md
+      - section: Next.js Blog Tutorial
+        href: docs/react-js/next-blog-tutorial/index.md
+        contents:
+        - text: Part 1 - Next.js Project Setup
+          href: docs/react-js/next-blog-tutorial/01.md
+        - text: Part 2 - Blog Posts and CSS
+          href: docs/react-js/next-blog-tutorial/02.md
+        - text: Part 3 - Components and DRYness
+          href: docs/react-js/next-blog-tutorial/03.md
+        - text: Part 4 - Search Engine Optimization
+          href: docs/react-js/next-blog-tutorial/04.md
+        - text: Part 5 - APIs and Databases
+          href: docs/react-js/next-blog-tutorial/05.md
+    - section: Learn Python
+      href: docs/python/index.md
+      contents:
+      - text: Objects in Python
+        href: docs/python/objects.md
+      - section: Learn Pyxel
+        href: docs/python/pyxel/index.md
+        contents:
+        - text: Physics Engine
+          href: docs/python/pyxel/01.md
+      - text: Python Projects
+        href: docs/python/projects.md
+    - section: Unity and C#
+      href: docs/unity-and-cs/index.md
+      contents:
+      - section: Platformer Basics
+        href: docs/unity-and-cs/platformer-basics/index.md
+        contents:
+        - text: Creating a Unity Project
+          href: docs/unity-and-cs/platformer-basics/01.md
+        - text: Creating a Player
+          href: docs/unity-and-cs/platformer-basics/02.md
+        - text: Creating a Tilemap
+          href: docs/unity-and-cs/platformer-basics/03.md
+        - text: Adding Tiles
+          href: docs/unity-and-cs/platformer-basics/04.md
+        - text: Scripting
+          href: docs/unity-and-cs/platformer-basics/05.md
+        - text: Platformer Extras
+          href: docs/unity-and-cs/platformer-basics/06.md
+      - section: Top Down Game
+        href: docs/unity-and-cs/top-down-game/index.md
+        contents:
+        - text: Project Setup and Folders
+          href: docs/unity-and-cs/top-down-game/01.md
+        - text: Creating a Player and Tilemap
+          href: docs/unity-and-cs/top-down-game/02.md
+        - text: Heads-Up Display
+          href: docs/unity-and-cs/top-down-game/03.md
+        - text: Collectibles
+          href: docs/unity-and-cs/top-down-game/04.md
+        - text: Prefabs and Scenes
+          href: docs/unity-and-cs/top-down-game/05.md
+        - text: Traverse Through Scenes and Doors
+          href: docs/unity-and-cs/top-down-game/06.md
+      - text: Animation Basics
+        href: docs/unity-and-cs/animation.md
+      - section: State Machines
+        href: docs/unity-and-cs/state-machines/index.md
+        contents:
+        - text: Getting Started
+          href: docs/unity-and-cs/state-machines/01.md
+        - text: Enemy States
+          href: docs/unity-and-cs/state-machines/02.md
+        - text: States and Animation
+          href: docs/unity-and-cs/state-machines/03.md
+      - text: Extra Resources
+        href: docs/unity-and-cs/resources.md
+    - section: Java with Greenfoot
+      href: docs/java-greenfoot/index.md
+      contents:
+      - section: Turtley Amazing
+        href: docs/java-greenfoot/turtley-amazing/index.md
+        contents:
+        - text: Introduction
+          href: docs/java-greenfoot/turtley-amazing/01.md
+        - text: Setup
+          href: docs/java-greenfoot/turtley-amazing/02.md
+        - text: Drawing a Line
+          href: docs/java-greenfoot/turtley-amazing/03.md
+        - text: Turning
+          href: docs/java-greenfoot/turtley-amazing/04.md
+        - text: Changing Colors
+          href: docs/java-greenfoot/turtley-amazing/05.md
+        - text: Repetition
+          href: docs/java-greenfoot/turtley-amazing/06.md
+        - text: Better Spirals
+          href: docs/java-greenfoot/turtley-amazing/07.md
+        - text: Loopy Colors
+          href: docs/java-greenfoot/turtley-amazing/08.md
+        - text: Modulo to the Rescue
+          href: docs/java-greenfoot/turtley-amazing/09.md
+        - text: Enormous Lists
+          href: docs/java-greenfoot/turtley-amazing/10.md
+      - section: Turtle Snowflakes
+        href: docs/java-greenfoot/turtle-snowflakes/index.md
+        contents:
+        - text: Introduction
+          href: docs/java-greenfoot/turtle-snowflakes/01.md
+        - text: Using Loops to Create Shapes
+          href: docs/java-greenfoot/turtle-snowflakes/02.md
+    - section: Algorithms
+      href: docs/algorithms/index.md
+      contents:
+      - text: Strings Part 1
+        href: docs/algorithms/01.md
+    - section: Mobile Apps
+      href: docs/mobile-apps/index.md
+      contents:
+      - text: Mobile App Project Setup
+        href: docs/mobile-apps/01.md
+      - text: Markup Languages
+        href: docs/mobile-apps/02.md
+  page-footer: Published by Merit Academy under a [Creative Commons License](https://creativecommons.org/licenses/by-sa/4.0/).
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-copy: true
+    from: markdown-tex_math_dollars-citations

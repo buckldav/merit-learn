@@ -1,11 +1,6 @@
 ---
-layout: default
 title: systemd and FTP
-parent: Web Dev Advanced
-nav_order: 4
 ---
-
-# `systemd` and FTP
 
 For the last piece of this unit about an introduction to web services, we will talk about the program that manages all services (`systemd`) and the file transfer protocol (FTP).
 
@@ -61,7 +56,7 @@ sftp username@hostname:port
 
 Note that `ftp` uses absolute paths and behaves kind of like a minimal shell.`
 
-```
+```bash
 sftp> ls
 sftp> cd directory
 sftp> put /path/to/file.txt         # from you to the server

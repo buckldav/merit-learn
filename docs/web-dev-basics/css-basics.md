@@ -1,22 +1,10 @@
 ---
-layout: default
 title: CSS Basics
-parent: Web Dev Basics
-nav_order: 2
 ---
-
-# CSS Basics
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ---
 
-CSS is the styling language of websites and web applications. It styles the <a href="/docs/web-dev-basics/html">HTML</a> markup of web pages and is nothing without HTML. It would be trying to do paint-by-numbers without a coloring book. Therefore, you do need to know at least a little bit of HTML before you learn any CSS.
+CSS is the styling language of websites and web applications. It styles the <a href="/docs/web-dev-basics/html.md">HTML</a> markup of web pages and is nothing without HTML. It would be trying to do paint-by-numbers without a coloring book. Therefore, you do need to know at least a little bit of HTML before you learn any CSS.
 It is highly recommended that you learn HTML and CSS at the same time.<br>
 <strong>It is highly recommended that you learn HTML and CSS at the same time.</strong>
 
@@ -45,7 +33,6 @@ CSS selectors allow you to style different parts of your HTML in an organized wa
 | Inline style | Change the styling of a tag in HTML | Paragraph 5 (green) |
 
 #### CSS
-{: .no_toc }
 
 ```css
 /* Element Selector */
@@ -65,7 +52,6 @@ p {
 ```
 
 #### HTML
-{: .no_toc }
 
 ```html
 <html>
@@ -89,7 +75,6 @@ p {
 The "Cascade" part of "CSS" refers to its loading behavior. CSS is loaded from top to bottom, thus bottom styles might override styles above them. 
 
 #### CSS
-{: .no_toc }
 
 ```css
 p {
@@ -103,7 +88,6 @@ p {
 ```
 
 #### HTML
-{: .no_toc }
 
 ```html
 <html>
@@ -119,7 +103,6 @@ p {
 This behavior extends to multiple stylesheets loaded in the HTML document head, later stylesheets may override styles in previous stylesheets. In the example below, the styles from file2.css will be used instead of file1.css because of the order the stylesheets are linked in the HTML.
 
 #### file1.css
-{: .no_toc }
 
 ```css
 p {
@@ -128,7 +111,6 @@ p {
 ```
 
 #### file2.css
-{: .no_toc }
 
 ```css
 p {
@@ -137,7 +119,6 @@ p {
 ```
 
 #### HTML
-{: .no_toc }
 
 ```html
 <html>

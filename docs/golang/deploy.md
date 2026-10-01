@@ -1,11 +1,6 @@
 ---
-layout: default
-title: Beego Part 8 - Deploy Part 1
-parent: Golang
-nav_order: 9
+title: Deploy Part 1
 ---
-
-# Deploy Part 1
 
 **Deploying** has to do with taking your application from your computer, moving it to a server, and running it. A server is just a computer hooked up to the public internet. Here is a diagram describing how our class server network works.
 
@@ -16,7 +11,7 @@ Here is an explanation of the diagram from left to right.
 - There is a single IP Address pointing to the location of the data center housing our class applications. A **router** has ports 80 and 443 open and directs that traffic to a proxy server.
 - The **proxy** server has *NGINX*, with configurations to further connect domains to servers on the internal network. Here's what the NGINX config is for our class.
 
-<details markdown="block">
+<details>
 <summary>NGINX Config for *.meritprepacademy.app</summary>
 
 ```nginx

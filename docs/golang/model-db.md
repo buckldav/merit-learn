@@ -1,11 +1,6 @@
 ---
-layout: default
-title: Beego Part 4 - Models and SQL Databases
-parent: Golang
-nav_order: 5
+title: Models and SQL Databases
 ---
-
-# Models and SQL Databases
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zsjvFFKOm3c?si=4NdXh2SPWhKfHuc3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

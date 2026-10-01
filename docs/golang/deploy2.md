@@ -1,11 +1,6 @@
 ---
-layout: default
-title: Beego Part 9 - Deploy Part 2
-parent: Golang
-nav_order: "91"
+title: Deploy Part 2
 ---
-
-# Deploy Part 2
 
 Now it is time to hook up to our PostgreSQL database in production.
 
@@ -187,7 +182,7 @@ psql -U \$POSTGRES_USER -d \"$NEW_USER\" -c 'GRANT SELECT, INSERT, UPDATE, DELET
 
 Make a production conf file based on your `app.conf`.
 
-```sh 
+```sh
 cp conf/app.conf conf/prod.conf
 echo "conf/prod.conf" >> .gitignore
 ```
@@ -216,7 +211,7 @@ POSTGRES_PASSWORD=PASSWORD
 
 Modify `Dockerfile` to use the `prod.conf`.
 
-```Dockerfile
+```dockerfile
 # Copy the rest of the application code from host to image
 COPY . .
 # NEW: Overwrite the app.conf with prod version

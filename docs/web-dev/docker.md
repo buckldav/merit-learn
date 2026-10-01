@@ -1,12 +1,6 @@
 ---
-layout: default
 title: Docker
-parent: Web Dev Advanced
-nav_order: 3
 ---
-
-
-# Docker
 
 So far, we have been running our services directly from our machine. This can be difficult to replicate across machines as operating systems and configurations can differ. As such, there is a system called "containerization" that 
 

@@ -1,22 +1,10 @@
 ---
-layout: default
 title: HTML
-parent: Web Dev Basics
-nav_order: 1
 ---
-
-# HTML
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ---
 
-HTML is the markup language of websites and web applications. It's the way that content (text, graphics, and other media) is defined and organized on a web page. HTML by itself does not look fantastic. To style the content defined by HTML (add fonts, colors, layouts, etc. to your web pages), you need to learn <a href="/docs/web-dev-basics/css">CSS</a>.<br>
+HTML is the markup language of websites and web applications. It's the way that content (text, graphics, and other media) is defined and organized on a web page. HTML by itself does not look fantastic. To style the content defined by HTML (add fonts, colors, layouts, etc. to your web pages), you need to learn <a href="/docs/web-dev-basics/css-basics.md">CSS</a>.<br>
 <strong>It is highly recommended that you learn HTML and CSS at the same time.</strong>
 
 ## Tutorials
@@ -64,4 +52,3 @@ When multiple elements are <b>nested</b> inside one another, it is good practice
 ```
 
 File names should be kebab case (lowercase with dashes instead of spaces; ```file-name.html```) or snake case (lowercase with underscores; ```file_name.html```). Be consistent, pick either kebab case or snake case for your files and stick to it.
-

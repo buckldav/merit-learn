@@ -1,11 +1,6 @@
 ---
-layout: default
-title: Beego Part 7 - Environment
-parent: Golang
-nav_order: 8
+title: Application Environment
 ---
-
-# Application Environment
 
 For this part of the lesson, explore on your own a little. Make a new Go project in a separate folder for a little proof of concept. Example:
 

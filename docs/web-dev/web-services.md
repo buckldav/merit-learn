@@ -1,11 +1,6 @@
 ---
-layout: default
-title: Intro to Web Services
-parent: Web Dev Advanced
-nav_order: 1
+title: Web Services
 ---
-
-# Web Services
 
 A **service** is a long-running program. It can be a website, a database, an application, an email server, etc. This page documents the following:
 
@@ -30,7 +25,7 @@ mkdir
 vi filename.txt
 ```
 
-```
+```md
 i   - Enter "insert mode" to type
 ESC - Exit "insert mode"
 :w  - Write changes
@@ -165,4 +160,3 @@ To open port 80 on your computer to the local network, you need to create an ent
 sudo firewall-cmd --add-port 80/tcp --permanent
 sudo firewall-cmd --reload
 ```
-

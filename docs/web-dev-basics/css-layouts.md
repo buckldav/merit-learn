@@ -1,20 +1,6 @@
 ---
-layout: default
-title: CSS Layouts
-parent: Web Dev Basics
-nav_order: 3
+title: CSS Layouts and Frameworks
 ---
-
-# CSS Layouts and Frameworks
-
-{: .no_toc }
-
-## Table of contents
-
-{: .no_toc .text-delta }
-
-1. TOC
-   {:toc}
 
 ---
 

@@ -1,11 +1,6 @@
 ---
-layout: default
 title: Beego Part 2 - Styling with Tailwind
-parent: Golang
-nav_order: 3
 ---
-
-# Beego Part 2 - Styling with Tailwind
 
 This guide assumes that you are familiar with CSS. We are going to use a more common and modern approach to writing CSS. [Tailwind CSS](https://tailwindcss.com/) is an approach to styling where <abbr title="indivisible, has one job">atomic</abbr> utility classes are used as building blocks.
 
@@ -152,6 +147,6 @@ Try adding some CSS classes. `navbar` and `link link-primary` are from DaisyUI, 
     <a class="link link-primary" href="/contact">Contact</a>
 </header>
 <div class="container">
-    {{ '{{' }} block "content" . }}{{ '{{' }} end }}
+    {{ block "content" . }}{{ end }}
 </div>
 ```

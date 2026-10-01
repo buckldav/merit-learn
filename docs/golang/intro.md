@@ -1,11 +1,6 @@
 ---
-layout: default
 title: Intro to Go
-parent: Golang
-nav_order: 1
 ---
-
-# Intro to Go
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/446E-r0rXHI?si=tdhwhe1CiRR69fQV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

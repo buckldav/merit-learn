@@ -1,12 +1,6 @@
 ---
-layout: post
-title: For Teachers
-parent: JavaScript Basics
-grand_parent: JavaScript
-nav_order: "99"
+title: JavaScript Basics Unit
 ---
-
-# JavaScript Basics Unit
 
 This unit was created by David Buckley for his classes at [Merit Academy](https://meritprepacademy.org) (Springville, UT).
 

@@ -1,11 +1,6 @@
 ---
-layout: default
 title: The Internet
-parent: Web Dev Basics
-nav_order: 5
 ---
-
-# The Internet
 
 Here are some vocabulary words and demonstrations having to do with the internet.
 

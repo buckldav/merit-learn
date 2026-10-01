@@ -1,12 +1,6 @@
 ---
-layout: post
 title: Unit Project - To Do App
-parent: JavaScript Basics
-grand_parent: JavaScript
-nav_order: "07"
 ---
-
-# Unit Project - To Do App
 
 **Objective:** Make a To Do App where a user can add tasks to a table and remove an individual task when it's completed. For an example, click [here](#example).
 

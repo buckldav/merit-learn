@@ -1,12 +1,8 @@
 ---
-layout: default
-title: Animation Basics
-nav_order: 3
-parent: Unity and C#
-permalink: /docs/unity-cs/animation-basics/
+title: Animation
+aliases:
+- /docs/unity-cs/animation-basics/
 ---
-
-# Animation
 
 First, create a spritesheet via a website like [piskelapp.com](https://www.piskelapp.com). Export your project as a PNG spritesheet.
 
