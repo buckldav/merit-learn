@@ -1,4 +1,0 @@
-WEBVTT Kind: captions; Language: en
-
-00:01.000 --> 00:04.500
-<font color="#fff"><i>Click and Drag</i></font>
