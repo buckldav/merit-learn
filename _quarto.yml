@@ -3,6 +3,7 @@ project:
   output-dir: _site
   render:
   - index.md
+  - forum/**/*.md
   - docs/**/*.md
   resources:
   - assets/**
