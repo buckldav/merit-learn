@@ -26,7 +26,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Build Quarto project
-        run: quarto build
+        run: quarto render .
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
